@@ -209,6 +209,8 @@ $(document).ready(function(){
     // }));
 
     $(".qa-wrap li").on('click', function() {
+      $(".qa-wrap li").removeClass("active");
+      $(this).addClass("active");
       var filter = $(this).attr("value");
       filterList(filter);
     });

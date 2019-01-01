@@ -67,7 +67,29 @@
                             </ul>
                         </li>
 
-                        <li><a href="~/ungdung">ứng dụng</a></li>
+                        <li>
+                            <a href="~/ungdung">ứng dụng</a>
+                            <ul class="dropdown">
+                                <li class="subs hassubs">
+                                    <a href="#">theo chức năng</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.CatalogFunctions)
+                                        {
+                                            <li class="subs"><a href="~/nhom-chucnang-@item.Slug">@item.Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li class="subs hassubs">
+                                    <a href="#">theo lĩnh vực</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.CatalogSectors)
+                                        {
+                                            <li class="subs"><a href="~/nhom-sanpham-@item.Slug">@item.Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="~/cauhoi">faq</a></li>
                         <li><a href="~/lienhe">liên hệ</a></li>
                     </ul>
