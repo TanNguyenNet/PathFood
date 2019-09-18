@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CV.Core\CV.Core.csproj" />
+    <ProjectReference Include="..\CV.Data\CV.Data.csproj" />
+    <ProjectReference Include="..\CV.Service.Interface\CV.Service.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

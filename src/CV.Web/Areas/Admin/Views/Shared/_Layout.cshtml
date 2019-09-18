@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    @{
+        await Html.RenderPartialAsync("Assets/_TopMeta").ConfigureAwait(true);
+    }
+
+    @{
+        await Html.RenderPartialAsync("Assets/_TopCss").ConfigureAwait(true);
+    }
+
+</head>
+
+<body>
+    <div id="wrapper">
+        @{
+            await Html.RenderPartialAsync("_Navbar").ConfigureAwait(true);
+        }
+        @{
+            await Html.RenderPartialAsync("_Sidebar").ConfigureAwait(true);
+        }
+
+        <div class="content-page" id="appjs">
+
+            @RenderBody()
+
+            @{
+                await Html.RenderPartialAsync("_Footer").ConfigureAwait(true);
+            }
+        </div>
+    </div>
+    @{
+        await Html.RenderPartialAsync("_RightSidebar").ConfigureAwait(true);
+    }
+    @{
+        await Html.RenderPartialAsync("Assets/_BottomScript").ConfigureAwait(true);
+    }
+    @await RenderSectionAsync("Scripts", required: false).ConfigureAwait(true)
+</body>
+</html>

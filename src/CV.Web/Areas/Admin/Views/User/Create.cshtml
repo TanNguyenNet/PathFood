@@ -1,0 +1,100 @@
+﻿@model CV.Data.Model.Identity.AppUserModel
+@{
+
+}
+
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">User</a></li>
+                                <li class="breadcrumb-item active">User Edit</li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">Add User</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card-box">
+                        <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Info</h5>
+
+                        <div class="form-group mb-3">
+                            <label for="userName">Username <span v-if="!$v.objModel.userName.required" class="text-danger">* Input </span></label>
+                            <input type="text" id="userName" class="form-control" v-model="$v.objModel.userName.$model" placeholder="Input username">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="firstName">First Name <span v-if="!$v.objModel.firstName.required" class="text-danger">*</span></label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" v-model="$v.objModel.firstName.$model" placeholder="Input first name">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="firstName">Last Name <span v-if="!$v.objModel.lastName.required" class="text-danger">*</span></label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" v-model="$v.objModel.lastName.$model" placeholder="Input last name">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="firstName">Email <span v-if="!$v.objModel.email.email" class="text-danger">* Sai định dạng</span> </label>
+                            <input type="text" id="email" name="email" class="form-control" v-model="$v.objModel.email.$model" placeholder="Input email">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="password">Password <span v-if="!$v.objModel.password.required" class="text-danger">* Nhập password</span> 
+                                                           <span v-if="!$v.objModel.password.minLength" class="text-danger">* Lớn hơn 5 ký tự</span>
+                            </label>
+                            <input type="password" id="password" name="password" class="form-control" v-model="$v.objModel.password.$model" placeholder="Input password">
+                        </div>
+
+
+
+                    </div> <!-- end card-box -->
+                </div> <!-- end col -->
+
+                <div class="col-lg-6">
+                    <div class="card-box">
+                        <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Roles</h5>
+                        <div class="mt-3">
+                            <div v-for="item in claims" class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck-{{item.claimValue}}">
+                                <label class="custom-control-label" for="customCheck1">{{item.claimValue}}</label>
+                            </div>
+                        </div>
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-3">
+                        <a class="btn w-sm btn-light waves-effect" asp-area="admin" asp-controller="user" asp-action="index">Cancel</a>
+                        <button type="button" class="btn w-sm btn-success waves-effect waves-light" v-if="!$v.$anyError" v-on:click="save">Save</button>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+            <!-- end row -->
+
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+    
+
+@section Scripts{
+    <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
+    <script src="~/lib/vuelidate/dist/validators.min.js"></script>
+    <script src="~/webAppAdmin/user/create.js"></script>
+}
