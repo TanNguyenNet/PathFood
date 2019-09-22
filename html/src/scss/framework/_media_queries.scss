@@ -1,0 +1,309 @@
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+  .new-product {
+    .img-content {
+    .overlay {
+      .overlay-content {
+        font-size: 10px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width : 991px) {
+  .QA-wrap {
+    margin-top: 40px;
+  }
+  .news {
+    background-color: #012046;
+    padding: 20px 0px;
+    .first-2 {
+      -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+      order: -1;
+    }
+  }
+  .new-product {
+  .header-filter {
+      font-size: 14px;
+      .select-hidden {
+        display: none;
+        visibility: hidden;
+        padding-right: 10px;
+      }
+      .select {
+        width: 102px;
+        font-size: 10px;
+      }
+      .select-styled:active:after, .select-styled.active:after {
+        top: 0px;
+      }
+      .select-styled:after {
+        top: 6px;
+      }
+    }
+  }
+  .news, .blog-list {
+    .info-content {
+      .title {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+        text-align: inherit;
+      }
+    }
+    li {
+      span {
+        top: 30px;
+      }
+    }
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) and (max-width : 991px) {
+  .header-title {
+        font-size: 38px;
+      }
+  .about-us {
+    .content {
+      text-align: center;
+      p {
+        padding-top: 30px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px) {
+  .mt45 {
+    margin-top: 0;
+  }
+  .contact-info {
+  .com-wrap1 {
+    border-right: none;
+    margin-top: 40px;
+  }
+  .first-2 {
+      -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+      order: -1;
+    }
+}
+  .Q-A {
+    .contet-wrap {
+      border-right: none;
+      padding: 0px;
+    }
+  }
+  .header-filter {
+    text-align: center;
+      .mbb20 {
+      padding-bottom: 10px;
+    }
+  }
+  .new-product {
+    .img-content {
+    .overlay {
+      .overlay-content {
+        font-size: 12px;
+        }
+      }
+    }
+  }
+  .header-title {
+        font-size: 38px;
+      }
+  .header-logo{
+    padding: 20px 0;
+    text-align: center;
+    .logo {
+      img {
+        width: 151px;
+        height: 100px;
+      }
+      span {
+        font-size: 14px;
+        padding: 0px 10px;
+        color: #0066b2;
+        font-weight: bold;
+      }
+      .accep {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+      .trust {
+        padding-right: 10px;
+        padding-left: 30px;
+      }
+    }
+  }
+  .art-navigation {
+    .content {
+      .circle-container {
+        position: relative;
+        /* 1 */
+        width: 574px;
+        height: 574px;
+      }
+      .circle-container > * {
+        width: 4em;
+        height: 4em;
+      }
+      .circle-container > :nth-of-type(1) {
+        transform: rotate(30deg) translate(12em) rotate(-30deg);
+      }
+      .circle-container > :nth-of-type(2) {
+        transform: rotate(90deg) translate(12em) rotate(-90deg);
+      }
+      .circle-container > :nth-of-type(3) {
+        transform: rotate(150deg) translate(12em) rotate(-150deg);
+      }
+      .circle-container > :nth-of-type(4) {
+        transform: rotate(210deg) translate(12em) rotate(-210deg);
+      }
+      .circle-container > :nth-of-type(5) {
+        transform: rotate(270deg) translate(12em) rotate(-270deg);
+      }
+      .circle-container > :nth-of-type(6) {
+        transform: rotate(330deg) translate(12em) rotate(-330deg);
+      }
+
+      .circle-container li > svg#Capa_1 {
+        transform: rotate(-120deg) translate(102px) rotate(65deg);
+      }
+      .circle-container li > svg#Capa_2 {
+        transform: rotate(-90deg) translate(115px) rotate(90deg);
+      }
+      .circle-container li > svg#Capa_3 {
+        transform: rotate(-56deg) translate(98px) rotate(115deg);
+      }
+      .circle-container li > svg#Capa_4 {
+        transform: rotate(-20deg) translate(56px) rotate(140deg);
+      }
+      .circle-container li > svg#Capa_5 {
+        transform: rotate(90deg) translate(15px) rotate(90deg);
+      }
+      .circle-container li > svg#Capa_6 {
+        transform: rotate(18deg) translate(-54px) rotate(-138deg);
+      }
+      .circle-container li a .overlay {
+        width: 80px;
+        height: 70px;
+        box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 5px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .menunav {
+        overflow: auto;
+      }
+      .menunav ul.abc {
+        position: relative;
+        padding: 80px;
+        max-width: 0; max-height: 0;
+        list-style: none;
+        top: -380px;
+        left: 20px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+/* Small Devices, Phones */
+@media only screen and (max-width: 575px) {
+  .new-product {
+    .img-content {
+    .overlay {
+      height: 100%;
+      min-height: 330px;
+      max-height: 820px;
+      .overlay-content {
+        font-size: 16px;
+        }
+      }
+    }
+  }
+  .top-bar {
+    display: none;
+  }
+  .header-logo{
+    padding: 20px 0;
+    text-align: center;
+    .logo {
+      img {
+        width: 100px;
+        height: 50px;
+      }
+      span {
+        font-size: 8px;
+        padding: 0px 6px;
+        color: #0066b2;
+        font-weight: bold;
+      }
+      .accep {
+        padding-right: 6px;
+        padding-left: 6px;
+      }
+      .trust {
+        padding-right: 6px;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 425px) {
+  .art-navigation {
+    .content {
+      .menunav ul.abc {
+        position: relative;
+        padding: 80px;
+        max-width: 0; max-height: 0;
+        list-style: none;
+        top: -380px;
+        left: 75px;
+        margin: auto;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 321px) and (max-width : 375px) {
+  .art-navigation {
+    .content {
+      .menunav ul.abc {
+        position: relative;
+        padding: 80px;
+        max-width: 0; max-height: 0;
+        list-style: none;
+        top: -380px;
+        left: 100px;
+        margin: auto;
+      }
+    }
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+  .art-navigation {
+    .content {
+      .menunav ul.abc {
+        position: relative;
+        padding: 80px;
+        max-width: 0; max-height: 0;
+        list-style: none;
+        top: -380px;
+        left: 45%;
+        margin: auto;
+      }
+    }
+  }
+}

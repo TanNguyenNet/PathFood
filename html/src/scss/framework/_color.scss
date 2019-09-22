@@ -1,0 +1,53 @@
+//color
+$black: #000;
+$hopbush: #c69;
+$bouquet: #b37399;
+$venus: #998099;
+$patina: #699;
+$nebula: #d2e1dd;
+$white: #fff;
+$dawn-pink: #f2ece4;
+$wafer: #e1d7d2;
+$iron: #dadbdf;
+$regent-grey: #808c99;
+$light-grey: #dedede;
+$pale-sky: #6b717f;
+$darklight-grey: #636363;
+$midnight-blue: #1F2A37;
+$dark-blue: #0c66ab;
+$dark-green: #1d9a0a;
+$light-green: #6ebb43;
+$dark-red: #b20d18;
+$dark-purple: #0c0faf;
+$light-blue: #0a51a1;
+$dark-orange: #de960a;
+$dark-ocean: #1b9bd2;
+$dark-celadon: #2d9d95;
+$orange-celadon: #b8644f;
+//shadow color
+$color-shadow: rgba($black, .125);
+
+//primary color
+$color-primary:  $hopbush;
+
+// $color-accent $patina
+
+//background color
+$color-background-white: $midnight-blue;
+$color-background-shade: $iron;
+$color-background-invert:  $hopbush;
+
+//text color
+$color-text-white: $white;
+$color-text: darken($pale-sky, 15);
+$color-text-weak:  $regent-grey;
+$color-text-strong:  $midnight-blue;
+$color-text-heading: $regent-grey;
+// $color-text-invert:  rgba($color-background, .75);
+// $color-text-strong-invert: $color-background;
+$color-text-link:  $color-primary;
+$color-text-link-visited:  $bouquet;
+$color-text-link-hover:  $midnight-blue;
+
+//color border
+$color-border:#6ebb43;
