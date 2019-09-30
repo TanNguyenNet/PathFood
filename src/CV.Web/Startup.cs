@@ -28,6 +28,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 
 namespace CV.Web
 {
@@ -67,12 +68,16 @@ namespace CV.Web
                 {
                     options.OutputFormatters.Remove(new XmlDataContractSerializerOutputFormatter());
                 })
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddConfigureCookieSettings();
 
             services.AddAutoMapperSetup();
-            
+
             services.AddConfigIdentityOption();
 
             services.AddAuthorizationPolicySetup();
@@ -83,13 +88,9 @@ namespace CV.Web
 
             services.AddTransient<IBootstrapper, Bootstrapper>();
 
-            services.AddTransient<IBootstrapperService, BootstrapperService>();
-
             services.AddScoped(typeof(IRepository<>), typeof(EFRepository<>));
 
-            services.AddTransient<IUserIdentityService, UserIdentityService>();
-
-            services.AddTransient<IPolicyService, PolicyService>();
+            services.AddApplicationService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CV.Data.Entities
 {
-    public class AudiTable : BaseEntity
+    public class AuditTable : BaseEntity
     {
         public DateTimeOffset CreatedTime { get; set; }
 

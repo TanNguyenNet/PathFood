@@ -29,7 +29,7 @@ namespace CV.Data.EF
 
             foreach (EntityEntry item in modified)
             {
-                var changedOrAddedItem = item.Entity as AudiTable;
+                var changedOrAddedItem = item.Entity as AuditTable;
                 if (changedOrAddedItem != null)
                 {
                     if (item.State == EntityState.Added)
