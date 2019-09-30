@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using CV.Data.Entities.Blog;
 using CV.Data.Entities.Identity;
+using CV.Data.Model.Blog;
 using CV.Data.Model.Identity;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,10 @@ namespace CV.Service.Mapper
             CreateMap<Claim, ClaimRequirementModel>()
                 .ForMember(d => d.ClaimName, s => s.MapFrom(x => x.Type))
                 .ForMember(d => d.ClaimValue, s => s.MapFrom(x => x.Value));
+
+            CreateMap<Post, PostModel>();
+
+            CreateMap<CategoryBlog, CategoryBlogModel>();
         }
     }
 }

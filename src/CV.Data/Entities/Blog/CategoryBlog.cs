@@ -16,6 +16,8 @@ namespace CV.Data.Entities.Blog
 
         public string Description { set; get; }
 
+        public string Slug { set; get; }
+
         public string UrlImage { set; get; }
 
         public bool SetHomePage { set; get; } = false;

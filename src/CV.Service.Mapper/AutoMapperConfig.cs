@@ -12,6 +12,8 @@ namespace CV.Service.Mapper
             return new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new DomainEntityToModelProfile());
+
+                cfg.AddProfile(new ModelToEntityProfile());
             });
         }
     }

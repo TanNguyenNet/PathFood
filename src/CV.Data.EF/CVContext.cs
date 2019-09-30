@@ -1,5 +1,6 @@
 ﻿using CV.Core.Data;
 using CV.Data.Entities;
+using CV.Data.Entities.Blog;
 using CV.Data.Entities.Identity;
 using CV.Utils.Contants;
 using CV.Utils.Helper;
@@ -64,6 +65,12 @@ namespace CV.Data.EF
             builder.Entity<IdentityUserToken<string>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
             #endregion Identity Config
+
+            builder.Entity<AppUser>().HasQueryFilter(x => x.DeletedDate == null);
+
+            builder.Entity<CategoryBlog>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<Post>().HasQueryFilter(x => x.DeletedTime == null);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
