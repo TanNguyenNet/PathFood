@@ -26,6 +26,23 @@ namespace CV.Service.Blog
             _categoryBlogRepo = _uow.GetRepository<CategoryBlog>();
         }
 
+        public void Delete(string id,string userId)
+        {
+            try
+            {
+                var entity = _categoryBlogRepo.GetById(id);
+
+                entity.DeletedTime = CoreHelper.SystemTimeNowUTCTimeZoneLocal;
+                entity.DeletedBy = userId;
+
+                _categoryBlogRepo.Update(entity);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public IEnumerable<CategoryBlogModel> GetAll(Languages? lang)
         {
             var query = _categoryBlogRepo.TableNoTracking;

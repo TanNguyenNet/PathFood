@@ -6,6 +6,8 @@
         await Html.RenderPartialAsync("Assets/_TopMeta").ConfigureAwait(true);
     }
 
+    @await RenderSectionAsync("Css", required: false).ConfigureAwait(true)
+
     @{
         await Html.RenderPartialAsync("Assets/_TopCss").ConfigureAwait(true);
     }

@@ -46,6 +46,8 @@ namespace CV.Data.EF.Migrations
 
                     b.Property<bool>("SetHomePage");
 
+                    b.Property<string>("Slug");
+
                     b.Property<string>("UrlImage");
 
                     b.HasKey("Id");
@@ -83,6 +85,8 @@ namespace CV.Data.EF.Migrations
                     b.Property<DateTimeOffset?>("PushlishDate");
 
                     b.Property<bool>("SetHomePage");
+
+                    b.Property<string>("Slug");
 
                     b.Property<string>("UrlImage");
 

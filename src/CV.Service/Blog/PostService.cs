@@ -25,6 +25,22 @@ namespace CV.Service.Blog
             _postRepo = uow.GetRepository<Post>();
         }
 
+        public void Delete(string id, string userId)
+        {
+            try
+            {
+                var entity = _postRepo.GetById(id);
+                entity.DeletedTime = CoreHelper.SystemTimeNowUTCTimeZoneLocal;
+                entity.DeletedBy = userId;
+                _postRepo.Update(entity);
+            }
+            catch
+            {
+
+                throw;
+            }
+        }
+
         public PagedResult<PostModel> GetAll(int page = 1, int pageSize = 20, string filter = "", DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null)
         {
             var query = _postRepo.TableNoTracking;

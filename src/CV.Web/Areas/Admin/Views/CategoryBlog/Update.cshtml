@@ -1,0 +1,137 @@
+﻿@model CV.Data.Model.Identity.AppUserModel
+@{
+
+}
+
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
+                            <li class="breadcrumb-item active">Add Category</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Sửa danh mục blog</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card-box">
+                    <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Thông tin</h5>
+                    <input type="hidden" id="catId" data-catid="@ViewBag.catId" />
+                    <div class="form-group mb-3">
+                        <label for="name">Tên <span v-if="!$v.objModel.name.required" class="text-danger">* Nhập tên</span></label>
+                        <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" placeholder="Nhập tên">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="description">Mô tả </label>
+                        <input type="text" id="description" name="description" class="form-control" v-model="objModel.description" placeholder="Nhập mô tả">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="example-select">Ngôn ngữ</label>
+                        <select class="form-control" id="lang" v-model="objModel.lang">
+                            <option v-for="lang in langs" v-bind:value="lang.id">
+                                {{lang.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <div class="checkbox mb-2">
+                            <input id="active" v-model="objModel.active" type="checkbox">
+                            <label for="active">
+                                Hiển thị
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- end card-box -->
+            </div> <!-- end col -->
+
+            <div class="col-lg-6">
+                <div class="card-box">
+                    <h5 class="text-uppercase mt-0 mb-3 bg-light p-2">Hình ảnh</h5>
+                    @*<form action="~/api/setting/UploadFileAsync" method="post" enctype="multipart/form-data" class="dropzone" id="myAwesomeDropzone">
+                            <div class="fallback">
+                                <input name="file" type="file" />
+                            </div>
+                            <div class="dz-message needsclick">
+                                <i class="h1 text-muted dripicons-cloud-upload"></i>
+                                <h3>Drop files here or click to upload.</h3>
+                                <span class="text-muted font-13">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+                            </div>
+                        </form>*@
+                    <div class="dropzone" id="uploadFile">
+                        <img :src="item.urlImage" alt="Click me to remove the file." data-dz-remove />
+                    </div>
+                    <input type="hidden" id="urlImage" value="" />
+                </div>
+            </div>
+
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mb-3">
+                    <a class="btn w-sm btn-light waves-effect" asp-area="admin" asp-controller="categoryBlog" asp-action="index">Cancel</a>
+                    <button type="button" class="btn w-sm btn-success waves-effect waves-light" v-if="!$v.$anyError" v-on:click="save">Save</button>
+                </div>
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+
+    </div> <!-- container -->
+
+</div> <!-- content -->
+
+@section Css{
+    <link href="~/assets/libs/dropzone/dropzone.min.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    <script src="~/assets/libs/dropzone/dropzone.min.js"></script>
+    <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
+    <script src="~/lib/vuelidate/dist/validators.min.js"></script>
+    <script src="~/webAppAdmin/blog/categoryBlog/update.js"></script>
+
+    <script>
+        Dropzone.autoDiscover = false;
+
+        $(function () {
+            // Now that the DOM is fully loaded, create the dropzone, and setup the
+            // event listeners
+            var myDropzone = new Dropzone("#uploadFile", { url: "/api/setting/UploadFileAsync" });
+            myDropzone.options.myAwesomeDropzone = {
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 5,// MB
+                maxFiles: 1, //Max file
+                addRemoveLinks: true,
+                dictRemoveFile: "Delete",
+                previewTemplate: $("#dropzone_preview_template").html()
+            };
+
+            myDropzone.on("success", function (file, serverResponse) {
+                $('#urlImage').val(serverResponse);
+                console.log($('#urlImage').val());
+            });
+
+            myDropzone.on("removedfile", function (file, serverResponse) {
+                myDropzone.createElement("<button>Remove file</button>");
+            });
+        })
+    </script>
+}
+}

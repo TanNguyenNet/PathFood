@@ -18,5 +18,7 @@ namespace CV.Service.Interface.Blog
         PostModel Insert(string userCurrent, PostModel post);
 
         PostModel Update(string id, string userCurrentId, PostModel post);
+
+        void Delete(string id, string userId);
     }
 }

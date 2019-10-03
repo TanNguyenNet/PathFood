@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
+using CV.Core;
 using CV.Core.Authorization;
 using CV.Core.Data;
 using CV.Data.EF;
@@ -16,6 +17,7 @@ using CV.Service.Interface.Identity;
 using CV.Service.Mapper;
 using CV.Utils.Contants;
 using CV.Utils.Utils.Config;
+using CV.Utils.Utils.Data;
 using CV.Web.Extension;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +39,8 @@ namespace CV.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            SystemSetting.Current = Configuration.GetSection<SystemSetting>("Setting");
+            DirectoryHelper.CreateIfNotExist(SystemSetting.Current.ResourceFolderPath);
         }
 
         public IConfiguration Configuration { get; }
@@ -104,6 +108,8 @@ namespace CV.Web
             {
                 app.UseExceptionHandler("/Error");
             }
+
+            
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

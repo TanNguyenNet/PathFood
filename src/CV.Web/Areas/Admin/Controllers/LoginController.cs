@@ -42,19 +42,19 @@ namespace CV.Web.Areas.Admin.Controllers
                 if (result.IsLockedOut)
                 {
                     ModelState.AddModelError("MsgError", "Tài khoản đã bị khóa");
-                    return View();
+                    return RedirectToAction("index");
                 }
                 else
                 {
                     //return new ObjectResult(new GenericResult(false, "Đăng nhập sai"));
                     ModelState.AddModelError("MsgError", "Đăng nhập sai");
-                    return View();
+                    return RedirectToAction("index");
                 }
             }
             else
             {
                 ModelState.AddModelError("MsgError", "Tên đăng nhập hoặc mật khẩu không đúng.");
-                return View();
+                return RedirectToAction("index");
             }
         }
 

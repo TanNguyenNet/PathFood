@@ -15,5 +15,7 @@ namespace CV.Service.Interface.Blog
         CategoryBlogModel Insert(string userCurrentId, CategoryBlogModel category);
 
         CategoryBlogModel Update(string catId, string userCurrentId, CategoryBlogModel category);
+
+        void Delete(string id,string userId);
     }
 }
