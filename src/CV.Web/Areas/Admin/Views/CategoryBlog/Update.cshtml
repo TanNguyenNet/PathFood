@@ -73,9 +73,9 @@
                             </div>
                         </form>*@
                     <div class="dropzone" id="uploadFile">
-                        <img :src="item.urlImage" alt="Click me to remove the file." data-dz-remove />
+                        <img :src="objModel.urlImage" alt="Click me to remove the file." width="100" height="100" data-dz-remove />
                     </div>
-                    <input type="hidden" id="urlImage" value="" />
+                    <input type="hidden" id="urlImage" :value="objModel.urlImage" />
                 </div>
             </div>
 
@@ -97,41 +97,9 @@
 
 </div> <!-- content -->
 
-@section Css{
-    <link href="~/assets/libs/dropzone/dropzone.min.css" rel="stylesheet" />
-}
-
 @section Scripts{
-    <script src="~/assets/libs/dropzone/dropzone.min.js"></script>
     <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
     <script src="~/lib/vuelidate/dist/validators.min.js"></script>
     <script src="~/webAppAdmin/blog/categoryBlog/update.js"></script>
-
-    <script>
-        Dropzone.autoDiscover = false;
-
-        $(function () {
-            // Now that the DOM is fully loaded, create the dropzone, and setup the
-            // event listeners
-            var myDropzone = new Dropzone("#uploadFile", { url: "/api/setting/UploadFileAsync" });
-            myDropzone.options.myAwesomeDropzone = {
-                paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 5,// MB
-                maxFiles: 1, //Max file
-                addRemoveLinks: true,
-                dictRemoveFile: "Delete",
-                previewTemplate: $("#dropzone_preview_template").html()
-            };
-
-            myDropzone.on("success", function (file, serverResponse) {
-                $('#urlImage').val(serverResponse);
-                console.log($('#urlImage').val());
-            });
-
-            myDropzone.on("removedfile", function (file, serverResponse) {
-                myDropzone.createElement("<button>Remove file</button>");
-            });
-        })
-    </script>
-}
+    <script src="~/js/dropzoneUploadfile.js"></script>
 }

@@ -33,10 +33,8 @@ namespace CV.Web.Api
         {
             try
             {
-                //var filePath = SystemSetting.Current.ResourceFolderPath;
                 var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "UploadFiles", file.FileName);
                 var rootPath = Path.Combine(_hostingEnvironment.WebRootPath, "UploadFiles");
-                var rootFolder = "wwwroot";
                 if (file.Length > 0)
                 {
                     DirectoryHelper.CreateIfNotExist(rootPath);
@@ -45,7 +43,7 @@ namespace CV.Web.Api
                         await file.CopyToAsync(stream);
                     }
                 }
-                var url = $"/{rootFolder}/UploadFiles/{file.FileName}";
+                var url = $"/UploadFiles/{file.FileName}";
                 return Ok(url);
             }
             catch (Exception ex)

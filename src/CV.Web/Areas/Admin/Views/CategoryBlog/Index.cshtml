@@ -46,10 +46,10 @@
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in list">
-                                        <td class="table-user">
+                                        <td >
                                             <a :href="'/admin/categoryBlog/update/' + item.id">{{item.name}}</a>
                                         </td>
-                                        <td>
+                                        <td class="table-user">
                                             <img :src="item.urlImage" alt="image-category" class="mr-2 rounded-circle">
                                             {{item.urlImage}}
                                         </td>
