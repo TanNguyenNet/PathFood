@@ -27,5 +27,7 @@ namespace CV.Data.Entities.Blog
         public bool SetHomePage { set; get; } = false;
 
         public bool Active { set; get; } = true;
+
+        public string CategoryBlogId { set; get; }
     }
 }

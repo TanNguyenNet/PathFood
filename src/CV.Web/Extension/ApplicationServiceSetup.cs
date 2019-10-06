@@ -26,6 +26,8 @@ namespace CV.Web.Extension
 
             services.AddTransient<ICategoryBlogService, CategoryBlogService>();
 
+            services.AddTransient<IPostService, PostService>();
+
             services.AddTransient<ILanguageService, LanguageService>();
 
         }

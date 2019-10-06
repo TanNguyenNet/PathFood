@@ -17,5 +17,7 @@ namespace CV.Data.Model.Blog
         public bool SetHomePage { set; get; }
 
         public bool Active { set; get; }
+
+        
     }
 }

@@ -40,7 +40,7 @@ namespace CV.Web.Api.Blog
         {
             if (ModelState.IsValid)
             {
-                var newUser = _categoryBlogService.Insert(base.UserId, catModel);
+                var newCat = _categoryBlogService.Insert(base.UserId, catModel);
             }
             return Ok();
         }
@@ -51,7 +51,7 @@ namespace CV.Web.Api.Blog
         {
             if (ModelState.IsValid)
             {
-                var updateUser = _categoryBlogService.Update(id, base.UserId, catModel);
+                var updateCat = _categoryBlogService.Update(id, base.UserId, catModel);
             }
             return Ok();
         }
