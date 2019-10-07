@@ -26,6 +26,7 @@ var app = new Vue({
             axios.get('/api/categoryBlog/GetCategory/' + self.objModel.id, null)
                 .then(function (response) {
                     self.objModel = response.data;
+                    $('#urlImage').val(self.objModel.urlImage);
                 })
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));

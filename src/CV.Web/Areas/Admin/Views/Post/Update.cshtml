@@ -1,0 +1,123 @@
+﻿@model CV.Data.Model.Identity.AppUserModel
+@{
+
+}
+
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
+                            <li class="breadcrumb-item active">Edit Post</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Cập nhật bài viết</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card-box">
+                    <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Thông tin</h5>
+                    <input type="hidden" id="postId" data-postid="@ViewBag.postId" />
+                    <div class="form-group mb-3">
+                        <label for="name">Tên <span v-if="!$v.objModel.name.required" class="text-danger">* Nhập tiêu đề</span></label>
+                        <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" required placeholder="Nhập tiêu đề">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="description">Mô tả </label>
+                        <input type="text" id="description" name="description" class="form-control" v-model="objModel.description" placeholder="Nhập mô tả">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="example-select">Ngôn ngữ</label>
+                        <select class="form-control" id="lang" v-model="objModel.lang">
+                            <option v-for="lang in langs" v-bind:value="lang.id">
+                                {{lang.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="example-select">Danh mục</label>
+                        <select class="form-control" id="cat" required v-model="objModel.categoryBlogId">
+                            <option value="">Chọn danh mục</option>
+                            <option v-for="cat in cats" v-bind:value="cat.id">
+                                {{cat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Ngày đăng bài</label>
+                        <input type="text" id="pushlishDate" class="form-control" v-model="pushlishDate">
+                    </div>
+                    <div class="form-group mb-3">
+                        <div class="checkbox form-check-inline">
+                            <input type="checkbox" id="active" v-model="objModel.active">
+                            <label for="active"> Hiển thị </label>
+                        </div>
+                        <div class="checkbox form-check-inline">
+                            <input type="checkbox" id="setHomePage" v-model="objModel.setHomePage">
+                            <label for="setHomePage"> Hiển thị trang chủ </label>
+                        </div>
+
+                    </div>
+                </div> <!-- end card-box -->
+            </div> <!-- end col -->
+
+            <div class="col-lg-6">
+                <div class="card-box">
+                    <h5 class="text-uppercase mt-0 mb-3 bg-light p-2">Hình ảnh</h5>
+                    <div class="dropzone" id="uploadFile">
+                        <img :src="objModel.urlImage" alt="Click me to remove the file." width="100" height="100" data-dz-remove />
+                    </div>
+                    <input type="hidden" id="urlImage" value="" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Nội dung</h4>
+                        <textarea id="content" data-plugins="summernote" data-summernote-height="400" rows="20" class="form-control">
+                        
+                        </textarea>
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div><!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mb-3">
+                    <a class="btn w-sm btn-light waves-effect" asp-area="admin" asp-controller="post" asp-action="index">Cancel</a>
+                    <button type="button" class="btn w-sm btn-success waves-effect waves-light" v-if="!$v.$anyError" v-on:click="save">Save</button>
+                </div>
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div> <!-- container -->
+</div> <!-- content -->
+
+
+@section Scripts{
+    <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
+    <script src="~/lib/vuelidate/dist/validators.min.js"></script>
+    <script src="~/webAppAdmin/blog/post/update.js"></script>
+    <script src="~/js/dropzoneUploadfile.js"></script>
+    <script src="~/js/summernote.js"></script>
+}

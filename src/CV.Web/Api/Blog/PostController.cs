@@ -19,6 +19,14 @@ namespace CV.Web.Api.Blog
             return Ok(model);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetPost(string id)
+        {
+            var model = _postService.GetPost(id);
+            return Ok(model);
+        }
+
         [HttpPost]
         public IActionResult Create(PostModel postModel)
         {
