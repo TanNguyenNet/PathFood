@@ -25,13 +25,13 @@ var app = new Vue({
                     alert("ERROR: " + (error.message | error));
                 });
         },
-        deleteItem: function (item) {
+        deleteItem: function (id) {
             var self = this;
 
             self.$dialog
                 .confirm('Bạn muốn xóa')
                 .then(function (dialog) {
-                    axios.delete('/api/categoryBlog/delete/' + item, null)
+                    axios.delete('/api/categoryBlog/delete/' + id, null)
                         .then(function (response) {
                             self.loadData(self.page);
                         })

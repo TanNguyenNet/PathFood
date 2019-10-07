@@ -18,6 +18,8 @@ namespace CV.Data.Entities.FAQ
 
         public bool Active { set; get; } = true;
 
+        public string Slug { set; get; }
+
         public string GroupQuestionId { set; get; }
 
         public virtual GroupQuestion GroupQuestion { set; get; }

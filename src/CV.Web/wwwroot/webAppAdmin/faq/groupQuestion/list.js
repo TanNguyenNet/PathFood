@@ -1,18 +1,11 @@
 ﻿Vue.component('paginate', VuejsPaginate);
 window.Vue.use(VuejsDialog.main.default);
 
-Vue.filter('formatDate', function (value) {
-    return moment(value).format('DD/MM/YYYY hh:mm');
-});
-
 var app = new Vue({
     el: '#appjs',
     data() {
         return {
-            list: [],
-            pCount: 0,
-            pSize: 20,
-            page: 1
+            list: []
         };
     },
     methods: {
@@ -24,10 +17,9 @@ var app = new Vue({
                 pageSize: self.pSize
             };
 
-            axios.get('/api/post/get', filter)
+            axios.get('/api/groupQuestion/get', filter)
                 .then(function (response) {
-                    self.list = response.data.results;
-                    self.pCount = response.data.pageCount;
+                    self.list = response.data;
                 })
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));
@@ -39,7 +31,7 @@ var app = new Vue({
             self.$dialog
                 .confirm('Bạn muốn xóa')
                 .then(function (dialog) {
-                    axios.delete('/api/post/delete/' + id, null)
+                    axios.delete('/api/categoryBlog/delete/' + id, null)
                         .then(function (response) {
                             self.loadData(self.page);
                         })
@@ -50,6 +42,8 @@ var app = new Vue({
                 .catch(function () {
                     console.log('Error');
                 });
+
+
         }
     },
     created: function () {

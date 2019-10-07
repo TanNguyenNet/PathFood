@@ -103,7 +103,7 @@ namespace CV.Service.Blog
             try
             {
                 var updatePost = _postRepo.GetById(id);
-
+                _mapper.Map(post, updatePost);
                 updatePost.LastUpdatedBy = userCurrentId;
 
                 _postRepo.Update(updatePost);
