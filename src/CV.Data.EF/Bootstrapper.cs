@@ -1,8 +1,7 @@
 ﻿using CV.Core.Data;
+using CV.Data.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,7 +11,7 @@ namespace CV.Data.EF
     {
         private readonly CVContext _context;
 
-        public Bootstrapper(CVContext context)
+        public Bootstrapper(CVContext context, UserManager<AppUser> userManager)
         {
             _context = context;
         }

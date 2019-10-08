@@ -15,9 +15,257 @@ namespace CV.Data.EF.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("CV.Data.Entities.Blog.CategoryBlog", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.Property<bool>("SetHomePage");
+
+                    b.Property<string>("Slug");
+
+                    b.Property<string>("UrlImage");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CategoryBlogs");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Blog.Post", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("CategoryBlogId");
+
+                    b.Property<string>("Content");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTimeOffset?>("PushlishDate");
+
+                    b.Property<bool>("SetHomePage");
+
+                    b.Property<string>("Slug");
+
+                    b.Property<string>("UrlImage");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Catalog.CatalogFunction", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Color");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Slug");
+
+                    b.Property<string>("URLImage");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CatalogFunctions");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Catalog.CatalogSector", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Color");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Slug");
+
+                    b.Property<string>("URLImage");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CatalogSectors");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Catalog.Product", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CatalogFunctionId");
+
+                    b.Property<string>("CatalogSectorId");
+
+                    b.Property<string>("Color");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Slug");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CatalogFunctionId");
+
+                    b.HasIndex("CatalogSectorId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.FAQ.GroupQuestion", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GroupQuestions");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.FAQ.Question", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Anwser");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<DateTimeOffset>("CreatedTime");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<DateTimeOffset?>("DeletedTime");
+
+                    b.Property<string>("GroupQuestionId");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("LastUpdatedBy");
+
+                    b.Property<DateTimeOffset>("LastUpdatedTime");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupQuestionId");
+
+                    b.ToTable("Questions");
+                });
 
             modelBuilder.Entity("CV.Data.Entities.Identity.AppRole", b =>
                 {
@@ -95,6 +343,26 @@ namespace CV.Data.EF.Migrations
                     b.ToTable("AppUsers");
                 });
 
+            modelBuilder.Entity("CV.Data.Entities.Setting.WebImage", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("Position");
+
+                    b.Property<string>("URL");
+
+                    b.Property<string>("URLImage");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WebImages");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -170,6 +438,24 @@ namespace CV.Data.EF.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("AppUserTokens");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Catalog.Product", b =>
+                {
+                    b.HasOne("CV.Data.Entities.Catalog.CatalogFunction", "CatalogFunction")
+                        .WithMany("Product")
+                        .HasForeignKey("CatalogFunctionId");
+
+                    b.HasOne("CV.Data.Entities.Catalog.CatalogSector", "CatalogSector")
+                        .WithMany("Product")
+                        .HasForeignKey("CatalogSectorId");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.FAQ.Question", b =>
+                {
+                    b.HasOne("CV.Data.Entities.FAQ.GroupQuestion", "GroupQuestion")
+                        .WithMany("Question")
+                        .HasForeignKey("GroupQuestionId");
                 });
 #pragma warning restore 612, 618
         }

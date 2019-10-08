@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Category";
+}
+
+<div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">FAQ</a></li>
+                            <li class="breadcrumb-item active">Group question</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Nhóm câu hỏi</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <a asp-area="admin" asp-controller="groupQuestion" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Thêm nhóm câu hỏi</a>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-centered table-striped" id="products-datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Tên</th>
+                                        <th>Hiển thị</th>
+                                        <th style="width: 85px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in list">
+                                        <td>
+                                            <a :href="'/admin/groupQuestion/update/' + item.id">{{item.name}}</a>
+                                        </td>
+                                        <td class="table-user">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="customCheck2" v-model="item.active" readonly>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a :href="'/admin/groupQuestion/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            <a v-on:click="deleteItem(item.id)" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container -->
+</div>
+
+@section Scripts{
+    <script src="~/lib/vuejs-paginate/dist/index.js"></script>
+    <script src="~/webAppAdmin/faq/groupQuestion/list.js"></script>
+}

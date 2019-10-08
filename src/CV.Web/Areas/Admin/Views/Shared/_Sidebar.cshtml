@@ -17,12 +17,67 @@
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a asp-action="index" asp-controller="user" asp-area="admin" >List</a>
+                            <a asp-action="index" asp-controller="user" asp-area="admin">List</a>
                         </li>
-                        
+
                     </ul>
                 </li>
-                
+
+                <li class="menu-title">Blog</li>
+
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="fe-users"></i>
+                        <span> Danh mục </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a asp-action="index" asp-controller="categoryBlog" asp-area="admin">List</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="fe-users"></i>
+                        <span> Bài viết </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a asp-action="index" asp-controller="post" asp-area="admin">List</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-title">Question</li>
+
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="fe-users"></i>
+                        <span> Nhóm câu hỏi </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a asp-action="index" asp-controller="groupQuestion" asp-area="admin">List</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="fe-users"></i>
+                        <span> Câu hỏi </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li>
+                            <a asp-action="index" asp-controller="question" asp-area="admin">List</a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
 
         </div>

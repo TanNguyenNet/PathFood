@@ -40,6 +40,11 @@
       "provider": "unpkg",
       "library": "vuejs-paginate@2.1.0",
       "destination": "wwwroot/lib/vuejs-paginate"
+    },
+    {
+      "provider": "unpkg",
+      "library": "vuejs-dialog@1.4.1",
+      "destination": "wwwroot/lib/vuejs-dialog"
     }
   ]
 }

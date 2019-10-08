@@ -1,0 +1,33 @@
+﻿using AutoMapper;
+using CV.Data.Entities.Blog;
+using CV.Data.Entities.Catalog;
+using CV.Data.Entities.FAQ;
+using CV.Data.Model.Blog;
+using CV.Data.Model.Catalog;
+using CV.Data.Model.FAQ;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CV.Service.Mapper
+{
+    public class ModelToEntityProfile : Profile
+    {
+        public ModelToEntityProfile()
+        {
+            CreateMap<PostModel, Post>();
+
+            CreateMap<CategoryBlogModel, CategoryBlog>();
+
+            CreateMap<QuestionModel, Question>();
+
+            CreateMap<GroupQuestionModel, GroupQuestion>().MaxDepth(2);
+
+            CreateMap<ProductModel, Product>();
+
+            CreateMap<CatalogFunctionModel, CatalogFunction>();
+
+            CreateMap<CatalogSectorModel, CatalogSector>();
+        }
+    }
+}

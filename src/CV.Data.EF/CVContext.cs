@@ -1,5 +1,8 @@
 ﻿using CV.Core.Data;
 using CV.Data.Entities;
+using CV.Data.Entities.Blog;
+using CV.Data.Entities.Catalog;
+using CV.Data.Entities.FAQ;
 using CV.Data.Entities.Identity;
 using CV.Utils.Contants;
 using CV.Utils.Helper;
@@ -29,7 +32,7 @@ namespace CV.Data.EF
 
             foreach (EntityEntry item in modified)
             {
-                var changedOrAddedItem = item.Entity as AudiTable;
+                var changedOrAddedItem = item.Entity as AuditTable;
                 if (changedOrAddedItem != null)
                 {
                     if (item.State == EntityState.Added)
@@ -64,6 +67,23 @@ namespace CV.Data.EF
             builder.Entity<IdentityUserToken<string>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
             #endregion Identity Config
+
+            builder.Entity<AppUser>().HasQueryFilter(x => x.DeletedDate == null);
+
+            builder.Entity<CategoryBlog>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<Post>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<Question>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<GroupQuestion>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<Product>().HasQueryFilter(x=>x.DeletedTime == null);
+
+            builder.Entity<CatalogFunction>().HasQueryFilter(x=>x.DeletedTime == null);
+
+            builder.Entity<CatalogSector>().HasQueryFilter(x=>x.DeletedTime == null);
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -21,7 +21,6 @@ namespace CV.Service.Identity
     public class UserIdentityService : IUserIdentityService
     {
         private readonly UserManager<AppUser> _userManager;
-        private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
 
         public UserIdentityService(UserManager<AppUser> userManager, IMapper mapper, IUnitOfWork uow)
