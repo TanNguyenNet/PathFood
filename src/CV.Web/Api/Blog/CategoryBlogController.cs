@@ -27,7 +27,6 @@ namespace CV.Web.Api.Blog
 
         [HttpGet]
         [Route("{id}")]
-        //[Authorize(Policy = nameof(ContantPolicy.User.ReadUserData))]
         public IActionResult GetCategory(string id)
         {
             var model = _categoryBlogService.GetCategoryBlog(id);

@@ -31,7 +31,7 @@ var app = new Vue({
             self.$dialog
                 .confirm('Bạn muốn xóa')
                 .then(function (dialog) {
-                    axios.delete('/api/categoryBlog/delete/' + id, null)
+                    axios.delete('/api/groupQuestion/delete/' + id, null)
                         .then(function (response) {
                             self.loadData(self.page);
                         })

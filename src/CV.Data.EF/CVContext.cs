@@ -1,6 +1,7 @@
 ﻿using CV.Core.Data;
 using CV.Data.Entities;
 using CV.Data.Entities.Blog;
+using CV.Data.Entities.Catalog;
 using CV.Data.Entities.FAQ;
 using CV.Data.Entities.Identity;
 using CV.Utils.Contants;
@@ -76,6 +77,13 @@ namespace CV.Data.EF
             builder.Entity<Question>().HasQueryFilter(x => x.DeletedTime == null);
 
             builder.Entity<GroupQuestion>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<Product>().HasQueryFilter(x=>x.DeletedTime == null);
+
+            builder.Entity<CatalogFunction>().HasQueryFilter(x=>x.DeletedTime == null);
+
+            builder.Entity<CatalogSector>().HasQueryFilter(x=>x.DeletedTime == null);
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
