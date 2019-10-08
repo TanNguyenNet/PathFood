@@ -8,10 +8,10 @@ body {
   font-family: $montserrat;
   font-weight: $font-weight-regular;
   font-style: normal;
-  font-size: $font-size-regular;
+  font-size: 14px;
   overflow-x: hidden;
   line-height: 1.5;
-  // color: $color-text-white;
+  color: #666666;
   -webkit-font-smoothing: antialiased;
   & * {
     margin: 0;
@@ -42,16 +42,16 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: $font-weight-regular;
 }
 h1 {
-  font-size: $font-size-xx-large; //48px
+  font-size: $font-size-xx-large; //42px
 }
 h2 {
-  font-size: $font-size-x-large; //32px
+  font-size: $font-size-x-large; //28px
 }
 h3 {
-  font-size: $font-size-large; //24px
+  font-size: $font-size-large; //21px
 }
 h4 {
-  font-size: $font-size-regular; //16px
+  font-size: $font-size-regular; //14px
 }
 h5 {
   font-size: $font-size-small; //12px

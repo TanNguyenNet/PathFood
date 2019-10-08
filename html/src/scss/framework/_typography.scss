@@ -1,8 +1,8 @@
 $font-size-small: 0.75rem; //12px
-$font-size-regular: 1rem; //16px
-$font-size-large: 1.5rem; //24px
-$font-size-x-large: 2rem; //32px
-$font-size-xx-large: 3rem; //48px
+$font-size-regular: 1rem; //14px
+$font-size-large: 1.5rem; //21px
+$font-size-x-large: 2rem; //28px
+$font-size-xx-large: 3rem; //42px
 $font-size-xxx-large: 4rem; //64px
 $font-size-xxxx-large: 6rem; //96px
 
@@ -43,6 +43,22 @@ $lobsterregular: 'Lobster-Regular', sans-serif;
   font-style: normal;
 }
 $montserrat: 'Montserrat-Light', 'Roboto', sans-serif;
+
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("./fonts/Montserrat-Bold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/Montserrat-Bold.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/Montserrat-Bold.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/Montserrat-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/Montserrat-Bold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/Montserrat-Bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+$montserrat-bold: 'Montserrat-Bold', 'Roboto', sans-serif;
 
 @font-face {
     font-family: 'IcoMoon-Free';

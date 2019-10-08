@@ -66,23 +66,23 @@ var
   });
 
   // JavaScript processing
-  // gulp.task('js', function() {
+  gulp.task('js', function() {
 
-  //   var jsbuild = gulp.src(folder.src + 'js/**/*')
-  //     .pipe(deporder())
-  //     .pipe(concat('main.js'));
+    var jsbuild = gulp.src(folder.src + 'js/**/*')
+      .pipe(deporder())
+      .pipe(concat('main.js'));
 
-  //   // {
-  //   //   jsbuild = jsbuild
-  //   //     .pipe(stripdebug())
-  //   //     .pipe(uglify());
-  //   // }
+    // {
+    //   jsbuild = jsbuild
+    //     .pipe(stripdebug())
+    //     .pipe(uglify());
+    // }
 
-  //   return jsbuild.pipe(stripdebug())
-  //     .pipe(uglify())
-  //     .pipe(gulp.dest(folder.build + 'js/'));
+    return jsbuild.pipe(stripdebug())
+      .pipe(uglify())
+      .pipe(gulp.dest(folder.build + 'js/'));
 
-  // });
+  });
 
   // CSS processing
   gulp.task('css', ['images'], function() {

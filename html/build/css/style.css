@@ -304,6 +304,15 @@ template {
   font-style: normal; }
 
 @font-face {
+  font-family: "Montserrat-Bold";
+  src: url("./fonts/Montserrat-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("./fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Montserrat-Bold.otf") format("opentype"), url("./fonts/Montserrat-Bold.svg") format("svg"), url("./fonts/Montserrat-Bold.ttf") format("truetype"), url("./fonts/Montserrat-Bold.woff") format("woff"), url("./fonts/Montserrat-Bold.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'IcoMoon-Free';
   src: url("./fonts/IcoMoon-Free.ttf") format("truetype");
   font-weight: normal;
@@ -2093,9 +2102,10 @@ body {
   font-family: "Montserrat-Light", "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 14px;
   overflow-x: hidden;
   line-height: 1.5;
+  color: #666666;
   -webkit-font-smoothing: antialiased; }
   body * {
     margin: 0;
@@ -3142,7 +3152,7 @@ div.news > div:after {
   .news .info-content {
     padding: 30px 20px; }
     .news .info-content .title {
-      font-weight: bold; }
+      font-family: "Montserrat-Bold", "Roboto", sans-serif; }
     .news .info-content p {
       padding: 10px 0 20px 0;
       text-align: justify; }
@@ -3232,43 +3242,67 @@ div.news > div:after {
       float: left;
       width: 50px;
       height: 50px; }
-    .consultant .person .contact {
+    .consultant .person .contact-person {
       float: left;
       font-size: 12px;
       padding-left: 10px; }
-      .consultant .person .contact span {
+      .consultant .person .contact-person span {
         display: block;
         color: #27313d; }
-        .consultant .person .contact span i {
+        .consultant .person .contact-person span i {
           padding-right: 5px; }
-      .consultant .person .contact .name {
+      .consultant .person .contact-person .name {
         font-weight: bold;
         color: #0066b2; }
 
 .mb-online {
+  display: none;
   position: fixed;
   width: 100%;
-  height: 100px;
+  height: 77px;
   bottom: 0;
   background-color: #012046;
   color: #fff;
   z-index: 999; }
+  .mb-online .hotline {
+    width: 50%;
+    height: 77px;
+    float: left;
+    border-right: 1px dashed #fff;
+    text-align: center;
+    padding: 15px 0; }
+    .mb-online .hotline .detail-hotline {
+      font-family: "Lobster-Regular", sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      text-align: center;
+      font-size: 18px;
+      text-transform: capitalize; }
+      .mb-online .hotline .detail-hotline span {
+        padding-left: 10px; }
+  .mb-online .con-person {
+    margin: auto;
+    width: 50%;
+    height: 77px;
+    float: right; }
   .mb-online .person {
     margin: 10px 20px; }
     .mb-online .person img {
       float: left;
       width: 50px;
       height: 50px; }
-    .mb-online .person .contact {
+    .mb-online .person .contact-person {
       float: left;
       font-size: 12px;
       padding-left: 10px; }
-      .mb-online .person .contact span {
+      .mb-online .person .contact-person span {
         display: block;
-        color: #27313d; }
-        .mb-online .person .contact span i {
+        color: #white; }
+        .mb-online .person .contact-person span i {
           padding-right: 5px; }
-      .mb-online .person .contact .name {
+      .mb-online .person .contact-person .name {
         font-weight: bold;
         color: #0066b2; }
 
@@ -3382,7 +3416,8 @@ div.news > div:after {
     stroke-dashoffset: 0; } }
 
 .blog-detail {
-  text-align: center; }
+  text-align: center;
+  margin-top: 45px; }
   .blog-detail h3 {
     font-size: 25px;
     color: #4e4e4e;
@@ -3539,6 +3574,40 @@ div.news > div:after {
       top: 1px; }
     .contact-info .incon-info p {
       padding-left: 30px; }
+
+.appli .title {
+  font-family: "Montserrat-Bold", "Roboto", sans-serif;
+  color: #0066b2;
+  margin-bottom: 10px;
+  text-transform: uppercase; }
+
+.appli p {
+  padding: 5px 0;
+  text-align: justify; }
+  .appli p strong {
+    font-family: "Montserrat-Bold", "Roboto", sans-serif; }
+
+.appli figure {
+  text-align: center; }
+
+.appli .material-list {
+  margin-top: 10px; }
+  .appli .material-list h4 {
+    font-family: "Montserrat-Bold", "Roboto", sans-serif;
+    color: #0066b2;
+    padding-bottom: 10px;
+    text-transform: uppercase; }
+  .appli .material-list ul {
+    padding-left: 20px; }
+    .appli .material-list ul li {
+      padding: 5px 0; }
+      .appli .material-list ul li:before {
+        content: "\2022";
+        color: #0066b2;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em; }
 
 /* --------------------------------------------------------------------- */
 /* Footer
@@ -4777,7 +4846,6 @@ div.news > div:after {
   .QA-wrap {
     margin-top: 40px; }
   .news {
-    background-color: #012046;
     padding: 20px 0px; }
     .news .first-2 {
       -webkit-box-ordinal-group: 0;
@@ -4812,6 +4880,11 @@ div.news > div:after {
       padding-top: 30px;
       font-size: 14px; } }
   @media only screen and (max-width: 767px) {
+  .product-list {
+    padding-top: 80px;
+    background-image: none; }
+  .mt60 {
+    margin-top: 60px; }
   .mt45 {
     margin-top: 0; }
   .contact-info .com-wrap1 {
@@ -4910,6 +4983,10 @@ div.news > div:after {
     left: 20px;
     margin: auto; } }
   @media only screen and (max-width: 575px) {
+  .consultant {
+    display: none; }
+  .mb-online {
+    display: block; }
   .new-product .img-content .overlay {
     height: 100%;
     min-height: 330px;
@@ -4946,6 +5023,16 @@ div.news > div:after {
     left: 75px;
     margin: auto; } }
   @media only screen and (min-width: 321px) and (max-width: 375px) {
+  .mb-online .con-person {
+    padding: 6px 0; }
+  .mb-online .person img {
+    float: left;
+    width: 40px;
+    height: 40px; }
+  .mb-online .person .contact-person {
+    float: left;
+    font-size: 10px;
+    padding-left: 0px; }
   .art-navigation .content .menunav ul.abc {
     position: relative;
     padding: 80px;
@@ -4956,6 +5043,16 @@ div.news > div:after {
     left: 100px;
     margin: auto; } }
   @media only screen and (max-width: 320px) {
+  .mb-online .con-person {
+    padding: 6px 0; }
+  .mb-online .person img {
+    float: left;
+    width: 40px;
+    height: 40px; }
+  .mb-online .person .contact-person {
+    float: left;
+    font-size: 10px;
+    padding-left: 5px; }
   .art-navigation .content .menunav ul.abc {
     position: relative;
     padding: 80px;
