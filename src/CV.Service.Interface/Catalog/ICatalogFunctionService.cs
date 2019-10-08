@@ -10,11 +10,11 @@ namespace CV.Service.Interface.Catalog
     {
         CatalogFunctionModel GetCatalogFunction(string id);
 
-        IEnumerable<CatalogSectorModel> GetAll(Languages? lang);
+        IEnumerable<CatalogFunctionModel> GetAll(Languages? lang);
 
-        CatalogSectorModel Insert(string userCurrentId, CatalogSectorModel catalogFunction);
+        CatalogFunctionModel Insert(string userCurrentId, CatalogFunctionModel catalogFunction);
 
-        CatalogSectorModel Update(string catId, string userCurrentId, CatalogSectorModel catalogFunction);
+        CatalogFunctionModel Update(string catId, string userCurrentId, CatalogFunctionModel catalogFunction);
 
         void Delete(string id, string userId);
     }

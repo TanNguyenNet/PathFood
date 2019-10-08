@@ -66,23 +66,31 @@ namespace CV.Service.Catalog
 
                 newCatalog.CreatedBy = userCurrentId;
                 newCatalog.Slug = StringHelper.ToUrlFriendly(newCatalog.Name);
-
                 _catalogSectorRepo.Insert(newCatalog);
-
                 return catalogSector;
-
             }
             catch
             {
-
                 throw;
             }
-            throw new NotImplementedException();
         }
 
         public CatalogSectorModel Update(string catId, string userCurrentId, CatalogSectorModel catalogSector)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var updateCatalogSector = _catalogSectorRepo.GetById(catId);
+
+                _mapper.Map(catalogSector, updateCatalogSector);
+
+                updateCatalogSector.LastUpdatedBy = userCurrentId;
+                _catalogSectorRepo.Update(updateCatalogSector);
+                return catalogSector;
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }
