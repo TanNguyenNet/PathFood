@@ -1,13 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "Category";
+    ViewData["Title"] = "Question";
 }
 
 <div class="content">
-
-    <!-- Start Content-->
     <div class="container-fluid">
-
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
@@ -15,10 +11,10 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0);">FAQ</a></li>
-                            <li class="breadcrumb-item active">Group question</li>
+                            <li class="breadcrumb-item active">Question</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Nhóm câu hỏi</h4>
+                    <h4 class="page-title">Câu hỏi</h4>
                 </div>
             </div>
         </div>
@@ -31,7 +27,7 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-                                <a asp-area="admin" asp-controller="groupQuestion" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Thêm nhóm câu hỏi</a>
+                                <a asp-area="admin" asp-controller="question" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Câu hỏi mới</a>
                             </div>
                         </div>
 
@@ -39,7 +35,7 @@
                             <table class="table table-centered table-striped" id="products-datatable">
                                 <thead>
                                     <tr>
-                                        <th>Tên</th>
+                                        <th>Câu hỏi</th>
                                         <th>Hiển thị</th>
                                         <th style="width: 85px;">Action</th>
                                     </tr>
@@ -47,22 +43,37 @@
                                 <tbody>
                                     <tr v-for="item in list">
                                         <td>
-                                            <a :href="'/admin/groupQuestion/update/' + item.id">{{item.name}}</a>
+                                            {{item.name}}
                                         </td>
-                                        <td class="table-user">
+                                        <td>
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" id="customCheck2" v-model="item.active" disabled>
                                             </div>
                                         </td>
                                         <td>
-                                            <a :href="'/admin/groupQuestion/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            <a :href="'/admin/question/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
                                             <a v-on:click="deleteItem(item.id)" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
+
                                 </tbody>
                             </table>
                         </div>
 
+                        <paginate v-model="page"
+                                  :page-count="pCount"
+                                  :page-range="2"
+                                  :container-class="'pagination pagination-rounded justify-content-end mb-0'"
+                                  :page-class="'page-item'"
+                                  :page-link-class="'page-link'"
+                                  :prev-class="'page-item'"
+                                  :prev-link-class="'page-link'"
+                                  :next-class="'page-item'"
+                                  :next-link-class="'page-link'"
+                                  :prev-text="'<'"
+                                  :next-text="'>'"
+                                  :click-handler="loadData">
+                        </paginate>
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
             </div> <!-- end col -->
@@ -74,5 +85,5 @@
 
 @section Scripts{
     <script src="~/lib/vuejs-paginate/dist/index.js"></script>
-    <script src="~/webAppAdmin/faq/groupQuestion/list.js"></script>
+    <script src="~/webAppAdmin/faq/question/list.js"></script>
 }

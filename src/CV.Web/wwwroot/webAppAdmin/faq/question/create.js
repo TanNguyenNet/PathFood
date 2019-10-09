@@ -10,7 +10,8 @@ var app = new Vue({
                 active: true,
                 lang: 1
             },
-            langs: []
+            langs: [],
+            groupQuestions: []
         };
     },
     validations: {
@@ -24,9 +25,9 @@ var app = new Vue({
     methods: {
         save: function () {
             var self = this;
-            axios.post('/api/groupQuestion/create', self.objModel)
+            axios.post('/api/question/create', self.objModel)
                 .then(function (response) {
-                    window.location.href = "/admin/groupQuestion/index";
+                    window.location.href = "/admin/question/index";
                 })
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));
@@ -41,9 +42,20 @@ var app = new Vue({
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));
                 });
+        },
+        loadGroupQuestion: function () {
+            var self = this;
+            axios.get('/api/groupQuestion/get', null)
+                .then(function (response) {
+                    self.groupQuestions = response.data;
+                })
+                .catch(function (error) {
+                    alert("ERROR: " + (error.message | error));
+                });
         }
     },
     created: function () {
         this.loadLang();
+        this.loadGroupQuestion();
     }
 });

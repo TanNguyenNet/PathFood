@@ -5,16 +5,25 @@ var app = new Vue({
     el: '#appjs',
     data() {
         return {
-            list: []
+            list: [],
+            pCount: 0,
+            pSize: 20,
+            page: 1
         };
     },
     methods: {
         loadData: function (page) {
             var self = this;
 
-            axios.get('/api/groupQuestion/get', null)
+            var filter = {
+                page: self.page,
+                pageSize: self.pSize
+            };
+
+            axios.get('/api/question/get', filter)
                 .then(function (response) {
-                    self.list = response.data;
+                    self.list = response.data.results;
+                    self.pCount = response.data.pageCount;
                 })
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));
@@ -26,7 +35,7 @@ var app = new Vue({
             self.$dialog
                 .confirm('Bạn muốn xóa')
                 .then(function (dialog) {
-                    axios.delete('/api/groupQuestion/delete/' + id, null)
+                    axios.delete('/api/question/delete/' + id, null)
                         .then(function (response) {
                             self.loadData(self.page);
                         })
@@ -37,8 +46,6 @@ var app = new Vue({
                 .catch(function () {
                     console.log('Error');
                 });
-
-
         }
     },
     created: function () {
