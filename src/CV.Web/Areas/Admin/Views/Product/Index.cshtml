@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Question";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Catalog</a></li>
+                            <li class="breadcrumb-item active">Product</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Sản phẩm</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row mb-2">
+                            <div class="col-sm-4">
+                                <a asp-area="admin" asp-controller="question" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Câu hỏi mới</a>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-centered table-striped" id="products-datatable">
+                                <thead>
+                                    <tr>
+                                        <th>Tên</th>
+                                        <th>Mô tả</th>
+                                        <th style="width: 85px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in list">
+                                        <td>
+                                            {{item.name}}
+                                        </td>
+                                        <td>
+                                            {{item.description}}
+                                        </td>
+                                        <td>
+                                            <a :href="'/admin/product/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            <a v-on:click="deleteItem(item.id)" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <paginate v-model="page"
+                                  :page-count="pCount"
+                                  :page-range="2"
+                                  :container-class="'pagination pagination-rounded justify-content-end mb-0'"
+                                  :page-class="'page-item'"
+                                  :page-link-class="'page-link'"
+                                  :prev-class="'page-item'"
+                                  :prev-link-class="'page-link'"
+                                  :next-class="'page-item'"
+                                  :next-link-class="'page-link'"
+                                  :prev-text="'<'"
+                                  :next-text="'>'"
+                                  :click-handler="loadData">
+                        </paginate>
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container -->
+</div>
+
+@section Scripts{
+    <script src="~/lib/vuejs-paginate/dist/index.js"></script>
+    <script src="~/webAppAdmin/faq/question/list.js"></script>
+}

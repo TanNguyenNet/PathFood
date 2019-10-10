@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CV.Data.Model.Blog;
+﻿using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CV.Web.Api.Blog
 {
-
     public class CategoryBlogController : BaseApiController
     {
         private readonly ICategoryBlogService _categoryBlogService;
+
         public CategoryBlogController(ICategoryBlogService categoryBlogService)
         {
             _categoryBlogService = categoryBlogService;
@@ -32,7 +27,6 @@ namespace CV.Web.Api.Blog
             var model = _categoryBlogService.GetCategoryBlog(id);
             return Ok(model);
         }
-
 
         [HttpPost]
         public IActionResult Create(CategoryBlogModel catModel)

@@ -22,7 +22,7 @@ namespace CV.Web.Api.FAQ
 
         [HttpGet]
         [Route("{id}")]
-        public IActionResult GetGroupQuestion(string id)
+        public IActionResult GetQuestion(string id)
         {
             var model = _questionService.GetQuestion(id);
             return Ok(model);

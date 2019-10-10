@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CV.Web.Areas.Admin.Controllers.FAQ
 {
-    public class QuestionController : Controller
+    public class QuestionController : BaseController
     {
         public IActionResult Index()
         {

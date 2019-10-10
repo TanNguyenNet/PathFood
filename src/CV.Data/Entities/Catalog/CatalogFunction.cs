@@ -22,6 +22,8 @@ namespace CV.Data.Entities.Catalog
 
         public string Slug { set; get; }
 
+        public bool Active { set; get; }
+
         public virtual ICollection<Product> Product { set; get; }
     }
 }

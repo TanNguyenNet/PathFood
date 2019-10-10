@@ -16,6 +16,8 @@ namespace CV.Data.Model.Catalog
 
         public string Slug { set; get; }
 
+        public bool Active { set; get; }
+
         public ICollection<ProductModel> Product { set; get; }
     }
 }

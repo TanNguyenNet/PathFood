@@ -15,11 +15,11 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
-                            <li class="breadcrumb-item active">Add Category</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Catalog</a></li>
+                            <li class="breadcrumb-item active">Update Catalog</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Sửa danh mục blog</h4>
+                    <h4 class="page-title">Sửa nhóm chức năng</h4>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="col-lg-6">
                 <div class="card-box">
                     <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Thông tin</h5>
-                    <input type="hidden" id="catId" data-catid="@ViewBag.catId" />
+                    <input type="hidden" id="catalogId" data-catalogid="@ViewBag.catalogId" />
                     <div class="form-group mb-3">
                         <label for="name">Tên <span v-if="!$v.objModel.name.required" class="text-danger">* Nhập tên</span></label>
                         <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" placeholder="Nhập tên">
@@ -47,6 +47,10 @@
                                 {{lang.name}}
                             </option>
                         </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Chọn màu</label>
+                        <input type="text" id="hexa-colorpicker" class="form-control" v-model="objModel.color">
                     </div>
                     <div class="form-group mb-3">
                         <div class="checkbox mb-2">
@@ -75,7 +79,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center mb-3">
-                    <a class="btn w-sm btn-light waves-effect" asp-area="admin" asp-controller="categoryBlog" asp-action="index">Cancel</a>
+                    <a class="btn w-sm btn-light waves-effect" asp-area="admin" asp-controller="catalogFunction" asp-action="index">Cancel</a>
                     <button type="button" class="btn w-sm btn-success waves-effect waves-light" v-if="!$v.$anyError" v-on:click="save">Save</button>
                 </div>
             </div> <!-- end col -->
@@ -88,8 +92,10 @@
 </div> <!-- content -->
 
 @section Scripts{
+    <script src="~/assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
     <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
     <script src="~/lib/vuelidate/dist/validators.min.js"></script>
-    <script src="~/webAppAdmin/blog/categoryBlog/update.js"></script>
+    <script src="~/webAppAdmin/catalog/function/update.js"></script>
     <script src="~/js/dropzoneUploadfile.js"></script>
+    <script src="~/js/colorpickerInit.js"></script>
 }
