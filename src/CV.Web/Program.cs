@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using CV.Service.Interface;
 using CV.Utils.Utils.Env;
@@ -17,8 +18,6 @@ namespace CV.Web
     {
         public static void Main(string[] args)
         {
-            //CreateWebHostBuilder(args).Build().Run();
-
             IWebHost webHost = BuildWebHost(args);
 
             OnAppStart(webHost);
@@ -26,24 +25,30 @@ namespace CV.Web
             webHost.Run();
         }
 
-        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        //    WebHost.CreateDefaultBuilder(args)
-        //        .UseStartup<Startup>();
 
         public static IWebHost BuildWebHost(string[] args)
         {
             var webHostBuilder = WebHost.CreateDefaultBuilder(args);
 
-            webHostBuilder.ConfigureLogging(logging => logging.SetMinimumLevel(LogLevel.Warning));
+            webHostBuilder.ConfigureLogging(logging =>
+            {
+                logging.SetMinimumLevel(LogLevel.Warning);
+                logging.AddConsole();
+            });
 
             webHostBuilder.UseStartup<Startup>();
 
-            webHostBuilder.UseKestrel(options => { options.AddServerHeader = false; });
 
-            if (!EnvHelper.IsDevelopment())
-            {
-                webHostBuilder.UseIISIntegration();
-            }
+            //webHostBuilder.UseKestrel(options => {
+            //    options.Listen(IPAddress.Any, 50003);
+            //    options.AddServerHeader = false; });
+
+            //if (!EnvHelper.IsDevelopment())
+            //{
+            //    webHostBuilder.UseIISIntegration();
+            //}
+
+            //webHostBuilder.UseUrls("http://localhost:3000/");
 
             var webHost = webHostBuilder.Build();
 

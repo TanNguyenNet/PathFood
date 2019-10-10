@@ -15,10 +15,10 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Catalog</a></li>
-                            <li class="breadcrumb-item active">Add Catalog Sector</li>
+                            <li class="breadcrumb-item active">Add Product</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Thêm nhóm lĩnh vực</h4>
+                    <h4 class="page-title">Thêm sản phẩm</h4>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
 
                     <div class="form-group mb-3">
                         <label for="name">Tên <span v-if="!$v.objModel.name.required" class="text-danger">* Nhập tên</span></label>
-                        <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" placeholder="Nhập tên">
+                        <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" required placeholder="Nhập tên">
                     </div>
 
                     <div class="form-group mb-3">
@@ -51,14 +51,8 @@
                         <label>Chọn màu</label>
                         <input type="text" id="hexa-colorpicker" class="form-control" v-model="objModel.color">
                     </div>
-                    <div class="form-group mb-3">
-                        <div class="checkbox mb-2">
-                            <input id="active" v-model="objModel.active" type="checkbox">
-                            <label for="active">
-                                Hiển thị
-                            </label>
-                        </div>
-                    </div>
+                   
+
                 </div> <!-- end card-box -->
             </div> <!-- end col -->
 
@@ -66,14 +60,38 @@
                 <div class="card-box">
                     <h5 class="text-uppercase mt-0 mb-3 bg-light p-2">Hình ảnh</h5>
                     <div class="dropzone" id="uploadFile">
-
                     </div>
                     <input type="hidden" id="urlImage" value="" />
+
+                    <div class="form-group mb-3">
+                        <label for="example-select">Nhóm lĩnh vực</label>
+                        <select class="form-control" id="cat" required v-model="objModel.catalogSectorId">
+                            <option value="">Chọn lĩnh vực</option>
+                            <option v-for="cat in catalogSectors" v-bind:value="cat.id">
+                                {{cat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="example-select">Nhóm chức năng</label>
+                        <select class="form-control" id="cat" required v-model="objModel.catalogFunctionId">
+                            <option value="">Chọn chức năng</option>
+                            <option v-for="cat in catalogFunctions" v-bind:value="cat.id">
+                                {{cat.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <div class="checkbox form-check-inline">
+                            <input type="checkbox" id="active" v-model="objModel.active">
+                            <label for="active"> Hiển thị </label>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
 
         </div>
-        <!-- end row -->
 
         <div class="row">
             <div class="col-12">
@@ -84,10 +102,7 @@
             </div> <!-- end col -->
         </div>
         <!-- end row -->
-
-
     </div> <!-- container -->
-
 </div> <!-- content -->
 
 
@@ -95,7 +110,7 @@
     <script src="~/assets/libs/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
     <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
     <script src="~/lib/vuelidate/dist/validators.min.js"></script>
-    <script src="~/webAppAdmin/catalog/sector/create.js"></script>
+    <script src="~/webAppAdmin/catalog/product/create.js"></script>
     <script src="~/js/dropzoneUploadfile.js"></script>
     <script src="~/js/colorpickerInit.js"></script>
 }
