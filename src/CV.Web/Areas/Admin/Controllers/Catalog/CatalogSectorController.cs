@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CV.Web.Areas.Admin.Controllers.Catalog
 {
-    public class CatalogSectorController : Controller
+    public class CatalogSectorController : BaseController
     {
         public IActionResult Index()
         {

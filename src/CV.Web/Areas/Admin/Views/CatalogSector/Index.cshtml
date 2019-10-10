@@ -15,10 +15,10 @@
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Catalog</a></li>
-                            <li class="breadcrumb-item active">Catalog Function</li>
+                            <li class="breadcrumb-item active">Catalog Sector</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Nhóm lĩnh vực</h4>
+                    <h4 class="page-title">Sản phẩm theo lĩnh vực</h4>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-                                <a asp-area="admin" asp-controller="catalogFunction" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Tạo nhóm chức năng</a>
+                                <a asp-area="admin" asp-controller="catalogSector" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Tạo nhóm lĩnh vực</a>
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@
                                             <img :src="item.urlImage" alt="table-user" class="mr-2 rounded-circle">
                                         </td>
                                         <td>
-                                            <a :href="'/admin/catalogFunction/update/' + item.id">{{item.name}}</a>
+                                            <a :href="'/admin/catalogSector/update/' + item.id">{{item.name}}</a>
                                         </td>
                                         <td>
                                             <div class="custom-control custom-checkbox">
@@ -59,7 +59,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <a :href="'/admin/catalogFunction/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            <a :href="'/admin/catalogSector/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
                                             <a v-on:click="deleteItem(item.id)" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
@@ -78,5 +78,5 @@
 
 @section Scripts{
     <script src="~/lib/vuejs-paginate/dist/index.js"></script>
-    <script src="~/webAppAdmin/catalog/function/list.js"></script>
+    <script src="~/webAppAdmin/catalog/sector/list.js"></script>
 }
