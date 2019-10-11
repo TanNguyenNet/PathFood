@@ -38,18 +38,6 @@ namespace CV.Web
 
             webHostBuilder.UseStartup<Startup>();
 
-
-            //webHostBuilder.UseKestrel(options => {
-            //    options.Listen(IPAddress.Any, 50003);
-            //    options.AddServerHeader = false; });
-
-            //if (!EnvHelper.IsDevelopment())
-            //{
-            //    webHostBuilder.UseIISIntegration();
-            //}
-
-            //webHostBuilder.UseUrls("http://localhost:3000/");
-
             var webHost = webHostBuilder.Build();
 
             return webHost;

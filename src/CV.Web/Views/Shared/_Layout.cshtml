@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi">
+<head>
+    @{
+        await Html.RenderPartialAsync("Assets/_TopMeta").ConfigureAwait(true);
+        await Html.RenderPartialAsync("Assets/_TopCss").ConfigureAwait(true);
+    }
+</head>
+<body class="home main-home home-background">
+    @{
+        await Html.RenderPartialAsync("_Header").ConfigureAwait(true);
+    }
+    
+    @RenderBody()
+
+    @{
+        await Html.RenderPartialAsync("_PartnerBanner").ConfigureAwait(true);
+    }
+    <!-- online chat -->
+    @{
+        await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);
+    }
+
+    @{
+        await Html.RenderPartialAsync("_Footer").ConfigureAwait(true);
+    }
+
+    @{
+        await Html.RenderPartialAsync("Assets/_BottomScript").ConfigureAwait(true);
+    }
+</body>
+</html>

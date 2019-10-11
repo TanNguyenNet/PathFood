@@ -1,0 +1,40 @@
+﻿<div class="col-md-8 col-sm-12 first-2">
+    <div class="info-wrap">
+        <form class="contact-form" action="~/goi-lien-he">
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Họ Tên <span class="star">*</span></label>
+                        <input type="text" class="form-control" name="name" id="name" required="required">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Địa Chỉ Email <span class="star">*</span></label>
+                        <input type="text" class="form-control" name="email" id="email" required="required">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Số điện thoại <span class="star">*</span></label>
+                        <input type="text" class="form-control" name="phone" id="phone">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Tiêu đề <span class="star">*</span></label>
+                        <input type="text" class="form-control" name="subject" id="subject" min="10" required="required">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="message">Nội Dung tin gửi <span class="star">*</span></label>
+                        <textarea class="form-control" row="6" name="message" id="message" maxlength="2024"></textarea>
+                    </div>
+                </div>
+                <div class="button col-md-12"><button type="submit" class="btn float-right">gửi</button></div>
+            </div>
+        </form>
+    </div>
+</div>

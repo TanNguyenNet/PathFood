@@ -130,13 +130,8 @@ namespace CV.Web
 
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-
-                routes.MapAreaRoute(
-                    name: "default",
-                    areaName: "admin",
                     template: "{controller}/{action}/{id?}",
-                    defaults: new { controller = "Dashboard", action = "Index" });
+                    defaults: new { controller = "Home", action = "Index" });
             });
         }
     }

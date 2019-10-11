@@ -5,15 +5,18 @@ using System.Threading.Tasks;
 using CV.Core.Endpoints;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CV.Web.Areas.Admin.Controllers.Home
+namespace CV.Web.Controllers
 {
-    public class DashboardController : BaseController
+    public class HomeController : BaseController
     {
-        [Route(AdminEndpoints.IndexEndpoint)]
+
+        [Route(HomeEndpoints.IndexEndpoint)]
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+       
+
     }
 }

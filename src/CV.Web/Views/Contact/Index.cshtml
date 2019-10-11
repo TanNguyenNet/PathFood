@@ -1,0 +1,78 @@
+﻿<div class="box">
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-wrap">
+                        <h1 class="header-title">Về Chúng Tôi</h1>
+                        <img src="~/client/images/icon/street.svg">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- QA  -->
+<div class="box">
+    <div class="contact-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="com-wrap1">
+                        <div class="com-wrap">
+                            <h3>Trụ sở chính</h3>
+                            <div class="incon-info">
+                                <span class="icon icon-location2"></span>
+                                <p><span>476/23 Âu cơ, Q.Tân Bình, TP.HCM</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-phone"></span>
+                                <p><span>Điện thoại: 090 3432 2312</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-mail2"></span>
+                                <p><span>Email: info@path.com.vn</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-printer"></span>
+                                <p><span>fax: 38 245 302</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-earth"></span>
+                                <p><a href="">coi bản đồ</a></p>
+                            </div>
+                        </div>
+                        <div class="com-wrap mt45">
+                            <h3>nhà máy sản xuất</h3>
+                            <div class="incon-info">
+                                <span class="icon icon-location2"></span>
+                                <p><span>476/23 Âu cơ, Q.Tân Bình, TP.HCM</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-phone"></span>
+                                <p><span>Điện thoại: 090 3432 2312</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-mail2"></span>
+                                <p><span>Email: info@path.com.vn</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-printer"></span>
+                                <p><span>fax: 38 245 302</span></p>
+                            </div>
+                            <div class="incon-info">
+                                <span class="icon icon-earth"></span>
+                                <p><a href="">coi bản đồ</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @{ 
+                    await Html.RenderPartialAsync("~/Views/Contact/_Index/_FormContact.cshtml").ConfigureAwait(true);
+                }
+            </div>
+        </div>
+    </div>
+</div>

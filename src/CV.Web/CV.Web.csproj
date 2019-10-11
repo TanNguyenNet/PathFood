@@ -227,6 +227,21 @@
     <None Include="wwwroot\assets\libs\toastr\toastr.min.js" />
     <None Include="wwwroot\assets\libs\twitter-bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
     <None Include="wwwroot\assets\libs\x-editable\bootstrap-editable.min.js" />
+    <None Include="wwwroot\client\css\fonts\Lobster-Regular.svg" />
+    <None Include="wwwroot\client\css\fonts\Lobster-Regular.woff2" />
+    <None Include="wwwroot\client\css\fonts\Montserrat-Bold.svg" />
+    <None Include="wwwroot\client\css\fonts\Montserrat-Bold.woff2" />
+    <None Include="wwwroot\client\css\fonts\Montserrat-Light.svg" />
+    <None Include="wwwroot\client\css\fonts\Montserrat-Light.woff2" />
+    <None Include="wwwroot\client\images\customer-service.svg" />
+    <None Include="wwwroot\client\images\icon\logo-footer.png_1" />
+    <None Include="wwwroot\client\images\icon\street.svg" />
+    <None Include="wwwroot\client\images\menu.svg" />
+    <None Include="wwwroot\client\images\slider\slider2_tmp912116530" />
+    <None Include="wwwroot\client\js\jquery.min.js" />
+    <None Include="wwwroot\client\js\main.js" />
+    <None Include="wwwroot\client\js\menu\jquery.meanmenu.min.js" />
+    <None Include="wwwroot\client\js\swiper\swiper.min.js" />
   </ItemGroup>
 
 </Project>
