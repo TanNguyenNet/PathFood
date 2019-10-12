@@ -1,13 +1,32 @@
 $(document).ready(function(){
+  //banner slider
   var swiper = new Swiper('.swiper',
     {
         pagination: '.swiper-pagination',
         paginationClickable: true,
         autoplay: 10000
     });
+
     var swiper1 = new Swiper('.swiper1', {
         slidesPerView: 4,
-        slidesPerColumn: 1
+        slidesPerColumn: 1,
+        breakpoints: {
+            1024: {
+                slidesPerView: 4
+            },
+            991: {
+                slidesPerView: 3
+            },
+            577: {
+                slidesPerView:2
+            },
+            576: {
+                slidesPerView: 1
+            },
+            320: {
+                slidesPerView: 1
+            }
+        }
     });
     $(".filter-list li span").on("click", function(){
       var filter = $(this).html().toLowerCase();
@@ -21,34 +40,30 @@ $(document).ready(function(){
           slidesxcol = 3;
         else slidesxcol = 1;
         swiper.destroy();
-        swiper = new Swiper('.swiper-container1', {
-          pagination: '.swiper-pagination',
+        swiper = new Swiper('.swiper1', {
           slidesPerView: 3,
           slidesPerColumn: slidesxcol,
-          paginationClickable: true,
           spaceBetween: 30
-      });
+        });
       }
       else {
       $(".swiper-slide").not("[data-filter='"+filter+"']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
         $("[data-filter='"+filter+"']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
-        console.log($(".swiper-slide").length)
+        // console.log($(".swiper-slide").length)
         if($(".swiper-slide").length > 6)
           slidesxcol = 3;
         else slidesxcol = 1;
         swiper.destroy();
-        swiper = new Swiper('.swiper-container', {
-          pagination: '.swiper-pagination',
+        swiper = new Swiper('.swiper1', {
           slidesPerView: 3,
           slidesPerColumn: slidesxcol,
-          paginationClickable: true,
           spaceBetween: 30
-      });
+        });
       }
     });
     var swiper2 = new Swiper('.swiper2', {
-      slidesPerView: 5,
-      spaceBetween: 30,
+      slidesPerView: 7,
+      spaceBetween: 0,
       autoplay: 10000
     });
     var swiper3 = new Swiper('.swiper3', {

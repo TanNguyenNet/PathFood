@@ -1,30 +1,46 @@
 .top-bar {
   background-color: #0066b2;
-  font-size: 12px;
+  font-size: 8px;
   color: $white;
-  padding:10px 0;
+  padding:5px 0;
   .icon {
     padding-right:5px;
   }
 }
 .header-logo{
-  padding: 20px 0;
+  padding: 50px 0;
   text-align: center;
   background-image: url(../images/dna.png);
   background-repeat: no-repeat;
   background-position: right;
+  .logo {
+    text-align: left;
+  }
   span {
     padding: 0px 20px;
     color: #0066b2;
     font-weight: bold;
+    font-size: 25px;
   }
 }
 .nav-wrap {
-  background-color: #0066b2;
+  // background-color: #0066b2;
+  border-bottom: 3px solid #a2a2a2;
   font-size: 0.75rem;
+  &:after {
+    content: '';
+    border-bottom: 17px solid #0066b2;
+    display: block;
+  }
   .main{
     width: 100%;
     // padding: 10px 0;
+  }
+  .mobile-menu {
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    // background-color: white;
   }
   /*General Menu Styling*/
    .mainnav{
@@ -32,10 +48,7 @@
   }
   li {
     list-style: none;
-    text-transform: uppercase;
-    // padding: 0px 20px;
-    color: $white;
-    font-weight: bold;
+
   }
   li a {
     text-decoration: none;
@@ -43,28 +56,37 @@
   .dropdown {
     position: absolute;
     width: 175px;
-      top: 230px;
+    top: 33px;
+    left: 146px;
     opacity: 0;
     visibility: hidden;
     transition: ease-out .35s;
     -moz-transition: ease-out .35s;
     -webkit-transition: ease-out .35s;
     background-color: $white;
-    border: 1px solid #0066b2;
+    border: 1px solid #999;
     z-index: 90;
   }
-  .mainnav li {
+  .mainnav > li {
     float: left;
-    padding: 15px 0px;
+    padding: 5px 15px;
+    border: 1px solid #999;
+    font-family: $montserrat-medium;
+    text-transform: uppercase;
+    // padding: 0px 20px;
+    color: $white;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: #f0f0f0;
     // background: maroon;
   }
   .mainnav li:first-child {
-    border: none;
+    // border: none;
   }
   .mainnav li a {
     display: block;
     padding: 2px 20px;
-    color: #fff;
+    color: #444;
   }
   .mainnav li:hover {
     background: #fff;
@@ -81,12 +103,19 @@
   }
   /*First Level*/
   .subs {
+    &:before {
+      padding-top: 10px;
+    }
     // left: -5px;
     position: relative;
     // top: 0px;
     width: 175px;
     border-left: none !important;
-    border-bottom: 1px solid #0066b2 !important;
+    border-bottom: 1px dashed #a2a2a2 !important;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: capitalize;
+    padding: 5px 0;
   }
   .subs:last-child {
     border: none !important;
@@ -94,7 +123,7 @@
   .hassubs:hover .dropdown,.hassubs .hassubs:hover .dropdown {
     opacity: 1;
     visibility: visible;
-     transition: ease-in .35s;
+    transition: ease-in .35s;
     -moz-transition: ease-in .35s;
     -webkit-transition: ease-in .35s;
   }
