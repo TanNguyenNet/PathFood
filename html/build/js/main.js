@@ -17,7 +17,7 @@ $(document).ready(function(){
             991: {
                 slidesPerView: 3
             },
-            577: {
+            990: {
                 slidesPerView:2
             },
             576: {
@@ -28,6 +28,20 @@ $(document).ready(function(){
             }
         }
     });
+    //blog filter
+    $(".qa-wrap li").on("click", function(){
+      var filter = $(this).attr("value");
+      $(".qa-wrap li").removeClass("active");
+      $(this).addClass("active");
+      if(filter=="kemsua"){
+        $("[data-filter='"+filter+"']").attr("style", null).show();
+      } else {
+        $(".QA-content .wrap").not("[data-filter='"+filter+"']").hide();
+        $("[data-filter='"+filter+"']").attr("style", null).show();
+      }
+    });
+
+    //new product slider & filter
     $(".filter-list li span").on("click", function(){
       var filter = $(this).html().toLowerCase();
       var slidesxcol;
@@ -41,9 +55,25 @@ $(document).ready(function(){
         else slidesxcol = 1;
         swiper.destroy();
         swiper = new Swiper('.swiper1', {
-          slidesPerView: 3,
-          slidesPerColumn: slidesxcol,
-          spaceBetween: 30
+          slidesPerView: 4,
+          slidesPerColumn: 1,
+          breakpoints: {
+              1024: {
+                  slidesPerView: 4
+              },
+              991: {
+                  slidesPerView: 3
+              },
+              990: {
+                  slidesPerView:2
+              },
+              576: {
+                  slidesPerView: 1
+              },
+              320: {
+                  slidesPerView: 1
+              }
+          }
         });
       }
       else {
@@ -55,9 +85,25 @@ $(document).ready(function(){
         else slidesxcol = 1;
         swiper.destroy();
         swiper = new Swiper('.swiper1', {
-          slidesPerView: 3,
-          slidesPerColumn: slidesxcol,
-          spaceBetween: 30
+          slidesPerView: 4,
+          slidesPerColumn: 1,
+          breakpoints: {
+              1024: {
+                  slidesPerView: 4
+              },
+              991: {
+                  slidesPerView: 3
+              },
+              990: {
+                  slidesPerView:2
+              },
+              576: {
+                  slidesPerView: 1
+              },
+              320: {
+                  slidesPerView: 1
+              }
+          }
         });
       }
     });
