@@ -20,6 +20,8 @@ namespace CV.Data.Entities.Catalog
 
         public string Slug { set; get; }
 
+        public bool Active { set; get; }
+
         public string CatalogFunctionId { set; get; }
 
         public string CatalogSectorId { set; get; }

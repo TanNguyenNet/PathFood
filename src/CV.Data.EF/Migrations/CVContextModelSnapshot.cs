@@ -94,6 +94,8 @@ namespace CV.Data.EF.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryBlogId");
+
                     b.ToTable("Posts");
                 });
 
@@ -173,6 +175,8 @@ namespace CV.Data.EF.Migrations
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
 
                     b.Property<string>("CatalogFunctionId");
 
@@ -446,6 +450,13 @@ namespace CV.Data.EF.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("AppUserTokens");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Blog.Post", b =>
+                {
+                    b.HasOne("CV.Data.Entities.Blog.CategoryBlog", "CategoryBlog")
+                        .WithMany("Post")
+                        .HasForeignKey("CategoryBlogId");
                 });
 
             modelBuilder.Entity("CV.Data.Entities.Catalog.Product", b =>

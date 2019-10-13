@@ -10,7 +10,7 @@ namespace CV.Service.Interface.FAQ
     {
         GroupQuestionModel GetGroupQuestion(string id);
 
-        IEnumerable<GroupQuestionModel> GetAll(Languages? lang);
+        IEnumerable<GroupQuestionModel> GetAll(Languages? lang,bool allowInclude=false);
 
         GroupQuestionModel Insert(string userCurrentId, GroupQuestionModel groupQuestion);
 

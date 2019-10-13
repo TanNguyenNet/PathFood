@@ -6,6 +6,7 @@ using CV.Data.Enum;
 using CV.Data.Model.FAQ;
 using CV.Service.Interface.FAQ;
 using CV.Utils.Helper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,12 +42,15 @@ namespace CV.Service.FAQ
             }
         }
 
-        public IEnumerable<GroupQuestionModel> GetAll(Languages? lang)
+        public IEnumerable<GroupQuestionModel> GetAll(Languages? lang, bool allowInclude = false)
         {
             var query = _groupQuestionRepo.TableNoTracking;
 
             if (lang != null)
                 query = query.Where(x => x.Lang == lang.Value);
+
+            if (allowInclude)
+                query = query.Include(x => x.Question);
 
             return query.ProjectTo<GroupQuestionModel>(_mapper.ConfigurationProvider).ToList();
         }

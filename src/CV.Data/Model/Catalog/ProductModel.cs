@@ -14,12 +14,14 @@ namespace CV.Data.Model.Catalog
 
         public string Slug { set; get; }
 
+        public bool Active { set; get; }
+
         public string CatalogFunctionId { set; get; }
 
         public string CatalogSectorId { set; get; }
 
-        public virtual CatalogFunctionModel CatalogFunction { set; get; }
+        public  CatalogFunctionModel CatalogFunction { set; get; }
 
-        public virtual CatalogSectorModel CatalogSector { set; get; }
+        public  CatalogSectorModel CatalogSector { set; get; }
     }
 }

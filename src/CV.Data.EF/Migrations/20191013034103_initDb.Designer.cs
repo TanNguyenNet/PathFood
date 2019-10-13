@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CV.Data.EF.Migrations
 {
     [DbContext(typeof(CVContext))]
-    [Migration("20191009042359_addColSlugTableGroupQuestion")]
-    partial class addColSlugTableGroupQuestion
+    [Migration("20191013034103_initDb")]
+    partial class initDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -96,6 +96,8 @@ namespace CV.Data.EF.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryBlogId");
+
                     b.ToTable("Posts");
                 });
 
@@ -103,6 +105,8 @@ namespace CV.Data.EF.Migrations
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
 
                     b.Property<string>("Color");
 
@@ -138,6 +142,8 @@ namespace CV.Data.EF.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Active");
+
                     b.Property<string>("Color");
 
                     b.Property<string>("CreatedBy");
@@ -171,6 +177,8 @@ namespace CV.Data.EF.Migrations
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
 
                     b.Property<string>("CatalogFunctionId");
 
@@ -444,6 +452,13 @@ namespace CV.Data.EF.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("AppUserTokens");
+                });
+
+            modelBuilder.Entity("CV.Data.Entities.Blog.Post", b =>
+                {
+                    b.HasOne("CV.Data.Entities.Blog.CategoryBlog", "CategoryBlog")
+                        .WithMany("Post")
+                        .HasForeignKey("CategoryBlogId");
                 });
 
             modelBuilder.Entity("CV.Data.Entities.Catalog.Product", b =>

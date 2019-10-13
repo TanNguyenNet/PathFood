@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using CV.Core.Data;
 using CV.Data.Entities.FAQ;
+using CV.Data.Enum;
 using CV.Data.Model.FAQ;
 using CV.Service.Interface.FAQ;
 using CV.Utils.Helper;
@@ -44,7 +45,12 @@ namespace CV.Service.FAQ
             }
         }
 
-        public PagedResult<QuestionModel> GetAll(int page = 1, int pageSize = 20, string filter = "")
+        public IEnumerable<QuestionModel> GetAll(string filter = "", Languages? lang = Languages.Vi)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PagedResult<QuestionModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "")
         {
             var query = _questionRepo.TableNoTracking;
 

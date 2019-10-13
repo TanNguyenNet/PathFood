@@ -1,4 +1,5 @@
-﻿using CV.Data.Model.Catalog;
+﻿using CV.Data.Enum;
+using CV.Data.Model.Catalog;
 using CV.Utils.Utils.Web.Page;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,13 @@ namespace CV.Service.Interface.Catalog
     {
         ProductModel GetProduct(string id);
 
-        ProductModel GetProductByFunction(string slug);
+        IEnumerable<ProductModel> GetProductByFunction(string slug);
 
-        ProductModel GetProductBySector(string slug);
+        IEnumerable<ProductModel> GetProductBySector(string slug);
 
-        PagedResult<ProductModel> GetAll(int page = 1, int pageSize = 20, string filter = "", string functionId = "", string sectorId = "");
+        PagedResult<ProductModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "", string functionId = "", string sectorId = "", Languages? lang = null);
+
+        IEnumerable<ProductModel> GetAll(Languages? lang = null);
 
         ProductModel Insert(string userCurrent, ProductModel product);
 

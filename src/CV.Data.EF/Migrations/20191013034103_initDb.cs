@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CV.Data.EF.Migrations
 {
-    public partial class addInitDb : Migration
+    public partial class initDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -142,7 +142,8 @@ namespace CV.Data.EF.Migrations
                     Description = table.Column<string>(nullable: true),
                     Color = table.Column<string>(nullable: true),
                     URLImage = table.Column<string>(nullable: true),
-                    Slug = table.Column<string>(nullable: true)
+                    Slug = table.Column<string>(nullable: true),
+                    Active = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -165,7 +166,8 @@ namespace CV.Data.EF.Migrations
                     Description = table.Column<string>(nullable: true),
                     Color = table.Column<string>(nullable: true),
                     URLImage = table.Column<string>(nullable: true),
-                    Slug = table.Column<string>(nullable: true)
+                    Slug = table.Column<string>(nullable: true),
+                    Active = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -186,6 +188,7 @@ namespace CV.Data.EF.Migrations
                     DeletedBy = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
+                    Slug = table.Column<string>(nullable: true),
                     UrlImage = table.Column<string>(nullable: true),
                     SetHomePage = table.Column<bool>(nullable: false),
                     Active = table.Column<bool>(nullable: false)
@@ -208,36 +211,12 @@ namespace CV.Data.EF.Migrations
                     LastUpdatedBy = table.Column<string>(nullable: true),
                     DeletedBy = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    Active = table.Column<bool>(nullable: false)
+                    Active = table.Column<bool>(nullable: false),
+                    Slug = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_GroupQuestions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Posts",
-                columns: table => new
-                {
-                    Id = table.Column<string>(nullable: false),
-                    Lang = table.Column<int>(nullable: false),
-                    CreatedTime = table.Column<DateTimeOffset>(nullable: false),
-                    LastUpdatedTime = table.Column<DateTimeOffset>(nullable: false),
-                    DeletedTime = table.Column<DateTimeOffset>(nullable: true),
-                    CreatedBy = table.Column<string>(nullable: true),
-                    LastUpdatedBy = table.Column<string>(nullable: true),
-                    DeletedBy = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Content = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    UrlImage = table.Column<string>(nullable: true),
-                    PushlishDate = table.Column<DateTimeOffset>(nullable: true),
-                    SetHomePage = table.Column<bool>(nullable: false),
-                    Active = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Posts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -272,6 +251,7 @@ namespace CV.Data.EF.Migrations
                     Description = table.Column<string>(nullable: true),
                     Color = table.Column<string>(nullable: true),
                     Slug = table.Column<string>(nullable: true),
+                    Active = table.Column<bool>(nullable: false),
                     CatalogFunctionId = table.Column<string>(nullable: true),
                     CatalogSectorId = table.Column<string>(nullable: true)
                 },
@@ -293,6 +273,39 @@ namespace CV.Data.EF.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Posts",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Lang = table.Column<int>(nullable: false),
+                    CreatedTime = table.Column<DateTimeOffset>(nullable: false),
+                    LastUpdatedTime = table.Column<DateTimeOffset>(nullable: false),
+                    DeletedTime = table.Column<DateTimeOffset>(nullable: true),
+                    CreatedBy = table.Column<string>(nullable: true),
+                    LastUpdatedBy = table.Column<string>(nullable: true),
+                    DeletedBy = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Content = table.Column<string>(nullable: true),
+                    Slug = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    UrlImage = table.Column<string>(nullable: true),
+                    PushlishDate = table.Column<DateTimeOffset>(nullable: true),
+                    SetHomePage = table.Column<bool>(nullable: false),
+                    Active = table.Column<bool>(nullable: false),
+                    CategoryBlogId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Posts_CategoryBlogs_CategoryBlogId",
+                        column: x => x.CategoryBlogId,
+                        principalTable: "CategoryBlogs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Questions",
                 columns: table => new
                 {
@@ -307,6 +320,7 @@ namespace CV.Data.EF.Migrations
                     Name = table.Column<string>(nullable: true),
                     Anwser = table.Column<string>(nullable: true),
                     Active = table.Column<bool>(nullable: false),
+                    Slug = table.Column<string>(nullable: true),
                     GroupQuestionId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -319,6 +333,11 @@ namespace CV.Data.EF.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_CategoryBlogId",
+                table: "Posts",
+                column: "CategoryBlogId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CatalogFunctionId",
@@ -360,9 +379,6 @@ namespace CV.Data.EF.Migrations
                 name: "AppUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CategoryBlogs");
-
-            migrationBuilder.DropTable(
                 name: "Posts");
 
             migrationBuilder.DropTable(
@@ -373,6 +389,9 @@ namespace CV.Data.EF.Migrations
 
             migrationBuilder.DropTable(
                 name: "WebImages");
+
+            migrationBuilder.DropTable(
+                name: "CategoryBlogs");
 
             migrationBuilder.DropTable(
                 name: "CatalogFunctions");
