@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CV.Core.Endpoints;
+using CV.Data.Model.FAQ;
 using CV.Service.Interface.FAQ;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +14,7 @@ namespace CV.Web.Controllers
         private readonly IQuestionService _questionService;
         private readonly IGroupQuestionService _groupQuestionService;
 
-        public QuestionController(IQuestionService questionService,IGroupQuestionService groupQuestionService)
+        public QuestionController(IQuestionService questionService, IGroupQuestionService groupQuestionService)
         {
             _questionService = questionService;
             _groupQuestionService = groupQuestionService;
@@ -25,6 +26,14 @@ namespace CV.Web.Controllers
         {
             var model = _groupQuestionService.GetAll(lang: base.CurrentLang);
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SendQuestion(QuestionModel question)
+        {
+            _questionService.Insert(question.CreatedBy, question);
+            return RedirectToAction("Index");
         }
     }
 }

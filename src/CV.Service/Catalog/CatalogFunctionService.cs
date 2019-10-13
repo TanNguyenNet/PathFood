@@ -41,9 +41,12 @@ namespace CV.Service.Catalog
             }
         }
 
-        public IEnumerable<CatalogFunctionModel> GetAll(Languages? lang)
+        public IEnumerable<CatalogFunctionModel> GetAll(Languages? lang,bool active = false)
         {
             var query = _catalogFunctionRepo.TableNoTracking;
+
+            if (active)
+                query = query.Where(x => x.Active == active);
 
             if (lang != null)
                 query = query.Where(x => x.Lang == lang.Value);

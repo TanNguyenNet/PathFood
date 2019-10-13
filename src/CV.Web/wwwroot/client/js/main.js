@@ -7,106 +7,7 @@ $(document).ready(function(){
         autoplay: 10000
     });
 
-    var swiper1 = new Swiper('.swiper1', {
-        slidesPerView: 4,
-        slidesPerColumn: 1,
-        breakpoints: {
-            1024: {
-                slidesPerView: 4
-            },
-            991: {
-                slidesPerView: 3
-            },
-            990: {
-                slidesPerView:2
-            },
-            576: {
-                slidesPerView: 1
-            },
-            320: {
-                slidesPerView: 1
-            }
-        }
-    });
-    //blog filter
-    $(".qa-wrap li").on("click", function(){
-      var filter = $(this).attr("value");
-      $(".qa-wrap li").removeClass("active");
-      $(this).addClass("active");
-      if(filter=="kemsua"){
-        $("[data-filter='"+filter+"']").attr("style", null).show();
-      } else {
-        $(".QA-content .wrap").not("[data-filter='"+filter+"']").hide();
-        $("[data-filter='"+filter+"']").attr("style", null).show();
-      }
-    });
 
-    //new product slider & filter
-    $(".filter-list li span").on("click", function(){
-      var filter = $(this).html().toLowerCase();
-      var slidesxcol;
-      $(".filter-list li span").removeClass("active");
-      $(this).addClass("active");
-
-      if(filter=="vi"){
-        $("[data-filter]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
-        if($(".swiper-slide").length > 6)
-          slidesxcol = 3;
-        else slidesxcol = 1;
-        swiper.destroy();
-        swiper = new Swiper('.swiper1', {
-          slidesPerView: 4,
-          slidesPerColumn: 1,
-          breakpoints: {
-              1024: {
-                  slidesPerView: 4
-              },
-              991: {
-                  slidesPerView: 3
-              },
-              990: {
-                  slidesPerView:2
-              },
-              576: {
-                  slidesPerView: 1
-              },
-              320: {
-                  slidesPerView: 1
-              }
-          }
-        });
-      }
-      else {
-      $(".swiper-slide").not("[data-filter='"+filter+"']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
-        $("[data-filter='"+filter+"']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
-        // console.log($(".swiper-slide").length)
-        if($(".swiper-slide").length > 6)
-          slidesxcol = 3;
-        else slidesxcol = 1;
-        swiper.destroy();
-        swiper = new Swiper('.swiper1', {
-          slidesPerView: 4,
-          slidesPerColumn: 1,
-          breakpoints: {
-              1024: {
-                  slidesPerView: 4
-              },
-              991: {
-                  slidesPerView: 3
-              },
-              990: {
-                  slidesPerView:2
-              },
-              576: {
-                  slidesPerView: 1
-              },
-              320: {
-                  slidesPerView: 1
-              }
-          }
-        });
-      }
-    });
     var swiper2 = new Swiper('.swiper2', {
       slidesPerView: 7,
       spaceBetween: 0,
@@ -182,6 +83,135 @@ $(document).ready(function(){
         cur = i;
       });
     });
+
+    var swiper1 = new Swiper('.swiper1', {
+      slidesPerView: 4,
+      slidesPerColumn: 1,
+      breakpoints: {
+          1024: {
+              slidesPerView: 4
+          },
+          991: {
+              slidesPerView: 3
+          },
+          990: {
+              slidesPerView:2
+          },
+          576: {
+              slidesPerView: 1
+          },
+          320: {
+              slidesPerView: 1
+          }
+      }
+    });
+    //new product slider & filter
+    $(".filter-list li").on("click", function(){
+      var filter = $(this).attr("value");
+      var slidesxcol;
+      $(".filter-list li").removeClass("active");
+      $(this).addClass("active");
+
+      if(filter=="vi"){
+        $("[data-filter]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
+        if($(".swiper1 .swiper-slide").length > 6)
+          slidesxcol = 3;
+        else slidesxcol = 1;
+        swiper1.destroy();
+        swiper1 = new Swiper('.swiper1', {
+          slidesPerView: 4,
+          slidesPerColumn: 1,
+          breakpoints: {
+              1024: {
+                  slidesPerView: 4
+              },
+              991: {
+                  slidesPerView: 3
+              },
+              990: {
+                  slidesPerView:2
+              },
+              576: {
+                  slidesPerView: 1
+              },
+              320: {
+                  slidesPerView: 1
+              }
+          }
+        });
+      }
+      else {
+      $(".swiper1 .swiper-slide").not("[data-filter='"+filter+"']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
+        $("[data-filter='"+filter+"']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
+        // console.log($(".swiper-slide").length)
+        if($(".swiper1 .swiper-slide").length > 6)
+          slidesxcol = 3;
+        else slidesxcol = 1;
+        swiper1.destroy();
+        swiper1 = new Swiper('.swiper1', {
+          slidesPerView: 4,
+          slidesPerColumn: 1,
+          breakpoints: {
+              1024: {
+                  slidesPerView: 4
+              },
+              991: {
+                  slidesPerView: 3
+              },
+              990: {
+                  slidesPerView:2
+              },
+              576: {
+                  slidesPerView: 1
+              },
+              320: {
+                  slidesPerView: 1
+              }
+          }
+        });
+      }
+    });
+
+    //QA filter
+    // $(".qa-wrap li").on('click', (function(event){
+    //   var target = $( event.target );
+    //   $(".qa-wrap li").removeClass("active");
+    //   $(this).addClass("active");
+
+    //   var filter = $(this).attr("value");
+
+    //   if(target.is ("li")){
+    //     $(".QA-content .wrap").filter(function(){
+
+    //     console.log("ádasdasdasd " + filter);
+    //       return $(this).data("filter").split(",").indexOf(filter) == -1;
+    //     }).hide();
+    //   } else {
+    //     $(".QA-content .wrap").show();
+    //   }
+    // }));
+
+    $(".qa-wrap li").on('click', function() {
+      var filter = $(this).attr("value");
+      filterList(filter);
+    });
+
+    //News filter function
+    function filterList(value) {
+      var list = $(".QA-content .wrap");
+      $(list).fadeOut("fast");
+      if (value == "all") {
+        $(".QA-content").find(".wrap").each(function (i) {
+          $(this).delay(200).slideDown("fast");
+        });
+      } else {
+        //Notice this *=" <- This means that if the data-category contains multiple options, it will find them
+        //Ex: data-category="Cat1, Cat2"
+        $(".QA-content").find("[data-filter*=" + value + "]").each(function (i) {
+          $(this).delay(200).slideDown("fast");
+        });
+      }
+    }
 
     //QA arrcordian
     $(".accordion_head").click(function() {

@@ -4,6 +4,7 @@ using CV.Data.Entities.Blog;
 using CV.Data.Entities.Catalog;
 using CV.Data.Entities.FAQ;
 using CV.Data.Entities.Identity;
+using CV.Data.Entities.Setting;
 using CV.Utils.Contants;
 using CV.Utils.Helper;
 using CV.Utils.Utils.Config;
@@ -95,6 +96,8 @@ namespace CV.Data.EF
             builder.Entity<CatalogFunction>().HasQueryFilter(x => x.DeletedTime == null);
 
             builder.Entity<CatalogSector>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<WebImage>().HasQueryFilter(x => x.DeletedTime == null);
 
         }
 

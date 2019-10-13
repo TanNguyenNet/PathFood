@@ -42,9 +42,12 @@ namespace CV.Service.Catalog
             }
         }
 
-        public IEnumerable<CatalogSectorModel> GetAll(Languages? lang)
+        public IEnumerable<CatalogSectorModel> GetAll(Languages? lang, bool active = false)
         {
             var query = _catalogSectorRepo.TableNoTracking;
+
+            if (active)
+                query = query.Where(x => x.Active == active);
 
             if (lang != null)
                 query = query.Where(x=>x.Lang == lang.Value);

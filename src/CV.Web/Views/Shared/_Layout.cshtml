@@ -7,16 +7,16 @@
     }
 </head>
 <body class="home main-home home-background">
-    @{
-        await Html.RenderPartialAsync("_Header").ConfigureAwait(true);
-    }
-    
+
+    @await Component.InvokeAsync("Header")
+
+
     @RenderBody()
 
     @{
         await Html.RenderPartialAsync("_PartnerBanner").ConfigureAwait(true);
     }
-    <!-- online chat -->
+
     @{
         await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);
     }

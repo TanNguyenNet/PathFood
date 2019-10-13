@@ -271,6 +271,24 @@ template {
 [hidden] {
   display: none !important; }
 
+.align-baseline {
+  vertical-align: baseline !important; }
+
+.align-top {
+  vertical-align: top !important; }
+
+.align-middle {
+  vertical-align: middle !important; }
+
+.align-bottom {
+  vertical-align: bottom !important; }
+
+.align-text-bottom {
+  vertical-align: text-bottom !important; }
+
+.align-text-top {
+  vertical-align: text-top !important; }
+
 .clearfix::after {
   display: block;
   clear: both;
@@ -299,6 +317,15 @@ template {
   src: url("./fonts/Montserrat-Light.eot");
   /* IE9 Compat Modes */
   src: url("./fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/Montserrat-Light.otf") format("opentype"), url("./fonts/Montserrat-Light.svg") format("svg"), url("./fonts/Montserrat-Light.ttf") format("truetype"), url("./fonts/Montserrat-Light.woff") format("woff"), url("./fonts/Montserrat-Light.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("./fonts/Montserrat-Medium.eot");
+  /* IE9 Compat Modes */
+  src: url("./fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/Montserrat-Medium.otf") format("opentype"), url("./fonts/Montserrat-Medium.svg") format("svg"), url("./fonts/Montserrat-Medium.ttf") format("truetype"), url("./fonts/Montserrat-Medium.woff") format("woff"), url("./fonts/Montserrat-Medium.woff2") format("woff2");
   /* Modern Browsers */
   font-weight: normal;
   font-style: normal; }
@@ -2692,61 +2719,75 @@ html {
 /* --------------------------------------------------------------------- */
 .top-bar {
   background-color: #0066b2;
-  font-size: 12px;
+  font-size: 8px;
   color: #fff;
-  padding: 10px 0; }
+  padding: 5px 0; }
   .top-bar .icon {
     padding-right: 5px; }
 
 .header-logo {
-  padding: 20px 0;
+  padding: 50px 0;
   text-align: center;
   background-image: url(../images/dna.png);
   background-repeat: no-repeat;
   background-position: right; }
+  .header-logo .logo {
+    text-align: left; }
   .header-logo span {
     padding: 0px 20px;
     color: #0066b2;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 25px; }
 
 .nav-wrap {
-  background-color: #0066b2;
+  border-bottom: 3px solid #a2a2a2;
   font-size: 0.75rem;
   /*General Menu Styling*/
   /*First Level*/
   /*Second Level*/ }
+  .nav-wrap:after {
+    content: '';
+    border-bottom: 17px solid #0066b2;
+    display: block; }
   .nav-wrap .main {
     width: 100%; }
+  .nav-wrap .mobile-menu {
+    margin: 0 auto;
+    position: relative;
+    top: 20px; }
   .nav-wrap .mainnav {
     margin: 0 auto; }
   .nav-wrap li {
-    list-style: none;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: bold; }
+    list-style: none; }
   .nav-wrap li a {
     text-decoration: none; }
   .nav-wrap .dropdown {
     position: absolute;
     width: 175px;
-    top: 230px;
+    top: 33px;
+    left: 146px;
     opacity: 0;
     visibility: hidden;
     transition: ease-out .35s;
     -moz-transition: ease-out .35s;
     -webkit-transition: ease-out .35s;
     background-color: #fff;
-    border: 1px solid #0066b2;
+    border: 1px solid #999;
     z-index: 90; }
-  .nav-wrap .mainnav li {
+  .nav-wrap .mainnav > li {
     float: left;
-    padding: 15px 0px; }
-  .nav-wrap .mainnav li:first-child {
-    border: none; }
+    padding: 5px 15px;
+    border: 1px solid #999;
+    font-family: "Montserrat-Medium", "Roboto", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: #f0f0f0; }
   .nav-wrap .mainnav li a {
     display: block;
     padding: 2px 20px;
-    color: #fff; }
+    color: #444; }
   .nav-wrap .mainnav li:hover {
     background: #fff;
     transition: ease-in .35s;
@@ -2761,7 +2802,13 @@ html {
     position: relative;
     width: 175px;
     border-left: none !important;
-    border-bottom: 1px solid #0066b2 !important; }
+    border-bottom: 1px dashed #a2a2a2 !important;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: capitalize;
+    padding: 5px 0; }
+    .nav-wrap .subs:before {
+      padding-top: 10px; }
   .nav-wrap .subs:last-child {
     border: none !important; }
   .nav-wrap .hassubs:hover .dropdown, .nav-wrap .hassubs .hassubs:hover .dropdown {
@@ -3222,8 +3269,7 @@ div.news > div:after {
     line-height: normal;
     text-align: center; }
   .product-list .content-wrap table {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
     border-collapse: separate;
     border-spacing: 15px; }
 
@@ -3314,8 +3360,7 @@ div.news > div:after {
   .blog-list .info-content .title {
     font-weight: bold; }
   .blog-list .info-content p {
-    padding: 10px 0 20px 0;
-    text-align: justify; }
+    padding: 10px 0 20px 0; }
 
 .blog-list .wrap-pagination {
   width: 100%;
@@ -3447,7 +3492,7 @@ div.news > div:after {
 
 .contact-form .form-group label {
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px; }
 
 .contact-form .form-group label .star {
@@ -3549,6 +3594,12 @@ div.news > div:after {
     color: #fff;
     margin-right: 10px; }
 
+.partner {
+  background-color: #efefef; }
+  .partner .swiper-slide {
+    border: 1px solid #e4e4e4;
+    text-align: center; }
+
 .contact {
   margin-top: 80px;
   text-align: center; }
@@ -3563,15 +3614,16 @@ div.news > div:after {
     border-bottom: 2px solid #0066b2;
     margin-bottom: 20px;
     display: inline-block;
-    font-weight: bold; }
+    font-weight: bold;
+    text-transform: capitalize; }
   .contact-info .incon-info {
     position: relative;
     margin: 15px 0; }
     .contact-info .incon-info .icon {
-      font-size: 20px;
+      font-size: 14px;
       padding-right: 20px;
       position: absolute;
-      top: 1px; }
+      top: 3px; }
     .contact-info .incon-info p {
       padding-left: 30px; }
 
@@ -3582,13 +3634,13 @@ div.news > div:after {
   text-transform: uppercase; }
 
 .appli p {
-  padding: 5px 0;
-  text-align: justify; }
+  padding: 5px 0; }
   .appli p strong {
     font-family: "Montserrat-Bold", "Roboto", sans-serif; }
 
 .appli figure {
-  text-align: center; }
+  text-align: center;
+  border: 1px solid #efefef; }
 
 .appli .material-list {
   margin-top: 10px; }
@@ -3613,35 +3665,36 @@ div.news > div:after {
 /* Footer
 /* --------------------------------------------------------------------- */
 #footer-style-1 {
-  background-color: #012046;
+  background-color: #0066b2;
   color: #fff; }
   #footer-style-1 .footer-logo {
     text-align: center; }
   #footer-style-1 h3 {
-    border-bottom: 2px solid #0066b2;
+    border-bottom: 2px solid #fff;
     margin-bottom: 20px;
     display: inline-block;
-    font-weight: bold; }
+    font-weight: bold;
+    text-transform: capitalize; }
   #footer-style-1 .incon-info {
     position: relative;
     margin: 15px 0; }
     #footer-style-1 .incon-info .icon {
-      font-size: 20px;
+      font-size: 14px;
       padding-right: 20px;
       position: absolute;
-      top: 1px; }
+      top: 3px; }
     #footer-style-1 .incon-info p {
       padding-left: 30px; }
   #footer-style-1 .foo-policy li {
     margin: 15px 0px; }
     #footer-style-1 .foo-policy li a:hover {
-      color: #0066b2; }
+      color: #059bff; }
   #footer-style-1 .foo-social li {
     padding: 10px 20px 10px 0px;
     display: inline-block;
     font-size: 30px; }
     #footer-style-1 .foo-social li a:hover {
-      color: #0066b2; }
+      color: #059bff; }
   #footer-style-1 .copy-right {
     border-top: 1px solid #979797;
     padding: 10px 0;
@@ -4840,9 +4893,70 @@ div.news > div:after {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important; } }
   @media only screen and (max-width: 1200px) {
+  .nav-wrap {
+    border-bottom: 3px solid #a2a2a2;
+    font-size: 0.75rem;
+    /*First Level*/ }
+    .nav-wrap:after {
+      content: '';
+      border-bottom: 17px solid #0066b2;
+      display: block; }
+    .nav-wrap .main {
+      width: 100%; }
+    .nav-wrap .mobile-menu {
+      margin: 0 auto;
+      position: relative;
+      top: 20px; }
+    .nav-wrap .dropdown {
+      position: absolute;
+      width: 175px;
+      top: 33px;
+      left: 146px;
+      opacity: 0;
+      visibility: hidden;
+      transition: ease-out .35s;
+      -moz-transition: ease-out .35s;
+      -webkit-transition: ease-out .35s;
+      background-color: #fff;
+      border: 1px solid #999;
+      z-index: 90; }
+    .nav-wrap .mainnav > li {
+      float: left;
+      padding: 5px 15px;
+      border: 1px solid #999;
+      font-family: "Montserrat-Medium", "Roboto", sans-serif;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 3px;
+      background-color: #f0f0f0; }
+    .nav-wrap .mainnav li a {
+      display: block;
+      padding: 2px 20px;
+      color: #444; }
+    .nav-wrap .subs {
+      position: relative;
+      width: 175px;
+      border-left: none !important;
+      border-bottom: 1px dashed #a2a2a2 !important;
+      font-size: 12px;
+      font-weight: normal;
+      text-transform: capitalize;
+      padding: 5px 0; }
+      .nav-wrap .subs:before {
+        padding-top: 10px; }
   .new-product .img-content .overlay .overlay-content {
     font-size: 10px; } }
   @media only screen and (max-width: 991px) {
+  .nav-wrap .mainnav > li {
+    padding: 5px 10px; }
+  .contact-info h3 {
+    font-size: 1.25rem; }
+  .contact-info .incon-info .icon {
+    font-size: 14px;
+    padding-right: 20px;
+    position: absolute;
+    top: 3px; }
   .QA-wrap {
     margin-top: 40px; }
   .news {
@@ -4873,13 +4987,26 @@ div.news > div:after {
     top: 30px; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header-title {
-    font-size: 38px; }
+    font-size: 28px; }
   .about-us .content {
     text-align: center; }
     .about-us .content p {
       padding-top: 30px;
       font-size: 14px; } }
   @media only screen and (max-width: 767px) {
+  .product-list .content-wrap h3 {
+    font-size: 20px; }
+  .product-list .content-wrap table {
+    font-size: 12px; }
+  .nav-wrap {
+    background-color: #0066b2;
+    border-bottom: none; }
+    .nav-wrap:after {
+      border-bottom: none; }
+  .contact-form .form-group label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 15px; }
   .product-list {
     padding-top: 80px;
     background-image: none; }
@@ -4904,7 +5031,7 @@ div.news > div:after {
   .new-product .img-content .overlay .overlay-content {
     font-size: 12px; }
   .header-title {
-    font-size: 38px; }
+    font-size: 28px; }
   .header-logo {
     padding: 20px 0;
     text-align: center; }
@@ -4983,6 +5110,8 @@ div.news > div:after {
     left: 20px;
     margin: auto; } }
   @media only screen and (max-width: 575px) {
+  body {
+    font-size: 12px; }
   .consultant {
     display: none; }
   .mb-online {

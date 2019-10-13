@@ -16,34 +16,35 @@
                         <h1 class="header-title">Về Chúng Tôi</h1>
                         <img src="~/client/images/icon/street.svg">
                         <p>
-                            Bạn có thắc mắc cần được giải đáp? </br>
+                            Bạn có thắc mắc cần được giải đáp? <br>
                             cả câu trả lời đều có ở đây! Nếu bạn không tìm thấy câu trả lời ở bên dưới? Điền thông tin câu hỏi của bạn ở form bên cạnh để Chúng tôi giải đáp thắc mắc của bạn nhé.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12">
                     <div class="QA-wrap">
-                        <form class="contact-form" action="">
+                        <form class="contact-form" action="~/question/sendquestion" method="post">
+                            @Html.AntiForgeryToken()
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Họ Tên <span class="star">*</span></label>
-                                        <input type="text" class="form-control" name="name" id="name">
+                                        <input type="text" class="form-control" required="required" name="CreatedBy" id="CreatedBy">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Địa Chỉ Email <span class="star">*</span></label>
-                                        <input type="text" class="form-control" name="email" id="email">
+                                        <input type="text" class="form-control" required="required" name="Email" id="Email">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="message">Nội Dung Câu Hỏi <span class="star">*</span></label>
-                                        <textarea class="form-control" row="5" name="message" id="message"></textarea>
+                                        <textarea class="form-control" row="5" required="required" name="Name" id="Name"></textarea>
                                     </div>
                                 </div>
-                                <div class="button col-md-12"><button class="btn float-right">gửi</button></div>
+                                <div class="button col-md-12"><button type="submit" class="btn float-right">gửi</button></div>
                             </div>
                         </form>
                     </div>
