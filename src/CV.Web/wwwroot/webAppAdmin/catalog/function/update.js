@@ -27,6 +27,7 @@ var app = new Vue({
                 .then(function (response) {
                     self.objModel = response.data;
                     $('#urlImage').val(self.objModel.urlImage);
+                    $('#hexa-colorpicker').val(self.objModel.color);
                 })
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));
@@ -35,6 +36,7 @@ var app = new Vue({
         save: function () {
             var self = this;
             self.objModel.urlImage = $('#urlImage').val();
+            self.objModel.color = $('#hexa-colorpicker').val();
             axios.put('/api/catalogFunction/update/' + self.objModel.id, self.objModel)
                 .then(function (response) {
                     window.location.href = "/admin/catalogFunction/index";

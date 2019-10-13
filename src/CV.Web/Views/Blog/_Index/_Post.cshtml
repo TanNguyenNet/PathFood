@@ -1,0 +1,162 @@
+﻿@model IEnumerable<PostModel>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-12 mt30">
+        <div class="content-wrap">
+            <img src="@item.UrlImage" alt="@item.Name">
+            <div class="info-content">
+                <h3 class="title">@item.Name</h3>
+                <p>@item.Description</p>
+                <div class="readmore">
+                    <a href="~/tintuc/@item.Slug">đọc thêm</a>
+                    <a class="float-right" href="~/tintuc/@item.Slug"><span class="icon icon-redo2"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@*<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Flavors.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="blog-detail.html">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/How-to-increase-SNF-in-Milk-Production-Know-about-SNF-–-Solids-Not-Fat-Vinayak-Ingredients.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="blog-detail.html">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="blog-detail.html">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Micro-Emulsions-in-Poultry.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Problems-of-Indian-Dairy-Industry-Vinayak-Ingredients.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Seasoning.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/The-Science-of-Feed-Formulation.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Are-Essential-Oils-Anti-Inflammatory.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Flavors.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/How-to-increase-SNF-in-Milk-Production-Know-about-SNF-–-Solids-Not-Fat-Vinayak-Ingredients.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4 col-sm-6 col-12 mt30">
+    <div class="content-wrap">
+        <img src="~/client/images/Micro-Emulsions-in-Poultry.jpg" alt="">
+        <div class="info-content">
+            <h3 class="title">Tỷ lệ vàng của chất béo</h3>
+            <p>We'll connect you with a Sagegreenlife Project Manager to learn more…</p>
+            <div class="readmore">
+                <a href="">đọc thêm</a>
+                <a class="float-right" href=""><span class="icon icon-redo2"></span></a>
+            </div>
+        </div>
+    </div>
+</div>*@

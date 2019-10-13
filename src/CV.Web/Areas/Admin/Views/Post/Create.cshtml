@@ -50,7 +50,7 @@
                     <div class="form-group mb-3">
                         <label for="example-select">Danh mục</label>
                         <select class="form-control" id="cat" required v-model="objModel.categoryBlogId">
-                            <option value="">Chọn danh mục</option>
+                            <option value="null">Chọn danh mục</option>
                             <option v-for="cat in cats" v-bind:value="cat.id">
                                 {{cat.name}}
                             </option>

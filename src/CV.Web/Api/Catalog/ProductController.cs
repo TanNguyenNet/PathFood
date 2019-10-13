@@ -19,7 +19,7 @@ namespace CV.Web.Api.Catalog
 
         public IActionResult Get(int page = 1, int pageSize = 20, string filter = "")
         {
-            var model = _productService.GetAll(page, pageSize, filter);
+            var model = _productService.GetPagedAll(page, pageSize, filter);
             return Ok(model);
         }
 

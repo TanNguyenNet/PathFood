@@ -17,9 +17,9 @@ namespace CV.Web.Extension
                 
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromHours(2);
-                options.LoginPath = "/Login/Index";
-                options.LogoutPath = "/Login/Logout";
-                options.AccessDeniedPath = "/Base/AccessDenied";
+                options.LoginPath = "/Admin/Login/Index";
+                options.LogoutPath = "/Admin/Login/Logout";
+                options.AccessDeniedPath = "/Admin/Base/AccessDenied";
                 
                 options.Cookie = new CookieBuilder
                 {

@@ -16,7 +16,7 @@ namespace CV.Web.Api.FAQ
         [HttpGet]
         public IActionResult Get(int page = 1, int pageSize = 20, string filter = "")
         {
-            var model = _questionService.GetAll(page, pageSize, filter);
+            var model = _questionService.GetPagedAll(page, pageSize, filter);
             return Ok(model);
         }
 
