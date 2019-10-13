@@ -34,6 +34,10 @@
                         <label for="name">Tên <span v-if="!$v.objModel.name.required" class="text-danger">* Nhập câu hỏi</span></label>
                         <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" placeholder="Nhập câu hỏi">
                     </div>
+                    <div class="form-group mb-0">
+                        <label for="product-meta-description">Trả lời </label>
+                        <textarea class="form-control" rows="3" id="product-meta-description" v-model="objModel.anwser"></textarea>
+                    </div>
                     <div class="form-group mb-3">
                         <label for="example-select">Ngôn ngữ</label>
                         <select class="form-control" id="lang" v-model="objModel.lang">
@@ -45,7 +49,7 @@
                     <div class="form-group mb-3">
                         <label for="example-select">Nhóm câu hỏi</label>
                         <select class="form-control" id="groupQuestion" v-model="objModel.groupQuestionId">
-                            <option value="">Chọn Nhóm</option>
+                            <option value="null">Chọn Nhóm</option>
                             <option v-for="group in groupQuestions" v-bind:value="group.id">
                                 {{group.name}}
                             </option>

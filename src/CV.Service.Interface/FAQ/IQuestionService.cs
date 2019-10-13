@@ -1,4 +1,5 @@
-﻿using CV.Data.Model.FAQ;
+﻿using CV.Data.Enum;
+using CV.Data.Model.FAQ;
 using CV.Utils.Utils.Web.Page;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,9 @@ namespace CV.Service.Interface.FAQ
 
         QuestionModel GetQuestionSlug(string slug);
 
-        PagedResult<QuestionModel> GetAll(int page = 1, int pageSize = 20, string filter = "");
+        PagedResult<QuestionModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "");
+
+        IEnumerable<QuestionModel> GetAll(string filter = "", Languages? lang = Languages.Vi);
 
         QuestionModel Insert(string userCurrent, QuestionModel question);
 

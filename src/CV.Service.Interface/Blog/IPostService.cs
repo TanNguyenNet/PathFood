@@ -1,4 +1,5 @@
-﻿using CV.Data.Model.Blog;
+﻿using CV.Data.Enum;
+using CV.Data.Model.Blog;
 using CV.Utils.Utils.Web.Page;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,11 @@ namespace CV.Service.Interface.Blog
 
         PostModel GetPostSlug(string slug);
 
-        PagedResult<PostModel> GetAll(int page = 1, int pageSize = 20, string filter = ""
-            , DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null);
+        PagedResult<PostModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = ""
+            , DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null, bool publishDate = false, Languages? lang = null);
+
+        IEnumerable<PostModel> GetAll(Languages? lang = null, int totalPost = 1,
+            bool home = false, bool? active = null, bool publishDate = false);
 
         PostModel Insert(string userCurrent, PostModel post);
 

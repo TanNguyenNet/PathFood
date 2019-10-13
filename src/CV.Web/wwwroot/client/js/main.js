@@ -1,14 +1,47 @@
 $(document).ready(function(){
+  //banner slider
   var swiper = new Swiper('.swiper',
     {
         pagination: '.swiper-pagination',
         paginationClickable: true,
         autoplay: 10000
     });
+
     var swiper1 = new Swiper('.swiper1', {
         slidesPerView: 4,
-        slidesPerColumn: 1
+        slidesPerColumn: 1,
+        breakpoints: {
+            1024: {
+                slidesPerView: 4
+            },
+            991: {
+                slidesPerView: 3
+            },
+            990: {
+                slidesPerView:2
+            },
+            576: {
+                slidesPerView: 1
+            },
+            320: {
+                slidesPerView: 1
+            }
+        }
     });
+    //blog filter
+    $(".qa-wrap li").on("click", function(){
+      var filter = $(this).attr("value");
+      $(".qa-wrap li").removeClass("active");
+      $(this).addClass("active");
+      if(filter=="kemsua"){
+        $("[data-filter='"+filter+"']").attr("style", null).show();
+      } else {
+        $(".QA-content .wrap").not("[data-filter='"+filter+"']").hide();
+        $("[data-filter='"+filter+"']").attr("style", null).show();
+      }
+    });
+
+    //new product slider & filter
     $(".filter-list li span").on("click", function(){
       var filter = $(this).html().toLowerCase();
       var slidesxcol;
@@ -21,34 +54,62 @@ $(document).ready(function(){
           slidesxcol = 3;
         else slidesxcol = 1;
         swiper.destroy();
-        swiper = new Swiper('.swiper-container1', {
-          pagination: '.swiper-pagination',
-          slidesPerView: 3,
-          slidesPerColumn: slidesxcol,
-          paginationClickable: true,
-          spaceBetween: 30
-      });
+        swiper = new Swiper('.swiper1', {
+          slidesPerView: 4,
+          slidesPerColumn: 1,
+          breakpoints: {
+              1024: {
+                  slidesPerView: 4
+              },
+              991: {
+                  slidesPerView: 3
+              },
+              990: {
+                  slidesPerView:2
+              },
+              576: {
+                  slidesPerView: 1
+              },
+              320: {
+                  slidesPerView: 1
+              }
+          }
+        });
       }
       else {
       $(".swiper-slide").not("[data-filter='"+filter+"']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
         $("[data-filter='"+filter+"']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
-        console.log($(".swiper-slide").length)
+        // console.log($(".swiper-slide").length)
         if($(".swiper-slide").length > 6)
           slidesxcol = 3;
         else slidesxcol = 1;
         swiper.destroy();
-        swiper = new Swiper('.swiper-container', {
-          pagination: '.swiper-pagination',
-          slidesPerView: 3,
-          slidesPerColumn: slidesxcol,
-          paginationClickable: true,
-          spaceBetween: 30
-      });
+        swiper = new Swiper('.swiper1', {
+          slidesPerView: 4,
+          slidesPerColumn: 1,
+          breakpoints: {
+              1024: {
+                  slidesPerView: 4
+              },
+              991: {
+                  slidesPerView: 3
+              },
+              990: {
+                  slidesPerView:2
+              },
+              576: {
+                  slidesPerView: 1
+              },
+              320: {
+                  slidesPerView: 1
+              }
+          }
+        });
       }
     });
     var swiper2 = new Swiper('.swiper2', {
-      slidesPerView: 5,
-      spaceBetween: 30,
+      slidesPerView: 7,
+      spaceBetween: 0,
       autoplay: 10000
     });
     var swiper3 = new Swiper('.swiper3', {
@@ -120,5 +181,20 @@ $(document).ready(function(){
 
         cur = i;
       });
+    });
+
+    //QA arrcordian
+    $(".accordion_head").click(function() {
+      if ($('.accordion_body').is(':visible')) {
+        $(".accordion_body").slideUp(300);
+        $(".plusminus").text('+');
+      }
+      if ($(this).next(".accordion_body").is(':visible')) {
+        $(this).next(".accordion_body").slideUp(300);
+        $(this).children(".plusminus").text('+');
+      } else {
+        $(this).next(".accordion_body").slideDown(300);
+        $(this).children(".plusminus").text('+');
+      }
     });
 });

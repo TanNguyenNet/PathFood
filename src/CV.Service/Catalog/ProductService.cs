@@ -2,10 +2,12 @@
 using AutoMapper.QueryableExtensions;
 using CV.Core.Data;
 using CV.Data.Entities.Catalog;
+using CV.Data.Enum;
 using CV.Data.Model.Catalog;
 using CV.Service.Interface.Catalog;
 using CV.Utils.Helper;
 using CV.Utils.Utils.Web.Page;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +43,14 @@ namespace CV.Service.Catalog
             }
         }
 
-        public PagedResult<ProductModel> GetAll(int page = 1, int pageSize = 20, string filter = "", string functionId = "", string sectorId = "")
+        public IEnumerable<ProductModel> GetAll(Languages? lang = null)
+        {
+            var query = _productRepo.TableNoTracking.Where(x => x.Lang == lang.Value).OrderBy(x => x.Color);
+            return query.ProjectTo<ProductModel>(_mapper.ConfigurationProvider).ToList();
+        }
+
+        public PagedResult<ProductModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "",
+            string functionId = "", string sectorId = "", Languages? lang = null)
         {
             var query = _productRepo.TableNoTracking;
 
@@ -71,14 +80,18 @@ namespace CV.Service.Catalog
             return _mapper.Map<ProductModel>(query);
         }
 
-        public ProductModel GetProductByFunction(string slug)
+        public IEnumerable<ProductModel> GetProductByFunction(string slug)
         {
-            throw new NotImplementedException();
+            var query = _productRepo.TableNoTracking.Where(x => x.CatalogFunction.Slug == slug).OrderBy(x=>x.Color);
+
+            return query.ProjectTo<ProductModel>(_mapper.ConfigurationProvider).ToList();
         }
 
-        public ProductModel GetProductBySector(string slug)
+        public IEnumerable<ProductModel> GetProductBySector(string slug)
         {
-            throw new NotImplementedException();
+            var query = _productRepo.TableNoTracking.Where(x => x.CatalogSector.Slug == slug).OrderBy(x => x.Color);
+
+            return query.ProjectTo<ProductModel>(_mapper.ConfigurationProvider).ToList();
         }
 
         public ProductModel Insert(string userCurrent, ProductModel product)

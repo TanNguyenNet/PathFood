@@ -66,6 +66,18 @@ namespace CV.Data.EF
 
             builder.Entity<IdentityUserToken<string>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
+            //builder.Entity<CatalogFunction>()
+            //    .HasMany(p => p.Product)
+            //    .WithOne(c => c.CatalogFunction)
+            //    .IsRequired(false)
+            //    .OnDelete(DeleteBehavior.SetNull);
+
+            //builder.Entity<CatalogSector>()
+            //    .HasMany(p => p.Product)
+            //    .WithOne(c => c.CatalogSector)
+            //    .IsRequired(false)
+            //    .OnDelete(DeleteBehavior.SetNull);
+
             #endregion Identity Config
 
             builder.Entity<AppUser>().HasQueryFilter(x => x.DeletedDate == null);
@@ -78,11 +90,11 @@ namespace CV.Data.EF
 
             builder.Entity<GroupQuestion>().HasQueryFilter(x => x.DeletedTime == null);
 
-            builder.Entity<Product>().HasQueryFilter(x=>x.DeletedTime == null);
+            builder.Entity<Product>().HasQueryFilter(x => x.DeletedTime == null);
 
-            builder.Entity<CatalogFunction>().HasQueryFilter(x=>x.DeletedTime == null);
+            builder.Entity<CatalogFunction>().HasQueryFilter(x => x.DeletedTime == null);
 
-            builder.Entity<CatalogSector>().HasQueryFilter(x=>x.DeletedTime == null);
+            builder.Entity<CatalogSector>().HasQueryFilter(x => x.DeletedTime == null);
 
         }
 

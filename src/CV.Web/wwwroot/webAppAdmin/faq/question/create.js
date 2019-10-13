@@ -7,6 +7,8 @@ var app = new Vue({
         return {
             objModel: {
                 name: "",
+                anwser:"",
+                groupQuestionId: null,
                 active: true,
                 lang: 1
             },

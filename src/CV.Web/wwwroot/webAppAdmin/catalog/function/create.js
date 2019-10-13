@@ -28,6 +28,7 @@ var app = new Vue({
         save: function () {
             var self = this;
             self.objModel.urlImage = $('#urlImage').val();
+            self.objModel.color = $('#hexa-colorpicker').val();
             axios.post('/api/catalogFunction/create', self.objModel)
                 .then(function (response) {
                     window.location.href = "/admin/catalogFunction/index";

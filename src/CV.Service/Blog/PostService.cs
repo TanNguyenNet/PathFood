@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using CV.Core.Data;
 using CV.Data.Entities.Blog;
+using CV.Data.Enum;
 using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
 using CV.Utils.Helper;
@@ -41,9 +42,35 @@ namespace CV.Service.Blog
             }
         }
 
-        public PagedResult<PostModel> GetAll(int page = 1, int pageSize = 20, string filter = "", DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null)
+        public IEnumerable<PostModel> GetAll(Languages? lang = null, int totalPost = 1,
+            bool home = false, bool? active = null, bool publishDate = false)
         {
             var query = _postRepo.TableNoTracking;
+
+            if (lang != null)
+                query = query.Where(x => x.Lang == lang.Value);
+
+            if (home)
+                query = query.Where(x => x.SetHomePage == home);
+
+            if (active != null)
+                query = query.Where(x => x.Active == active);
+
+            if (publishDate)
+                query = query.Where(x => x.PushlishDate <= CoreHelper.SystemTimeNowUTCTimeZoneLocal.DateTime);
+
+            query = query.OrderByDescending(x => x.PushlishDate).Take(totalPost);
+
+            return query.ProjectTo<PostModel>(_mapper.ConfigurationProvider).ToList();
+        }
+
+        public PagedResult<PostModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "",
+            DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null, bool publishDate = false, Languages? lang = null)
+        {
+            var query = _postRepo.TableNoTracking;
+
+            if (lang != null)
+                query = query.Where(x => x.Lang == lang.Value);
 
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
@@ -53,6 +80,9 @@ namespace CV.Service.Blog
 
             if (toDate != null)
                 query = query.Where(x => x.PushlishDate <= toDate.Value);
+
+            if (publishDate)
+                query = query.Where(x => x.PushlishDate.Value.DateTime <= CoreHelper.SystemTimeNowUTCTimeZoneLocal.DateTime);
 
             query = query.OrderByDescending(x => x.PushlishDate)
                .Skip((page - 1) * pageSize).Take(pageSize);
@@ -76,7 +106,7 @@ namespace CV.Service.Blog
 
         public PostModel GetPostSlug(string slug)
         {
-            var query = _postRepo.TableNoTracking.Where(x=>x.Slug== slug);
+            var query = _postRepo.TableNoTracking.Where(x => x.Slug == slug).FirstOrDefault();
 
             return _mapper.Map<PostModel>(query);
         }

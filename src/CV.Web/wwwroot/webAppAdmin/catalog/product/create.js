@@ -10,8 +10,8 @@ var app = new Vue({
                 urlImage: "",
                 description: "",
                 color: "#4a81d4",
-                catalogSectorId: "",
-                catalogFunctionId: "",
+                catalogSectorId: null,
+                catalogFunctionId: null,
                 active: true,
                 lang: 1
             },
@@ -54,6 +54,7 @@ var app = new Vue({
         save: function () {
             var self = this;
             self.objModel.urlImage = $('#urlImage').val();
+            self.objModel.color = $('#hexa-colorpicker').val();
             axios.post('/api/product/create', self.objModel)
                 .then(function (response) {
                     window.location.href = "/admin/product/index";

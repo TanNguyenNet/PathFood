@@ -1,0 +1,47 @@
+﻿@model CatalogModel
+<div class="box">
+    <div class="brums">
+        <img src="~/client/images/product-bg.jpg" alt="">
+    </div>
+</div>
+
+<!-- Main slider -->
+<div class="box">
+    <div class="product-list">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="aside-nav">
+                        <h3>
+                            Sản phẩm theo chức năng
+                        </h3>
+                        <ul>
+                            @foreach (var item in Model.CatalogFunctions)
+                            {
+                                <li><a style="color: @item.Color" href="~/nhom-chucnang-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="aside-nav mt45">
+                        <h3>
+                            Sản phẩm theo lĩnh vực
+                        </h3>
+                        <ul>
+                            @foreach (var item in Model.CatalogSectors)
+                            {
+                                <li><a style="color: @item.Color" href="~/nhom-sanpham-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+
+                @{
+                    await Html.RenderPartialAsync("~/Views/Catalog/_Index/_Product.cshtml").ConfigureAwait(true);
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>

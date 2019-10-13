@@ -6,7 +6,7 @@ var app = new Vue({
     data() {
         return {
             objModel: {
-                id:""
+                id: ""
             },
             langs: [],
             groupQuestions: []

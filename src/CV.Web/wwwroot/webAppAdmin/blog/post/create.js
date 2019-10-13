@@ -13,7 +13,7 @@ var app = new Vue({
                 pushlishDate: moment(new Date()),
                 lang: 1,
                 content: "",
-                categoryBlogId: "",
+                categoryBlogId: null,
                 setHomePage: false
             },
             pushlishDate: moment(new Date()).format('DD-MM-YYYY hh:mm'),

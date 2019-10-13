@@ -113,3 +113,23 @@ $(".accordion_head").click(function () {
         $(this).children(".plusminus").text('+');
     }
 });
+
+var c = document.querySelector('.pagination');
+var indexs = Array.from(document.querySelectorAll('.index'));
+var cur = -1;
+indexs.forEach(function (index, i) {
+    index.addEventListener('click', function (e) {
+        // clear
+        c.className = 'pagination';
+        void c.offsetWidth; // Reflow
+
+        c.classList.add('open');
+        c.classList.add("i".concat(i + 1));
+
+        if (cur > i) {
+            c.classList.add('flip');
+        }
+
+        cur = i;
+    });
+});
