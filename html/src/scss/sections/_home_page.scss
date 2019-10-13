@@ -623,7 +623,7 @@ div.news > div:after {
     }
     p {
       padding: 10px 0 20px 0;
-      text-align: justify;
+      // text-align: justify;
     }
   }
   .wrap-pagination {
@@ -848,8 +848,10 @@ div.news > div:after {
   }
 }
 .partner {
+  background-color: #efefef;
   .swiper-slide {
     border: 1px solid #e4e4e4;
+    text-align: center;
   }
 }
 .contact {
@@ -901,6 +903,7 @@ div.news > div:after {
   }
   figure {
     text-align: center;
+    border: 1px solid #efefef;
   }
   .material-list {
     margin-top: 10px;

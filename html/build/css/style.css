@@ -3360,8 +3360,7 @@ div.news > div:after {
   .blog-list .info-content .title {
     font-weight: bold; }
   .blog-list .info-content p {
-    padding: 10px 0 20px 0;
-    text-align: justify; }
+    padding: 10px 0 20px 0; }
 
 .blog-list .wrap-pagination {
   width: 100%;
@@ -3595,8 +3594,11 @@ div.news > div:after {
     color: #fff;
     margin-right: 10px; }
 
-.partner .swiper-slide {
-  border: 1px solid #e4e4e4; }
+.partner {
+  background-color: #efefef; }
+  .partner .swiper-slide {
+    border: 1px solid #e4e4e4;
+    text-align: center; }
 
 .contact {
   margin-top: 80px;
@@ -3637,7 +3639,8 @@ div.news > div:after {
     font-family: "Montserrat-Bold", "Roboto", sans-serif; }
 
 .appli figure {
-  text-align: center; }
+  text-align: center;
+  border: 1px solid #efefef; }
 
 .appli .material-list {
   margin-top: 10px; }
