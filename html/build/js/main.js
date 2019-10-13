@@ -173,16 +173,45 @@ $(document).ready(function(){
     });
 
     //QA filter
-    $(".qa-wrap li").on("click", function(){
+    // $(".qa-wrap li").on('click', (function(event){
+    //   var target = $( event.target );
+    //   $(".qa-wrap li").removeClass("active");
+    //   $(this).addClass("active");
+
+    //   var filter = $(this).attr("value");
+
+    //   if(target.is ("li")){
+    //     $(".QA-content .wrap").filter(function(){
+
+    //     console.log("ádasdasdasd " + filter);
+    //       return $(this).data("filter").split(",").indexOf(filter) == -1;
+    //     }).hide();
+    //   } else {
+    //     $(".QA-content .wrap").show();
+    //   }
+    // }));
+
+    $(".qa-wrap li").on('click', function() {
       var filter = $(this).attr("value");
-      console.log("gia tri lay ra " + filter);
-      $(".qa-wrap li").removeClass("active");
-      $(this).addClass("active");
-        $(".QA-content .wrap").filter(function(){
-          console.log("kiem tra data sau khi slipt " + $(this).data("filter").split(" ").indexOf(filter));
-          // return $(this).data("").split(",").indexOf(filter) == -1;
-        }).show();
+      filterList(filter);
     });
+
+    //News filter function
+    function filterList(value) {
+      var list = $(".QA-content .wrap");
+      $(list).fadeOut("fast");
+      if (value == "all") {
+        $(".QA-content").find(".wrap").each(function (i) {
+          $(this).delay(200).slideDown("fast");
+        });
+      } else {
+        //Notice this *=" <- This means that if the data-category contains multiple options, it will find them
+        //Ex: data-category="Cat1, Cat2"
+        $(".QA-content").find("[data-filter*=" + value + "]").each(function (i) {
+          $(this).delay(200).slideDown("fast");
+        });
+      }
+    }
 
     //QA arrcordian
     $(".accordion_head").click(function() {
