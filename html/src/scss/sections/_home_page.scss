@@ -421,6 +421,7 @@ div.news > div:after {
     .title {
       font-family: $montserrat-bold;
       // font-weight: bold;
+      color: #0066b2 ;
     }
     p {
       padding: 10px 0 20px 0;
@@ -501,13 +502,14 @@ div.news > div:after {
   .content-wrap {
     h3 {
       font-size: 25px;
-      color: #4e4e4e;
-      font-family: $lobsterregular;
+      color: #0066b2;
+      font-family: $montserrat-bold;
       font-weight: normal;
       font-style: normal;
       font-stretch: normal;
       line-height: normal;
       text-align: center;
+      text-transform: uppercase;
     }
     table {
       // padding-bottom: 20px;
@@ -620,7 +622,8 @@ div.news > div:after {
   .info-content {
     padding: 30px 20px;
     .title {
-      font-weight: bold;
+      font-family: $montserrat-medium;
+      color: #0066b2;
     }
     p {
       padding: 10px 0 20px 0;
@@ -648,9 +651,9 @@ div.news > div:after {
     margin: 0;
   }
   svg {
-    left: -13px;
+    left: -16px;
     position: absolute;
-    top: -11px;
+    top: -12px;
     transition: transform 500ms;
     width: 46px;
   }
@@ -697,8 +700,9 @@ div.news > div:after {
   margin-top: 45px;
   h3 {
     font-size: 25px;
-    color: #4e4e4e;
-    font-family: $lobsterregular;
+    color: #0066b2;
+    text-transform: uppercase;
+    font-family: $montserrat-bold;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
