@@ -2733,10 +2733,12 @@ html {
   background-position: right; }
   .header-logo .logo {
     text-align: left; }
+  .header-logo .logo-text {
+    display: inline-block;
+    font-family: "Montserrat-Medium", "Roboto", sans-serif; }
   .header-logo span {
-    padding: 0px 20px;
+    padding: 0px 40px;
     color: #0066b2;
-    font-weight: bold;
     font-size: 25px; }
 
 .nav-wrap {
@@ -2879,7 +2881,7 @@ html {
     /* Cell orientation */
     /* Cell background colors */ }
     .art-navigation .content span {
-      display: inline-block;
+      display: block;
       padding-top: 10px; }
     .art-navigation .content .circle-container {
       position: relative;
@@ -2930,23 +2932,23 @@ html {
     .art-navigation .content .circle-container li > svg {
       height: 40px; }
     .art-navigation .content .circle-container li > svg#Capa_1 {
-      -webkit-transform: rotate(-128deg) translate(9em) rotate(70deg);
-              transform: rotate(-128deg) translate(9em) rotate(70deg); }
+      -webkit-transform: rotate(-128deg) translate(122px) rotate(75deg);
+              transform: rotate(-128deg) translate(122px) rotate(75deg); }
     .art-navigation .content .circle-container li > svg#Capa_2 {
-      -webkit-transform: rotate(-90deg) translate(11em) rotate(90deg);
-              transform: rotate(-90deg) translate(11em) rotate(90deg); }
+      -webkit-transform: rotate(-89deg) translate(152px) rotate(90deg);
+              transform: rotate(-89deg) translate(152px) rotate(90deg); }
     .art-navigation .content .circle-container li > svg#Capa_3 {
-      -webkit-transform: rotate(-50deg) translate(10em) rotate(105deg);
-              transform: rotate(-50deg) translate(10em) rotate(105deg); }
+      -webkit-transform: rotate(-53deg) translate(136px) rotate(112deg);
+              transform: rotate(-53deg) translate(136px) rotate(112deg); }
     .art-navigation .content .circle-container li > svg#Capa_4 {
-      -webkit-transform: rotate(-10deg) translate(6em) rotate(130deg);
-              transform: rotate(-10deg) translate(6em) rotate(130deg); }
+      -webkit-transform: rotate(-10deg) translate(84px) rotate(130deg);
+              transform: rotate(-10deg) translate(84px) rotate(130deg); }
     .art-navigation .content .circle-container li > svg#Capa_5 {
-      -webkit-transform: rotate(90deg) translate(2em) rotate(90deg);
-              transform: rotate(90deg) translate(2em) rotate(90deg); }
+      -webkit-transform: rotate(87deg) translate(28px) rotate(90deg);
+              transform: rotate(87deg) translate(28px) rotate(90deg); }
     .art-navigation .content .circle-container li > svg#Capa_6 {
-      -webkit-transform: rotate(10deg) translate(-6em) rotate(-132deg);
-              transform: rotate(10deg) translate(-6em) rotate(-132deg); }
+      -webkit-transform: rotate(14deg) translate(-70px) rotate(-132deg);
+              transform: rotate(14deg) translate(-70px) rotate(-132deg); }
     .art-navigation .content .circle-container li img {
       -webkit-transform: scale(1.25);
               transform: scale(1.25); }
@@ -2963,23 +2965,24 @@ html {
       background-repeat: no-repeat;
       text-align: center;
       border-radius: 50%;
-      width: 120px;
-      height: 112px;
-      -webkit-box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 10px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
-              box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 10px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1); }
+      width: 104px;
+      height: 95px;
+      -webkit-box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 8px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
+              box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 8px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1); }
     .art-navigation .content .circle, .art-navigation .content .circle:before, .art-navigation .content .circle:after {
       border-radius: 50%; }
     .art-navigation .content .menunav {
       position: relative;
-      margin: auto; }
+      margin: auto;
+      top: 40px; }
     .art-navigation .content .menunav ul.abc {
-      position: relative;
+      position: absolute;
       padding: 95px;
       max-width: 0;
       max-height: 0;
       list-style: none;
-      top: -420px;
-      left: 8px;
+      top: 185px;
+      left: 468px;
       margin: auto; }
     .art-navigation .content .menunav li {
       position: absolute; }
@@ -2993,23 +2996,23 @@ html {
       -webkit-transform-origin: 100% 100%;
               transform-origin: 100% 100%; }
     .art-navigation .content .coconut {
-      -webkit-transform: rotate(0deg) skewX(40deg);
-              transform: rotate(0deg) skewX(40deg); }
+      -webkit-transform: rotate(5deg) skewX(40deg);
+              transform: rotate(5deg) skewX(40deg); }
     .art-navigation .content .vanilla {
-      -webkit-transform: rotate(60deg) skewX(40deg);
-              transform: rotate(60deg) skewX(40deg); }
+      -webkit-transform: rotate(65deg) skewX(40deg);
+              transform: rotate(65deg) skewX(40deg); }
     .art-navigation .content .orange {
-      -webkit-transform: rotate(120deg) skewX(40deg);
-              transform: rotate(120deg) skewX(40deg); }
+      -webkit-transform: rotate(125deg) skewX(40deg);
+              transform: rotate(125deg) skewX(40deg); }
     .art-navigation .content .almond {
-      -webkit-transform: rotate(180deg) skewX(40deg);
-              transform: rotate(180deg) skewX(40deg); }
+      -webkit-transform: rotate(185deg) skewX(40deg);
+              transform: rotate(185deg) skewX(40deg); }
     .art-navigation .content .grape {
-      -webkit-transform: rotate(240deg) skewX(40deg);
-              transform: rotate(240deg) skewX(40deg); }
+      -webkit-transform: rotate(245deg) skewX(40deg);
+              transform: rotate(245deg) skewX(40deg); }
     .art-navigation .content .cherry {
-      -webkit-transform: rotate(300deg) skewX(40deg);
-              transform: rotate(300deg) skewX(40deg); }
+      -webkit-transform: rotate(305deg) skewX(40deg);
+              transform: rotate(305deg) skewX(40deg); }
     .art-navigation .content .menunav label {
       cursor: pointer; }
     .art-navigation .content .slice label {
@@ -3089,9 +3092,8 @@ html {
   margin-top: 60px;
   margin-bottom: 60px; }
   .new-product .header-filter {
-    background-color: #0066b2;
     padding: 20px 0;
-    color: #fff; }
+    color: #666666; }
     .new-product .header-filter .select-hidden {
       display: none;
       visibility: hidden;
@@ -3101,7 +3103,7 @@ html {
       display: inline-block;
       position: relative;
       font-size: 14px;
-      color: #fff;
+      color: #666666;
       width: 145px;
       top: -2px; }
     .new-product .header-filter .select-styled {
@@ -3113,7 +3115,7 @@ html {
       width: 0;
       height: 0;
       border: 5px solid transparent;
-      border-color: #fff transparent transparent transparent;
+      border-color: #666 transparent transparent transparent;
       position: absolute;
       top: 8px;
       right: 10px; }
@@ -3148,13 +3150,13 @@ html {
       display: inline-block;
       padding: 0 20px; }
       .new-product .header-filter li:hover {
-        background-color: #fff;
+        background-color: #0066b2;
         border-radius: 15px;
-        color: #0066b2; }
+        color: #fff; }
     .new-product .header-filter .active {
-      background-color: #fff;
+      background-color: #0066b2;
       border-radius: 15px;
-      color: #0066b2; }
+      color: #fff; }
   .new-product .img-content {
     margin-top: 40px;
     position: relative; }
@@ -3307,7 +3309,7 @@ div.news > div:after {
   width: 100%;
   height: 77px;
   bottom: 0;
-  background-color: #012046;
+  background-color: #0066b2;
   color: #fff;
   z-index: 999; }
   .mb-online .hotline {
@@ -3350,7 +3352,7 @@ div.news > div:after {
           padding-right: 5px; }
       .mb-online .person .contact-person .name {
         font-weight: bold;
-        color: #0066b2; }
+        color: #fff; }
 
 .blog-list .content-wrap {
   border: 1px solid #e4e4e4; }
@@ -4946,8 +4948,26 @@ div.news > div:after {
       .nav-wrap .subs:before {
         padding-top: 10px; }
   .new-product .img-content .overlay .overlay-content {
-    font-size: 10px; } }
+    font-size: 10px; }
+  .art-navigation .content .menunav ul.abc {
+    position: absolute;
+    padding: 95px;
+    max-width: 0;
+    max-height: 0;
+    list-style: none;
+    top: 185px;
+    left: 378px;
+    margin: auto; } }
   @media only screen and (max-width: 991px) {
+  .art-navigation .content .menunav ul.abc {
+    position: absolute;
+    padding: 95px;
+    max-width: 0;
+    max-height: 0;
+    list-style: none;
+    top: 185px;
+    left: 258px;
+    margin: auto; }
   .nav-wrap .mainnav > li {
     padding: 5px 10px; }
   .contact-info h3 {
@@ -4977,7 +4997,8 @@ div.news > div:after {
     .new-product .header-filter .select-styled:active:after, .new-product .header-filter .select-styled.active:after {
       top: 0px; }
     .new-product .header-filter .select-styled:after {
-      top: 6px; }
+      top: 6px;
+      right: -2px; }
   .news .info-content .title, .blog-list .info-content .title {
     font-size: 18px; }
   .news .info-content p, .blog-list .info-content p {
@@ -5057,6 +5078,8 @@ div.news > div:after {
   .art-navigation .content .circle-container > * {
     width: 4em;
     height: 4em; }
+  .art-navigation .content .circle-container li > svg {
+    height: 30px; }
   .art-navigation .content .circle-container > :nth-of-type(1) {
     -webkit-transform: rotate(30deg) translate(12em) rotate(-30deg);
             transform: rotate(30deg) translate(12em) rotate(-30deg); }
@@ -5076,23 +5099,23 @@ div.news > div:after {
     -webkit-transform: rotate(330deg) translate(12em) rotate(-330deg);
             transform: rotate(330deg) translate(12em) rotate(-330deg); }
   .art-navigation .content .circle-container li > svg#Capa_1 {
-    -webkit-transform: rotate(-120deg) translate(102px) rotate(65deg);
-            transform: rotate(-120deg) translate(102px) rotate(65deg); }
+    -webkit-transform: rotate(-130deg) translate(90px) rotate(74deg);
+            transform: rotate(-130deg) translate(90px) rotate(74deg); }
   .art-navigation .content .circle-container li > svg#Capa_2 {
-    -webkit-transform: rotate(-90deg) translate(115px) rotate(90deg);
-            transform: rotate(-90deg) translate(115px) rotate(90deg); }
+    -webkit-transform: rotate(-90deg) translate(108px) rotate(90deg);
+            transform: rotate(-90deg) translate(108px) rotate(90deg); }
   .art-navigation .content .circle-container li > svg#Capa_3 {
-    -webkit-transform: rotate(-56deg) translate(98px) rotate(115deg);
-            transform: rotate(-56deg) translate(98px) rotate(115deg); }
+    -webkit-transform: rotate(-54deg) translate(96px) rotate(115deg);
+            transform: rotate(-54deg) translate(96px) rotate(115deg); }
   .art-navigation .content .circle-container li > svg#Capa_4 {
-    -webkit-transform: rotate(-20deg) translate(56px) rotate(140deg);
-            transform: rotate(-20deg) translate(56px) rotate(140deg); }
+    -webkit-transform: rotate(-10deg) translate(60px) rotate(130deg);
+            transform: rotate(-10deg) translate(60px) rotate(130deg); }
   .art-navigation .content .circle-container li > svg#Capa_5 {
-    -webkit-transform: rotate(90deg) translate(15px) rotate(90deg);
-            transform: rotate(90deg) translate(15px) rotate(90deg); }
+    -webkit-transform: rotate(88deg) translate(25px) rotate(90deg);
+            transform: rotate(88deg) translate(25px) rotate(90deg); }
   .art-navigation .content .circle-container li > svg#Capa_6 {
-    -webkit-transform: rotate(18deg) translate(-54px) rotate(-138deg);
-            transform: rotate(18deg) translate(-54px) rotate(-138deg); }
+    -webkit-transform: rotate(12deg) translate(-55px) rotate(-128deg);
+            transform: rotate(12deg) translate(-55px) rotate(-128deg); }
   .art-navigation .content .circle-container li a .overlay {
     width: 80px;
     height: 70px;
@@ -5101,13 +5124,13 @@ div.news > div:after {
   .art-navigation .content .menunav {
     overflow: auto; }
   .art-navigation .content .menunav ul.abc {
-    position: relative;
+    position: absolute;
     padding: 80px;
     max-width: 0;
     max-height: 0;
     list-style: none;
-    top: -380px;
-    left: 20px;
+    top: 194px;
+    left: 196px;
     margin: auto; } }
   @media only screen and (max-width: 575px) {
   body {
@@ -5141,16 +5164,6 @@ div.news > div:after {
     .header-logo .logo .trust {
       padding-right: 6px;
       padding-left: 10px; } }
-  @media only screen and (max-width: 425px) {
-  .art-navigation .content .menunav ul.abc {
-    position: relative;
-    padding: 80px;
-    max-width: 0;
-    max-height: 0;
-    list-style: none;
-    top: -380px;
-    left: 75px;
-    margin: auto; } }
   @media only screen and (min-width: 321px) and (max-width: 375px) {
   .mb-online .con-person {
     padding: 6px 0; }
@@ -5161,16 +5174,7 @@ div.news > div:after {
   .mb-online .person .contact-person {
     float: left;
     font-size: 10px;
-    padding-left: 0px; }
-  .art-navigation .content .menunav ul.abc {
-    position: relative;
-    padding: 80px;
-    max-width: 0;
-    max-height: 0;
-    list-style: none;
-    top: -380px;
-    left: 100px;
-    margin: auto; } }
+    padding-left: 0px; } }
   @media only screen and (max-width: 320px) {
   .mb-online .con-person {
     padding: 6px 0; }
@@ -5181,13 +5185,4 @@ div.news > div:after {
   .mb-online .person .contact-person {
     float: left;
     font-size: 10px;
-    padding-left: 5px; }
-  .art-navigation .content .menunav ul.abc {
-    position: relative;
-    padding: 80px;
-    max-width: 0;
-    max-height: 0;
-    list-style: none;
-    top: -380px;
-    left: 45%;
-    margin: auto; } }
+    padding-left: 5px; } }

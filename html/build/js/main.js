@@ -112,7 +112,7 @@ $(document).ready(function(){
       $(".filter-list li").removeClass("active");
       $(this).addClass("active");
 
-      if(filter=="vi"){
+      if(filter=="all"){
         $("[data-filter]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
         if($(".swiper1 .swiper-slide").length > 6)
           slidesxcol = 3;
@@ -171,25 +171,6 @@ $(document).ready(function(){
         });
       }
     });
-
-    //QA filter
-    // $(".qa-wrap li").on('click', (function(event){
-    //   var target = $( event.target );
-    //   $(".qa-wrap li").removeClass("active");
-    //   $(this).addClass("active");
-
-    //   var filter = $(this).attr("value");
-
-    //   if(target.is ("li")){
-    //     $(".QA-content .wrap").filter(function(){
-
-    //     console.log("ádasdasdasd " + filter);
-    //       return $(this).data("filter").split(",").indexOf(filter) == -1;
-    //     }).hide();
-    //   } else {
-    //     $(".QA-content .wrap").show();
-    //   }
-    // }));
 
     $(".qa-wrap li").on('click', function() {
       var filter = $(this).attr("value");

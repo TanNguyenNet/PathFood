@@ -16,10 +16,14 @@
   .logo {
     text-align: left;
   }
+  .logo-text {
+    display: inline-block;
+    font-family: $montserrat-medium;
+  }
   span {
-    padding: 0px 20px;
+    padding: 0px 40px;
     color: #0066b2;
-    font-weight: bold;
+    // font-weight: bold;
     font-size: 25px;
   }
 }

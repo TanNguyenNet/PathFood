@@ -83,8 +83,36 @@
       }
     }
   }
+
+  .art-navigation {
+    .content {
+      .menunav ul.abc {
+        position: absolute;
+        padding: 95px;
+        max-width: 0; max-height: 0;
+        list-style: none;
+        top: 185px;
+        left: 378px;
+        margin: auto;
+      }
+    }
+  }
+
 }
 @media only screen and (max-width : 991px) {
+  .art-navigation {
+    .content {
+      .menunav ul.abc {
+        position: absolute;
+        padding: 95px;
+        max-width: 0; max-height: 0;
+        list-style: none;
+        top: 185px;
+        left: 258px;
+        margin: auto;
+      }
+    }
+  }
   .nav-wrap {
     .mainnav > li {
       padding: 5px 10px;
@@ -132,6 +160,7 @@
       }
       .select-styled:after {
         top: 6px;
+        right: -2px;
       }
     }
   }
@@ -274,6 +303,9 @@
         width: 4em;
         height: 4em;
       }
+      .circle-container li > svg {
+        height: 30px;
+      }
       .circle-container > :nth-of-type(1) {
         transform: rotate(30deg) translate(12em) rotate(-30deg);
       }
@@ -294,22 +326,22 @@
       }
 
       .circle-container li > svg#Capa_1 {
-        transform: rotate(-120deg) translate(102px) rotate(65deg);
+        transform: rotate(-130deg) translate(90px) rotate(74deg);
       }
       .circle-container li > svg#Capa_2 {
-        transform: rotate(-90deg) translate(115px) rotate(90deg);
+        transform: rotate(-90deg) translate(108px) rotate(90deg);
       }
       .circle-container li > svg#Capa_3 {
-        transform: rotate(-56deg) translate(98px) rotate(115deg);
+        transform: rotate(-54deg) translate(96px) rotate(115deg);
       }
       .circle-container li > svg#Capa_4 {
-        transform: rotate(-20deg) translate(56px) rotate(140deg);
+        transform: rotate(-10deg) translate(60px) rotate(130deg);
       }
       .circle-container li > svg#Capa_5 {
-        transform: rotate(90deg) translate(15px) rotate(90deg);
+        transform: rotate(88deg) translate(25px) rotate(90deg);
       }
       .circle-container li > svg#Capa_6 {
-        transform: rotate(18deg) translate(-54px) rotate(-138deg);
+        transform: rotate(12deg) translate(-55px) rotate(-128deg);
       }
       .circle-container li a .overlay {
         width: 80px;
@@ -320,12 +352,12 @@
         overflow: auto;
       }
       .menunav ul.abc {
-        position: relative;
+        position: absolute;
         padding: 80px;
         max-width: 0; max-height: 0;
         list-style: none;
-        top: -380px;
-        left: 20px;
+        top: 194px;
+        left: 196px;
         margin: auto;
       }
     }
@@ -390,19 +422,19 @@
 }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 425px) {
-  .art-navigation {
-    .content {
-      .menunav ul.abc {
-        position: relative;
-        padding: 80px;
-        max-width: 0; max-height: 0;
-        list-style: none;
-        top: -380px;
-        left: 75px;
-        margin: auto;
-      }
-    }
-  }
+  // .art-navigation {
+  //   .content {
+  //     .menunav ul.abc {
+  //       position: relative;
+  //       padding: 80px;
+  //       max-width: 0; max-height: 0;
+  //       list-style: none;
+  //       top: -380px;
+  //       left: 75px;
+  //       margin: auto;
+  //     }
+  //   }
+  // }
 }
 @media only screen and (min-width: 321px) and (max-width : 375px) {
   .mb-online {
@@ -422,19 +454,19 @@
       }
     }
   }
-  .art-navigation {
-    .content {
-      .menunav ul.abc {
-        position: relative;
-        padding: 80px;
-        max-width: 0; max-height: 0;
-        list-style: none;
-        top: -380px;
-        left: 100px;
-        margin: auto;
-      }
-    }
-  }
+  // .art-navigation {
+  //   .content {
+  //     .menunav ul.abc {
+  //       position: relative;
+  //       padding: 80px;
+  //       max-width: 0; max-height: 0;
+  //       list-style: none;
+  //       top: -380px;
+  //       left: 100px;
+  //       margin: auto;
+  //     }
+  //   }
+  // }
 }
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
@@ -455,17 +487,17 @@
       }
     }
   }
-  .art-navigation {
-    .content {
-      .menunav ul.abc {
-        position: relative;
-        padding: 80px;
-        max-width: 0; max-height: 0;
-        list-style: none;
-        top: -380px;
-        left: 45%;
-        margin: auto;
-      }
-    }
-  }
+  // .art-navigation {
+  //   .content {
+  //     .menunav ul.abc {
+  //       position: relative;
+  //       padding: 80px;
+  //       max-width: 0; max-height: 0;
+  //       list-style: none;
+  //       top: -380px;
+  //       left: 45%;
+  //       margin: auto;
+  //     }
+  //   }
+  // }
 }

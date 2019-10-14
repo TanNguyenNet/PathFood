@@ -35,7 +35,7 @@
   .content {
     text-align: center;
     span {
-      display: inline-block;
+      display: block;
       padding-top: 10px;
     }
     .circle-container {
@@ -93,22 +93,22 @@
       height: 40px;
     }
     .circle-container li > svg#Capa_1 {
-      transform: rotate(-128deg) translate(9em) rotate(70deg);
+      transform: rotate(-128deg) translate(122px) rotate(75deg);
     }
     .circle-container li > svg#Capa_2 {
-      transform: rotate(-90deg) translate(11em) rotate(90deg);
+      transform: rotate(-89deg) translate(152px) rotate(90deg);
     }
     .circle-container li > svg#Capa_3 {
-      transform: rotate(-50deg) translate(10em) rotate(105deg);
+      transform: rotate(-53deg) translate(136px) rotate(112deg);
     }
     .circle-container li > svg#Capa_4 {
-      transform: rotate(-10deg) translate(6em) rotate(130deg);
+      transform: rotate(-10deg) translate(84px) rotate(130deg);
     }
     .circle-container li > svg#Capa_5 {
-      transform: rotate(90deg) translate(2em) rotate(90deg)
+      transform: rotate(87deg) translate(28px) rotate(90deg)
     }
     .circle-container li > svg#Capa_6 {
-      transform: rotate(10deg) translate(-6em) rotate(-132deg);
+      transform: rotate(14deg) translate(-70px) rotate(-132deg);
     }
     .circle-container li img {
       transform: scale(1.25);
@@ -127,9 +127,9 @@
       background-repeat: no-repeat;
       text-align: center;
       border-radius: 50%;
-      width: 120px;
-      height: 112px;
-      box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 10px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
+      width: 104px;
+      height: 95px;
+      box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 8px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
     }
     // wheel menu
     .circle, .circle:before, .circle:after { border-radius: 50%; }
@@ -137,14 +137,15 @@
       position: relative;
       margin:auto;
       // min-width: 10em; width: 50%; max-width: 12em;
+      top: 40px;
     }
     .menunav ul.abc {
-      position: relative;
+      position: absolute;
       padding: 95px;
       max-width: 0; max-height: 0;
       list-style: none;
-      top: -420px;
-      left: 8px;
+      top: 185px;
+      left: 468px;
       margin: auto;
     }
     .menunav li {
@@ -158,12 +159,12 @@
       transform-origin: 100% 100%;
     }
     /* Cell orientation */
-    .coconut { transform: rotate(0deg) skewX(40deg); }
-    .vanilla { transform: rotate(60deg) skewX(40deg); }
-    .orange { transform: rotate(120deg) skewX(40deg); }
-    .almond { transform: rotate(180deg) skewX(40deg); }
-    .grape { transform: rotate(240deg) skewX(40deg); }
-    .cherry { transform: rotate(300deg) skewX(40deg); }
+    .coconut { transform: rotate(5deg) skewX(40deg); }
+    .vanilla { transform: rotate(65deg) skewX(40deg); }
+    .orange { transform: rotate(125deg) skewX(40deg); }
+    .almond { transform: rotate(185deg) skewX(40deg); }
+    .grape { transform: rotate(245deg) skewX(40deg); }
+    .cherry { transform: rotate(305deg) skewX(40deg); }
     .menunav label { cursor: pointer; }
     .slice label {
       display: block;
@@ -261,9 +262,9 @@
   margin-top: 60px;
   margin-bottom: 60px;
   .header-filter {
-    background-color: #0066b2;
+    // background-color: #0066b2;
     padding: 20px 0;
-    color: $white;
+    color: #666666;
     .select-hidden {
       display: none;
       visibility: hidden;
@@ -275,7 +276,7 @@
       display: inline-block;
       position: relative;
       font-size: 14px;
-      color: #fff;
+      color: #666666;
       width: 145px;
       top: -2px;
     }
@@ -298,7 +299,7 @@
       width: 0;
       height: 0;
       border: 5px solid transparent;
-      border-color: #fff transparent transparent transparent;
+      border-color: #666 transparent transparent transparent;
       position: absolute;
       top: 8px;
       right: 10px;
@@ -350,15 +351,15 @@
       display: inline-block;
       padding: 0 20px;
       &:hover {
-        background-color: $white;
+        background-color: #0066b2;
         border-radius: 15px;
-        color: #0066b2;
+        color: $white;
       }
     }
     .active {
-      background-color: $white;
+      background-color: #0066b2;
       border-radius: 15px;
-      color: #0066b2
+      color: $white;
     }
   }
   .img-content {
@@ -557,7 +558,7 @@ div.news > div:after {
   width: 100%;
   height: 77px;
   bottom: 0;
-  background-color: #012046;
+  background-color: #0066b2;
   color: $white;
   z-index: 999;
   .hotline {
@@ -607,7 +608,7 @@ div.news > div:after {
       }
       .name {
         font-weight: bold;
-        color: #0066b2;
+        color: #fff;
       }
     }
   }
