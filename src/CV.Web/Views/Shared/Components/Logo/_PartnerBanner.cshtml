@@ -1,17 +1,12 @@
-﻿<div class="box mt45">
+﻿@model IEnumerable<WebImageModel>
+<div class="box mt45">
     <div class="partner">
         <div class="swiper-container swiper2">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="~/client/images/p1.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p2.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p3.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p4.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p5.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p1.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p2.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p3.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p4.png" alt="slider 1"></div>
-                <div class="swiper-slide"><img src="~/client/images/p5.png" alt="slider 1"></div>
+                @foreach (var item in Model)
+                {
+                    <div class="swiper-slide"><img src="@item.URLImage" alt="@item.Name"></div>
+                }
             </div>
         </div>
     </div>

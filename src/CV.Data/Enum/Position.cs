@@ -8,7 +8,7 @@ namespace CV.Data.Enum
     public enum Position
     {
 
-        [Display(Name = "Hình trang chủ")]
+        [Display(Name = "Hình slide trang chủ")]
         HomeSlide,
 
         [Display(Name = "Logo")]

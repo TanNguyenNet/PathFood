@@ -42,9 +42,12 @@ namespace CV.Service.Setting
             }
         }
 
-        public IEnumerable<WebImageModel> GetAll()
+        public IEnumerable<WebImageModel> GetAll(Position? position = null)
         {
             var query = _webImageRepo.TableNoTracking;
+
+            if (position != null)
+                query = query.Where(x => x.Position == position.Value);
 
             return query.ProjectTo<WebImageModel>(_mapper.ConfigurationProvider).ToList();
         }
@@ -61,7 +64,7 @@ namespace CV.Service.Setting
             return _mapper.Map<WebImageModel>(query);
         }
 
-    public WebImageModel Insert(string userCurrent, WebImageModel webImage)
+        public WebImageModel Insert(string userCurrent, WebImageModel webImage)
         {
             try
             {

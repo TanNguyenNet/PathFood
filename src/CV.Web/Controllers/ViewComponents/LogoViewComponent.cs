@@ -14,5 +14,11 @@ namespace CV.Web.Controllers.ViewComponents
         {
             _webImageService = webImageService;
         }
+
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var model = await Task.Run(() => Task.Run(() => _webImageService.GetAll(Data.Enum.Position.Logo)));
+            return View("_PartnerBanner", model);
+        }
     }
 }
