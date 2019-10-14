@@ -17,7 +17,7 @@ var app = new Vue({
         objModel: {
             name: {
                 required,
-                minLength: minLength(3)
+                minLength: minLength(1)
             }
         }
     },

@@ -3,10 +3,12 @@ using CV.Data.Entities.Blog;
 using CV.Data.Entities.Catalog;
 using CV.Data.Entities.FAQ;
 using CV.Data.Entities.Identity;
+using CV.Data.Entities.Setting;
 using CV.Data.Model.Blog;
 using CV.Data.Model.Catalog;
 using CV.Data.Model.FAQ;
 using CV.Data.Model.Identity;
+using CV.Data.Model.Setting;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -37,6 +39,8 @@ namespace CV.Service.Mapper
             CreateMap<CatalogFunction, CatalogFunctionModel>().MaxDepth(2);
 
             CreateMap<CatalogSector, CatalogSectorModel>().MaxDepth(2);
+
+            CreateMap<WebImage, WebImageModel>();
         }
     }
 }

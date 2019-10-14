@@ -13,9 +13,7 @@
 
     @RenderBody()
 
-    @{
-        await Html.RenderPartialAsync("_PartnerBanner").ConfigureAwait(true);
-    }
+    @await Component.InvokeAsync("Logo")
 
     @{
         await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);

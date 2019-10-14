@@ -44,6 +44,8 @@ namespace CV.Web.Extension
 
             services.AddTransient<IQuestionService, QuestionService>();
 
+            services.AddTransient<IWebImageService, WebImageService>();
+
         }
     }
 }

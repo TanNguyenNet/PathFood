@@ -9,6 +9,8 @@ namespace CV.Service.Interface.Setting
     {
         IEnumerable<WebImageModel> GetAll();
 
+        WebImageModel GetImage(string id);
+
         IEnumerable<dynamic> GetAllPosition();
 
         WebImageModel Insert(string userCurrent, WebImageModel webImage);

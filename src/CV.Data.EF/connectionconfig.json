@@ -1,6 +1,6 @@
 ﻿{
   "ConnectionStrings": {
-    "Development": "Data Source=localhost,1433;Initial Catalog=Pathfood;User ID=sa;Password=Password123;Trusted_Connection=False;MultipleActiveResultSets=True",
+    "Development": "Data Source=61.14.233.59,1433;Initial Catalog=path;User ID=path;Password=123456;Trusted_Connection=False;MultipleActiveResultSets=True",
     "CODE": "Data Source=localhost;Initial Catalog=Pathfood;User ID=vlxd;Password=123456;Trusted_Connection=False;MultipleActiveResultSets=True"
   }
 }

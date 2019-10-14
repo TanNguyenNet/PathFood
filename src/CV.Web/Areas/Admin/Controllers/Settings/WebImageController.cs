@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CV.Web.Areas.Admin.Controllers.Settings
 {
-    public class WebImageController : Controller
+    public class WebImageController : BaseController
     {
         public IActionResult Index()
         {
@@ -18,8 +18,9 @@ namespace CV.Web.Areas.Admin.Controllers.Settings
             return View();
         }
 
-        public IActionResult Update()
+        public IActionResult Update(string id)
         {
+            ViewBag.imageId = id;
             return View();
         }
 

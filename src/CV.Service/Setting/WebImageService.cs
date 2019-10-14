@@ -55,7 +55,13 @@ namespace CV.Service.Setting
             return list;
         }
 
-        public WebImageModel Insert(string userCurrent, WebImageModel webImage)
+        public WebImageModel GetImage(string id)
+        {
+            var query = _webImageRepo.GetById(id);
+            return _mapper.Map<WebImageModel>(query);
+        }
+
+    public WebImageModel Insert(string userCurrent, WebImageModel webImage)
         {
             try
             {

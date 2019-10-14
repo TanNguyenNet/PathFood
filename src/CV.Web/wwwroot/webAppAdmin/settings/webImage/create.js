@@ -8,7 +8,7 @@ var app = new Vue({
             objModel: {
                 urlImage: "",
                 url: "",
-                Position: 1,
+                position: 1,
                 lang: 1
             },
             positions: []
@@ -16,10 +16,7 @@ var app = new Vue({
     },
     validations: {
         objModel: {
-            name: {
-                required,
-                minLength: minLength(3)
-            }
+            
         }
     },
     methods: {

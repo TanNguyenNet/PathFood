@@ -14,11 +14,11 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Catalog</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Settings</a></li>
                             <li class="breadcrumb-item active">Catalog Function</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Nhóm lĩnh vực</h4>
+                    <h4 class="page-title">Hình ảnh</h4>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-                                <a asp-area="admin" asp-controller="catalogFunction" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Tạo nhóm chức năng</a>
+                                <a asp-area="admin" asp-controller="webImage" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Thêm image</a>
                             </div>
                         </div>
 
@@ -40,8 +40,7 @@
                                 <thead>
                                     <tr>
                                         <th>Hình</th>
-                                        <th>Tên</th>
-                                        <th>Hiển thị</th>
+                                        <th>URL</th>
                                         <th style="width: 85px;">Action</th>
                                     </tr>
                                 </thead>
@@ -51,15 +50,10 @@
                                             <img :src="item.urlImage" alt="table-user" class="mr-2 rounded-circle">
                                         </td>
                                         <td>
-                                            <a :href="'/admin/catalogFunction/update/' + item.id">{{item.name}}</a>
+                                            <a :href="'/admin/webImage/update/' + item.id">{{item.url}}</a>
                                         </td>
                                         <td>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" id="customCheck2" v-model="item.active" disabled>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a :href="'/admin/catalogFunction/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            <a :href="'/admin/webImage/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
                                             <a v-on:click="deleteItem(item.id)" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
