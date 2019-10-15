@@ -18,50 +18,50 @@ $(document).ready(function(){
     });
     $('header .mobile-menu').meanmenu();
 
-    $('select').each(function(){
-      var $this = $(this), numberOfOptions = $(this).children('option').length;
+    // $('select').each(function(){
+    //   var $this = $(this), numberOfOptions = $(this).children('option').length;
 
-      $this.addClass('select-hidden');
-      $this.wrap('<div class="select"></div>');
-      $this.after('<div class="select-styled"></div>');
+    //   $this.addClass('select-hidden');
+    //   $this.wrap('<div class="select"></div>');
+    //   $this.after('<div class="select-styled"></div>');
 
-      var $styledSelect = $this.next('div.select-styled');
-      $styledSelect.text($this.children('option').eq(0).text());
+    //   var $styledSelect = $this.next('div.select-styled');
+    //   $styledSelect.text($this.children('option').eq(0).text());
 
-      var $list = $('<ul />', {
-          'class': 'select-options'
-      }).insertAfter($styledSelect);
+    //   var $list = $('<ul />', {
+    //       'class': 'select-options'
+    //   }).insertAfter($styledSelect);
 
-      for (var i = 0; i < numberOfOptions; i++) {
-          $('<li />', {
-              text: $this.children('option').eq(i).text(),
-              rel: $this.children('option').eq(i).val()
-          }).appendTo($list);
-      }
+    //   for (var i = 0; i < numberOfOptions; i++) {
+    //       $('<li />', {
+    //           text: $this.children('option').eq(i).text(),
+    //           rel: $this.children('option').eq(i).val()
+    //       }).appendTo($list);
+    //   }
 
-      var $listItems = $list.children('li');
+    //   var $listItems = $list.children('li');
 
-      $styledSelect.click(function(e) {
-          e.stopPropagation();
-          $('div.select-styled.active').not(this).each(function(){
-              $(this).removeClass('active').next('ul.select-options').hide();
-          });
-          $(this).toggleClass('active').next('ul.select-options').toggle();
-      });
+    //   $styledSelect.click(function(e) {
+    //       e.stopPropagation();
+    //       $('div.select-styled.active').not(this).each(function(){
+    //           $(this).removeClass('active').next('ul.select-options').hide();
+    //       });
+    //       $(this).toggleClass('active').next('ul.select-options').toggle();
+    //   });
 
-      $listItems.click(function(e) {
-          e.stopPropagation();
-          $styledSelect.text($(this).text()).removeClass('active');
-          $this.val($(this).attr('rel'));
-          $list.hide();
-          //console.log($this.val());
-      });
+    //   $listItems.click(function(e) {
+    //       e.stopPropagation();
+    //       $styledSelect.text($(this).text()).removeClass('active');
+    //       $this.val($(this).attr('rel'));
+    //       $list.hide();
+    //       //console.log($this.val());
+    //   });
 
-      $(document).click(function() {
-          $styledSelect.removeClass('active');
-          $list.hide();
-      });
-    });
+    //   $(document).click(function() {
+    //       $styledSelect.removeClass('active');
+    //       $list.hide();
+    //   });
+    // });
     //pagination
 
     var c = document.querySelector('.pagination');
@@ -83,7 +83,24 @@ $(document).ready(function(){
         cur = i;
       });
     });
-
+    // new product selection
+    $('#pr-option').on("change", function(){
+      var opVal = $(this).val();
+      if (opVal == 2) {
+        // $(".new-product ul").removeClass("display-product");
+        $("[data-change='"+opVal+"']").removeClass("non-display-product").addClass("display-product");
+        $("[data-change='"+1+"']").removeClass("display-product").addClass("non-display-product");
+        $(".new-product .function").removeClass("non-display-product").addClass("display-product");
+        $(".new-product .field").removeClass("display-product").addClass("non-display-product");
+        // $(".new-product ul").addClass("display-product");
+      }else {
+        // $(".new-product ul").removeClass("display-product");
+        $("[data-change='"+opVal+"']").removeClass("non-display-product").addClass("display-product");
+         $("[data-change='"+2+"']").removeClass("display-product").addClass("non-display-product");
+         $(".new-product .field").removeClass("non-display-product").addClass("display-product");
+        $(".new-product .function").removeClass("display-product").addClass("non-display-product");
+      }
+    });
     var swiper1 = new Swiper('.swiper1', {
       slidesPerView: 4,
       slidesPerColumn: 1,

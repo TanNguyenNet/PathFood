@@ -3157,6 +3157,12 @@
        background-color: #0066b2;
        border-radius: 15px;
        color: #fff; }
+       .new-product .display-product {
+        display: block;
+       }
+       .new-product .non-display-product {
+        display: none;
+       }
    .new-product .img-content {
      margin-top: 40px;
      position: relative; }
