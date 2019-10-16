@@ -37,6 +37,7 @@
                                     <tr>
                                         <th>Tên</th>
                                         <th>Mô tả</th>
+                                        <th>Sản phẩm mới</th>
                                         <th style="width: 85px;">Action</th>
                                     </tr>
                                 </thead>
@@ -47,6 +48,11 @@
                                         </td>
                                         <td>
                                             {{item.description}}
+                                        </td>
+                                        <td class="table-user">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="newCheck" v-model="item.new" disabled>
+                                            </div>
                                         </td>
                                         <td>
                                             <a :href="'/admin/product/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>

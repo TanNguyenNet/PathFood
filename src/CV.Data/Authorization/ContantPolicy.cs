@@ -6,11 +6,6 @@ namespace CV.Data.Authorization
 {
     public class ContantPolicy
     {
-        public class Users
-        {
-            public static string InsertData = "";
-        }
-
         public class Base
         {
             public const string Read = nameof(Read);
@@ -32,7 +27,7 @@ namespace CV.Data.Authorization
 
             public const string DeleteUserData = nameof(Base.Delete) + nameof(User);
 
-            public string ReadData { set; get; } = "ReadUserData";
+            public const string ReadData = nameof(ReadUserData);
 
             public const string InsertData = nameof(InsertUserData);
 
@@ -40,6 +35,13 @@ namespace CV.Data.Authorization
 
             public const string DeleteData = nameof(DeleteUserData);
 
+        }
+
+        public class Admin
+        {
+            public const string ManageAdminData = nameof(Base.Read) + nameof(Admin);
+
+            public const string AdminData = nameof(ManageAdminData);
         }
     }
 }

@@ -21,10 +21,7 @@ namespace CV.Service.Identity
         {
             var listClaim = new List<Claim>
             {
-                new Claim(nameof(ContantPolicy.User),ContantPolicy.User.ReadUserData),
-                new Claim(nameof(ContantPolicy.User),ContantPolicy.User.UpdateUserData),
-                new Claim(nameof(ContantPolicy.User),ContantPolicy.User.InsertUserData),
-                new Claim(nameof(ContantPolicy.User),ContantPolicy.User.DeleteUserData)
+                new Claim(nameof(ContantPolicy.Admin),ContantPolicy.Admin.ManageAdminData)
             };
 
             return _mapper.Map<IEnumerable<ClaimRequirementModel>>(listClaim);

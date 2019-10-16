@@ -60,5 +60,11 @@ namespace CV.Web.Api.Identity
             return Ok();
         }
 
+        [HttpPut]
+        public IActionResult UpdatePassword(ChangePasswordModel model)
+        {
+            _userIdentityService.ChangePassword(base.UserId, model);
+            return Ok();
+        }
     }
 }

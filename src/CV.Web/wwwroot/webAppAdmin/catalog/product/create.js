@@ -13,6 +13,7 @@ var app = new Vue({
                 catalogSectorId: null,
                 catalogFunctionId: null,
                 active: true,
+                new: false,
                 lang: 1
             },
             catalogSectors: "",

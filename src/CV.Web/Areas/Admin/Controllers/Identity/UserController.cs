@@ -21,22 +21,21 @@ namespace CV.Web.Areas.Admin.Controllers.Identity
         }
 
 
-        public IActionResult Create()
+        //[Authorize(Policy = nameof(ContantPolicy.Admin.ManageAdminData))]
+        public IActionResult Index(int page = 1, int pageSize = 20, string filter = "")
         {
             return View();
         }
 
-        //[HttpPost]
-        //[AutoValidateAntiforgeryToken]
-        //public IActionResult Create(AppUserModel user)
-        //{
-        //    if(ModelState.IsValid)
-        //    {
-        //        var newUser = _userIdentityService.Insert(user);
-        //    }
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
 
-        //    return RedirectToAction("Index");
-        //}
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         public IActionResult Update(string id)
         {
@@ -44,10 +43,6 @@ namespace CV.Web.Areas.Admin.Controllers.Identity
             return View();
         }
 
-        //[Authorize(Policy = nameof(ContantPolicy.User.ReadUserData))]
-        public IActionResult Index(int page = 1, int pageSize = 20, string filter = "")
-        {
-            return View();
-        }
+        
     }
 }

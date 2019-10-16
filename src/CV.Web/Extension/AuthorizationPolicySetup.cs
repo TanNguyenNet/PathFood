@@ -15,8 +15,7 @@ namespace CV.Web.Extension
             if (services == null) throw new ArgumentNullException(nameof(services));
             services.AddAuthorization(options =>
             {
-                options.AddPolicy(nameof(ContantPolicy.User.ReadUserData), policy => policy.Requirements.Add(new ClaimRequirement(nameof(ContantPolicy.User), ContantPolicy.User.ReadUserData)));
-                options.AddPolicy(nameof(ContantPolicy.User.InsertUserData), policy => policy.Requirements.Add(new ClaimRequirement(nameof(ContantPolicy.User), ContantPolicy.User.InsertUserData)));
+                options.AddPolicy(nameof(ContantPolicy.Admin.ManageAdminData), policy => policy.Requirements.Add(new ClaimRequirement(nameof(ContantPolicy.Admin), ContantPolicy.Admin.ManageAdminData)));
             });
         }
     }

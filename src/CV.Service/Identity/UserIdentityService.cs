@@ -29,6 +29,24 @@ namespace CV.Service.Identity
             _mapper = mapper;
         }
 
+        public ChangePasswordModel ChangePassword(string userCurrent, ChangePasswordModel model)
+        {
+            try
+            {
+                var updatePass = _userManager.FindByIdAsync(userCurrent);
+                updatePass.Wait();
+                _userManager.ChangePasswordAsync(updatePass.Result, model.OldPassword, model.NewPassword).Wait();
+
+                return model;
+
+            }
+            catch
+            {
+
+                throw;
+            }
+        }
+
         public PagedResult<AppUserModel> GetAll(int page = 1, int pageSize = 20, string filter = "")
         {
             var query = _userManager.Users.Where(x => x.DeletedDate == null);

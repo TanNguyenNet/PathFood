@@ -11,6 +11,8 @@ namespace CV.Service.Interface.Identity
     {
         AppUserModel GetUser(string id);
 
+        ChangePasswordModel ChangePassword(string userCurrent,ChangePasswordModel model);
+
         PagedResult<AppUserModel> GetAll(int page = 1, int pageSize = 20, string filter = "");
 
         AppUserModel Insert(AppUserModel user);
