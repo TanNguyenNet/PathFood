@@ -329,7 +329,7 @@ body.enlarged {
   background-color: #4a81d4; }
 
 .left-side-menu-dark .left-side-menu {
-  background-color: #38414a;
+  background-color: #0066b2;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-right: 2px solid #3c4650; }
@@ -396,7 +396,7 @@ body.enlarged {
   float: left; }
 
 .navbar-custom {
-  background-color: #38414a;
+  background-color: #0066b2;
   -webkit-box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
           box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
   padding: 0 10px 0 0;
