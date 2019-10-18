@@ -21,10 +21,12 @@ namespace CV.Web.Controllers
 
         [Route(BlogEndpoints.IndexEndpoint)]
         [Route(BlogEndpoints.IndexPagedEndpoint)]
+        [Route(BlogEndpoints.CatPagedEndpoint)]
         [HttpGet]
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(int page = 1, string cat = "")
         {
-            var model = _postService.GetPagedAll(page, 12, publishDate: true, lang: CurrentLang);
+            var model = _postService.GetPagedAll(page, 12, publishDate: true, lang: CurrentLang, cat: cat);
+            ViewBag.cat = cat;
             return View(model);
         }
 

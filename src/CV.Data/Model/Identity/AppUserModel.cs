@@ -23,10 +23,6 @@ namespace CV.Data.Model.Identity
         [Display(Name = "Password")]
         public string Password { set; get; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { set; get; }
 
         [Required]
         [EmailAddress]

@@ -24,6 +24,8 @@ namespace CV.Data.EF
 
         public DbSet<Post> Posts { set; get; }
 
+        public DbSet<PageContent> PageContents { set; get; }
+
         public DbSet<CategoryBlog> CategoryBlogs { set; get; }
 
         public DbSet<GroupQuestion> GroupQuestions { set; get; }
@@ -31,5 +33,8 @@ namespace CV.Data.EF
         public DbSet<Question> Questions { set; get; }
 
         public DbSet<WebImage> WebImages { set; get; }
+
+        public DbSet<Info> Infos { set; get; }
+
     }
 }

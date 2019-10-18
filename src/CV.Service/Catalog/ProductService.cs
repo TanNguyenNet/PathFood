@@ -63,11 +63,14 @@ namespace CV.Service.Catalog
             if (!string.IsNullOrWhiteSpace(sectorId))
                 query = query.Where(x => x.CatalogSectorId == sectorId);
 
+            var rowCount = query.Count();
+            query = query.OrderBy(x=>x.Name).Skip((page - 1) * pageSize).Take(pageSize);
+
             var paginationSet = new PagedResult<ProductModel>()
             {
                 Results = query.ProjectTo<ProductModel>(_mapper.ConfigurationProvider).ToList(),
                 CurrentPage = page,
-                RowCount = query.Count(),
+                RowCount = rowCount,
                 PageSize = pageSize
             };
             return paginationSet;

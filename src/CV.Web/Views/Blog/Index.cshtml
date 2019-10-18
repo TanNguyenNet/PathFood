@@ -24,7 +24,14 @@
                                 {
                                     for (int i = 0; i < Model.PageCount; i++)
                                     {
-                                        <div class="index"><a href="~/tintuc-@i/">@i</a></div>
+                                        if (ViewBag.cat != "")
+                                        {
+                                            <div class="index"><a href="~/tintuc-@i">@i</a></div>
+                                        }
+                                        else
+                                        {
+                                            <div class="index"><a href="~/tintuc-@i-@ViewBag.cat">@i</a></div>
+                                        }
                                     }
                                 }
                             }

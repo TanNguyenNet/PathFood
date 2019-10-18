@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -29,6 +29,8 @@
 
 
   <ItemGroup>
+
+    
     <ProjectReference Include="..\CV.Data.EF\CV.Data.EF.csproj" />
     <ProjectReference Include="..\CV.Service.Interface\CV.Service.Interface.csproj" />
     <ProjectReference Include="..\CV.Service.Mapper\CV.Service.Mapper.csproj" />

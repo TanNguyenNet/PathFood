@@ -32,6 +32,10 @@ namespace CV.Service.Mapper
             CreateMap<CatalogSectorModel, CatalogSector>();
 
             CreateMap<WebImageModel, WebImage>();
+
+            CreateMap<PageContentModel, PageContent>();
+
+            CreateMap<InfoModel, Info>();
         }
     }
 }

@@ -65,7 +65,8 @@ namespace CV.Service.Blog
         }
 
         public PagedResult<PostModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "",
-            DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null, bool publishDate = false, Languages? lang = null)
+            DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null, bool publishDate = false, 
+            Languages? lang = null,string cat = "")
         {
             var query = _postRepo.TableNoTracking;
 
@@ -84,6 +85,10 @@ namespace CV.Service.Blog
             if (publishDate)
                 query = query.Where(x => x.PushlishDate.Value.DateTime <= CoreHelper.SystemTimeNowUTCTimeZoneLocal.DateTime);
 
+            if (!string.IsNullOrWhiteSpace(cat))
+                query = query.Where(x => x.CategoryBlog.Slug == cat);
+
+            var rowCount = query.Count();
             query = query.OrderByDescending(x => x.PushlishDate)
                .Skip((page - 1) * pageSize).Take(pageSize);
 
@@ -91,7 +96,7 @@ namespace CV.Service.Blog
             {
                 Results = query.ProjectTo<PostModel>(_mapper.ConfigurationProvider).ToList(),
                 CurrentPage = page,
-                RowCount = query.Count(),
+                RowCount = rowCount,
                 PageSize = pageSize
             };
             return paginationSet;

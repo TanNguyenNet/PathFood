@@ -56,7 +56,17 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="~/tintuc">tin tức</a></li>
+                        <li class="hassubs">
+                            <a href="~/tintuc">tin tức</a>
+
+                            <ul class="dropdown">
+                                @foreach (var item in Model.CategoryBlogs)
+                                {
+                                    <li class="subs hassubs"><a href="~/tintuc-1-@item.Slug">@item.Name</a></li>
+                                }
+                            </ul>
+                        </li>
+
                         <li><a href="~/ungdung">ứng dụng</a></li>
                         <li><a href="~/cauhoi">faq</a></li>
                         <li><a href="~/lienhe">liên hệ</a></li>

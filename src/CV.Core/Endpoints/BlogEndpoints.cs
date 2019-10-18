@@ -8,9 +8,7 @@ namespace CV.Core.Endpoints
     {
         public const string IndexEndpoint = "~/tintuc";
         public const string IndexPagedEndpoint = "~/tintuc-{page}";
-
-        public const string CatBlogEndpoint = "~/tintuc-{cat}";
-        public const string CatBlogPagedEndpoint = "~/tintuc-{cat}-{page}";
+        public const string CatPagedEndpoint = "~/tintuc-{page}-{cat}";
 
         public const string PostEndpoint = "~/tintuc/{slug}";
     }

@@ -50,7 +50,7 @@ namespace CV.Service.Identity
         public PagedResult<AppUserModel> GetAll(int page = 1, int pageSize = 20, string filter = "")
         {
             var query = _userManager.Users.Where(x => x.DeletedDate == null);
-
+            var rowCount = query.Count();
             query = query.OrderByDescending(x => x.CreatedDate)
                 .Skip((page - 1) * pageSize).Take(pageSize);
 
@@ -58,7 +58,7 @@ namespace CV.Service.Identity
             {
                 Results = query.ProjectTo<AppUserModel>(_mapper.ConfigurationProvider).ToList(),
                 CurrentPage = page,
-                RowCount = query.Count(),
+                RowCount = rowCount,
                 PageSize = pageSize
             };
             return paginationSet;

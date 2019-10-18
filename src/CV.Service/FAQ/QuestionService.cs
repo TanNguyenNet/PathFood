@@ -57,6 +57,8 @@ namespace CV.Service.FAQ
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
 
+            var rowCount = query.Count();
+
             query = query.OrderBy(x => x.Name)
                .Skip((page - 1) * pageSize).Take(pageSize);
 
@@ -64,7 +66,7 @@ namespace CV.Service.FAQ
             {
                 Results = query.ProjectTo<QuestionModel>(_mapper.ConfigurationProvider).ToList(),
                 CurrentPage = page,
-                RowCount = query.Count(),
+                RowCount = rowCount,
                 PageSize = pageSize
             };
             return paginationSet;

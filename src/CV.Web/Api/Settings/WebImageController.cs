@@ -55,7 +55,7 @@ namespace CV.Web.Api.Settings
         {
             if (ModelState.IsValid)
             {
-                var updateCat = _webImageService.Update(base.UserId,id, model);
+                var updateCat = _webImageService.Update(base.UserId, id, model);
             }
             return Ok();
         }
@@ -64,7 +64,7 @@ namespace CV.Web.Api.Settings
         [Route("{id}")]
         public IActionResult Delete(string id)
         {
-            _webImageService.Delete(id, base.UserId);
+            _webImageService.Delete(base.UserId, id);
             return Ok();
         }
     }

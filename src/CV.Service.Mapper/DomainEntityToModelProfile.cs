@@ -41,6 +41,10 @@ namespace CV.Service.Mapper
             CreateMap<CatalogSector, CatalogSectorModel>().MaxDepth(2);
 
             CreateMap<WebImage, WebImageModel>();
+
+            CreateMap<Info, InfoModel>();
+
+            CreateMap<PageContent, PageContentModel>();
         }
     }
 }
