@@ -3190,7 +3190,50 @@
      transition: ease-in .35s;
      -moz-transition: ease-in .35s;
      -webkit-transition: ease-in .35s; }
- 
+    .new-product .box {
+      position: absolute;
+      top: 50%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+    }
+      
+    .new-product .box select {
+      /* background-color: #0563af; */
+      color: #666666;
+      padding: 5px;
+      width: 150px;
+      border: none;
+      /* font-size: 20px; */
+      /* box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); */
+      -webkit-appearance: button;
+      appearance: button;
+      outline: none;
+    }
+    
+    .new-product .box::before {
+      content: "\f13a";
+      font-family: FontAwesome;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25%;
+      height: 100%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 32px;
+      color: rgba(140, 140, 140, 0.5);
+      background-color: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+    
+    .new-product .box:hover::before {
+      color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .new-product .box select option {
+      padding: 30px;
+    }
  div.news > div:after {
    content: '';
    display: block;
