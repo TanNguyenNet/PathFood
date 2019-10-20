@@ -99,6 +99,10 @@ namespace CV.Data.EF
 
             builder.Entity<WebImage>().HasQueryFilter(x => x.DeletedTime == null);
 
+            builder.Entity<PageContent>().HasQueryFilter(x => x.DeletedTime == null);
+
+            builder.Entity<Info>().HasQueryFilter(x => x.DeletedTime == null);
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

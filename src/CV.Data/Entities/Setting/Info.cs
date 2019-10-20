@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CV.Data.Enum;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -26,5 +27,7 @@ namespace CV.Data.Entities.Setting
         public string PortEmail { set; get; }
 
         public string SmtpEmail { set; get; }
+
+        public InfoType InfoType { set; get; }
     }
 }

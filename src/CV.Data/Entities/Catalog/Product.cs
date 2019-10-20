@@ -18,6 +18,8 @@ namespace CV.Data.Entities.Catalog
 
         public string Color { set; get; }
 
+        public string UrlImage { set; get; }
+
         public string Slug { set; get; }
 
         public bool Active { set; get; }

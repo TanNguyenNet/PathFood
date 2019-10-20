@@ -6,6 +6,6 @@ namespace CV.Core.Endpoints
 {
     public class IntegrateEndpoints
     {
-        public const string IndexIntegrate = "~/ungdung";
+        public const string IndexIntegrate = "~/ungdung-{slug}";
     }
 }

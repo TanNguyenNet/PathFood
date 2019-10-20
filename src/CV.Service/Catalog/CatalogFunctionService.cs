@@ -6,6 +6,7 @@ using CV.Data.Enum;
 using CV.Data.Model.Catalog;
 using CV.Service.Interface.Catalog;
 using CV.Utils.Helper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace CV.Service.Catalog
             }
         }
 
-        public IEnumerable<CatalogFunctionModel> GetAll(Languages? lang,bool active = false)
+        public IEnumerable<CatalogFunctionModel> GetAll(Languages? lang, bool active = false, bool getProduct = false)
         {
             var query = _catalogFunctionRepo.TableNoTracking;
 
@@ -50,6 +51,9 @@ namespace CV.Service.Catalog
 
             if (lang != null)
                 query = query.Where(x => x.Lang == lang.Value);
+
+            if (getProduct)
+                query = query.Include(x => x.Product).Where(x => x.Product.Any(p => p.New == true));
 
             query = query.OrderBy(x => x.Name);
 

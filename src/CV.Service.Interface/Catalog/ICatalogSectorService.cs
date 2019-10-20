@@ -10,7 +10,7 @@ namespace CV.Service.Interface.Catalog
     {
         CatalogSectorModel GetCatalogSector(string id);
 
-        IEnumerable<CatalogSectorModel> GetAll(Languages? lang, bool active = false);
+        IEnumerable<CatalogSectorModel> GetAll(Languages? lang, bool active = false, bool getProduct= false);
 
         CatalogSectorModel Insert(string userCurrentId, CatalogSectorModel catalogSector);
 

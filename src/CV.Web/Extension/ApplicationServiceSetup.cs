@@ -32,6 +32,8 @@ namespace CV.Web.Extension
 
             services.AddTransient<IPostService, PostService>();
 
+            services.AddTransient<IPageContentService, PageContentService>();
+
             services.AddTransient<ILanguageService, LanguageService>();
 
             services.AddTransient<ICatalogFunctionService, CatalogFunctionService>();
@@ -45,6 +47,8 @@ namespace CV.Web.Extension
             services.AddTransient<IQuestionService, QuestionService>();
 
             services.AddTransient<IWebImageService, WebImageService>();
+
+            services.AddTransient<IInfoService, InfoService>();
 
         }
     }

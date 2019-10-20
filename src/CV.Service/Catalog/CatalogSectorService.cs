@@ -6,6 +6,7 @@ using CV.Data.Enum;
 using CV.Data.Model.Catalog;
 using CV.Service.Interface.Catalog;
 using CV.Utils.Helper;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace CV.Service.Catalog
             }
         }
 
-        public IEnumerable<CatalogSectorModel> GetAll(Languages? lang, bool active = false)
+        public IEnumerable<CatalogSectorModel> GetAll(Languages? lang, bool active = false, bool getProduct = false)
         {
             var query = _catalogSectorRepo.TableNoTracking;
 
@@ -50,8 +51,12 @@ namespace CV.Service.Catalog
                 query = query.Where(x => x.Active == active);
 
             if (lang != null)
-                query = query.Where(x=>x.Lang == lang.Value);
-
+                query = query.Where(x => x.Lang == lang.Value);
+            if (getProduct)
+            {
+                query = query.Include(x => x.Product).Where(x => x.Product.Any(p => p.New == true));
+            }
+                
             return query.ProjectTo<CatalogSectorModel>(_mapper.ConfigurationProvider).ToList();
         }
 

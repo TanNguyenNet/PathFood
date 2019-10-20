@@ -4,14 +4,16 @@ using CV.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CV.Data.EF.Migrations
 {
     [DbContext(typeof(CVContext))]
-    partial class CVContextModelSnapshot : ModelSnapshot
+    [Migration("20191020143350_addTablePageContentAndInfo")]
+    partial class addTablePageContentAndInfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -241,8 +243,6 @@ namespace CV.Data.EF.Migrations
                     b.Property<bool>("New");
 
                     b.Property<string>("Slug");
-
-                    b.Property<string>("UrlImage");
 
                     b.HasKey("Id");
 

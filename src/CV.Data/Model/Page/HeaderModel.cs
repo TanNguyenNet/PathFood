@@ -13,5 +13,7 @@ namespace CV.Data.Model.Page
         public IEnumerable<CatalogSectorModel> CatalogSectors { set; get; }
 
         public IEnumerable<CategoryBlogModel> CategoryBlogs { set; get; }
+
+        public IEnumerable<PageContentModel> PageContents { set; get; }
     }
 }

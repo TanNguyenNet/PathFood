@@ -8,13 +8,11 @@ namespace CV.Service.Interface.Setting
 {
     public interface IInfoService
     {
-        IEnumerable<InfoModel> GetAll();
-
         InfoModel GetInfo(string id);
 
-        IEnumerable<InfoModel> InfoType(InfoType type);
+        IEnumerable<InfoModel> GetAll(InfoType? type=null);
 
-        IEnumerable<dynamic> GetAllPosition();
+        IEnumerable<dynamic> GetAllType();
 
         InfoModel Insert(string userCurrent, InfoModel info);
 

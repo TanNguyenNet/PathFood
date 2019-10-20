@@ -18,5 +18,6 @@ namespace CV.Data.Model.Page
         public IEnumerable<CatalogFunctionModel> CatalogFunctions { set; get; }
 
         public IEnumerable<CatalogSectorModel> CatalogSectors { set; get; }
+
     }
 }
