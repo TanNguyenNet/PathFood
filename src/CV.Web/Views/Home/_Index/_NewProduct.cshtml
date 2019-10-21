@@ -31,13 +31,13 @@
             </div>
         </div>
         <div class="container function display-product" data-change="1">
-            <div class="row">
-                @foreach (var item in Model.CatalogFunctions)
-                {
-                    foreach (var product in item.Product)
+            <div class="swiper-container swiper1">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model.CatalogFunctions)
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="img-content">
+                        foreach (var product in item.Product)
+                        {
+                            <div class="swiper-slide img-content" data-filter="@item.Slug">
                                 <img class="img-fluid" src="@product.UrlImage" alt="@product.Name">
                                 <div class="overlay">
                                     <div class="overlay-content">
@@ -46,19 +46,19 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     }
-                }
+                    </div>
             </div>
         </div>
         <div class="container field non-display-product" data-change="2">
-            <div class="row">
-                @foreach (var item in Model.CatalogSectors)
-                {
-                    foreach (var product in item.Product)
+            <div class="swiper-container swiper1">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model.CatalogSectors)
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="img-content">
+                        foreach (var product in item.Product)
+                        {
+                            <div class="swiper-slide img-content" data-filter="@item.Slug">
                                 <img class="img-fluid" src="@product.UrlImage" alt="@product.Name">
                                 <div class="overlay">
                                     <div class="overlay-content">
@@ -67,9 +67,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     }
-                }
+                </div>
             </div>
         </div>
     </div>

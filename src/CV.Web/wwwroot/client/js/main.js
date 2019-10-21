@@ -129,12 +129,11 @@ $(document).ready(function(){
       $(".filter-list li").removeClass("active");
       $(this).addClass("active");
 
-      if(filter=="vi"){
+      if(filter=="vi" || filter=="kem-sua"){
         $("[data-filter]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
         if($(".swiper1 .swiper-slide").length > 6)
           slidesxcol = 3;
         else slidesxcol = 1;
-        swiper1.destroy();
         swiper1 = new Swiper('.swiper1', {
           slidesPerView: 4,
           slidesPerColumn: 1,
@@ -164,7 +163,6 @@ $(document).ready(function(){
         if($(".swiper1 .swiper-slide").length > 6)
           slidesxcol = 3;
         else slidesxcol = 1;
-        swiper1.destroy();
         swiper1 = new Swiper('.swiper1', {
           slidesPerView: 4,
           slidesPerColumn: 1,
