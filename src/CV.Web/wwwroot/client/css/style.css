@@ -3404,7 +3404,9 @@
        .mb-online .person .contact-person .name {
          font-weight: bold;
          color: #fff; }
- 
+ .blog-list {
+   padding-top: 80px;
+ }
  .blog-list .content-wrap {
    border: 1px solid #e4e4e4; }
  
@@ -3417,6 +3419,7 @@
      padding: 10px 0 20px 0; }
  
  .blog-list .wrap-pagination {
+   margin: 40px 0;
    width: 100%;
    text-align: center; }
  
@@ -3439,7 +3442,7 @@
    margin: 0; }
  
  .blog-list svg {
-   left: -16px;
+   left: -14px;
    position: absolute;
    top: -12px;
    -webkit-transition: -webkit-transform 500ms;
@@ -3516,7 +3519,7 @@
  
  .blog-detail {
    text-align: center;
-   margin-top: 45px; }
+   margin-top: 80px; }
    .blog-detail h3 {
      font-size: 25px;
      color: #0066b2;
@@ -3681,7 +3684,9 @@
        top: 3px; }
      .contact-info .incon-info p {
        padding-left: 30px; }
- 
+ .appli {
+   margin-top: 80px;
+ }
  .appli .title {
    font-family: "Montserrat-Bold", "Roboto", sans-serif;
    color: #0066b2;
