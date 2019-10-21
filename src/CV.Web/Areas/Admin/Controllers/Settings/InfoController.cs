@@ -9,11 +9,10 @@ namespace CV.Web.Areas.Admin.Controllers.Settings
 {
     public class InfoController : BaseController
     {
-        private readonly IInfoService _infoService;
 
-        public InfoController(IInfoService infoService)
+        public InfoController()
         {
-            _infoService = infoService;
+
         }
 
         public IActionResult Index()

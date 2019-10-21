@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@model IEnumerable<InfoModel>
+@{ 
     ViewData["Title"] = "Liên hệ";
     ViewData["Description"] = "Gởi thông tin liên hệ cho chúng tôi";
 }
@@ -25,52 +26,63 @@
             <div class="row">
                 <div class="col-md-4 col-sm-12 com-wrap1">
                     <div>
-                        <div class="com-wrap">
-                            <h3>Trụ sở chính</h3>
-                            <div class="incon-info">
-                                <span class="icon icon-location2"></span>
-                                <p><span>476/23 Âu cơ, Q.Tân Bình, TP.HCM</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-phone"></span>
-                                <p><span>Điện thoại: 090 3432 2312</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-mail2"></span>
-                                <p><span>Email: info@path.com.vn</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-printer"></span>
-                                <p><span>fax: 38 245 302</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-earth"></span>
-                                <p><a href="">coi bản đồ</a></p>
-                            </div>
-                        </div>
-                        <div class="com-wrap mt45">
-                            <h3>nhà máy sản xuất</h3>
-                            <div class="incon-info">
-                                <span class="icon icon-location2"></span>
-                                <p><span>476/23 Âu cơ, Q.Tân Bình, TP.HCM</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-phone"></span>
-                                <p><span>Điện thoại: 090 3432 2312</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-mail2"></span>
-                                <p><span>Email: info@path.com.vn</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-printer"></span>
-                                <p><span>fax: 38 245 302</span></p>
-                            </div>
-                            <div class="incon-info">
-                                <span class="icon icon-earth"></span>
-                                <p><a href="">coi bản đồ</a></p>
-                            </div>
-                        </div>
+                        @{
+                            if (Model.Count() > 0)
+                            {
+                                <div class="com-wrap">
+                                    <h3>Trụ sở chính</h3>
+                                    <div class="incon-info">
+                                        <span class="icon icon-location2"></span>
+                                        <p><span>Địa chỉ: @Model.ToList()[0].Address</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-phone"></span>
+                                        <p><span>Điện thoại: @Model.ToList()[0].Phone</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-mail2"></span>
+                                        <p><span>Email: @Model.ToList()[0].Email</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-printer"></span>
+                                        <p><span>fax: @Model.ToList()[0].Fax</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-earth"></span>
+                                        <p><a href="">coi bản đồ</a></p>
+                                    </div>
+                                </div>
+                            }
+
+                            if (Model.Count() > 1)
+                            {
+                                <div class="com-wrap mt45">
+                                    <h3>nhà máy sản xuất</h3>
+                                    <div class="incon-info">
+                                        <span class="icon icon-location2"></span>
+                                        <p><span>@Model.ToList()[1].Address</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-phone"></span>
+                                        <p><span>Điện thoại: @Model.ToList()[1].Phone</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-mail2"></span>
+                                        <p><span>Email: @Model.ToList()[1].Email</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-printer"></span>
+                                        <p><span>fax: @Model.ToList()[1].Fax</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-earth"></span>
+                                        <p><a href="">coi bản đồ</a></p>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
                     </div>
                 </div>
                 @{ 

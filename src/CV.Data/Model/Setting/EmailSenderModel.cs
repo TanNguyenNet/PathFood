@@ -11,5 +11,9 @@ namespace CV.Data.Model.Setting
         public string Subject { set; get; }
 
         public string Message { set; get; }
+
+        public string FullName { set; get; }
+
+        public string Phone { set; get; }
     }
 }
