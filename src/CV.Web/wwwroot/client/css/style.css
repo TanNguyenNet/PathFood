@@ -2766,8 +2766,8 @@
    .nav-wrap .dropdown {
      position: absolute;
      width: 175px;
-     top: 33px;
-     left: 146px;
+     top: 100%;
+     left: 0;
      opacity: 0;
      visibility: hidden;
      transition: ease-out .35s;
@@ -2777,7 +2777,8 @@
      border: 1px solid #999;
      z-index: 90; }
    .nav-wrap .mainnav > li {
-     float: left;
+     position: relative;
+     display: inline-block;
      padding: 5px 15px;
      border: 1px solid #999;
      font-family: "Montserrat-Medium", "Roboto", sans-serif;
@@ -3345,11 +3346,13 @@
        float: left;
        font-size: 12px;
        padding-left: 10px; }
-       .consultant .person .contact-person span {
+       .consultant .person .contact-person a, .consultant .person .contact-person span {
          display: block;
+         cursor: pointer;
          color: #27313d; }
-         .consultant .person .contact-person span i {
-           padding-right: 5px; }
+         .consultant .person .contact-person a i,  .consultant .person .contact-person span i{
+           padding-right: 5px;
+           cursor: pointer; }
        .consultant .person .contact-person .name {
          font-weight: bold;
          color: #0066b2; }
@@ -3396,11 +3399,13 @@
        float: left;
        font-size: 12px;
        padding-left: 10px; }
-       .mb-online .person .contact-person span {
+       .mb-online .person .contact-person span, .mb-online .person .contact-person a {
          display: block;
-         color: #white; }
-         .mb-online .person .contact-person span i {
-           padding-right: 5px; }
+         cursor: pointer;
+         color: white; }
+         .mb-online .person .contact-person span i, .mb-online .person .contact-person a i {
+           padding-right: 5px;
+           cursor: pointer; }
        .mb-online .person .contact-person .name {
          font-weight: bold;
          color: #fff; }
