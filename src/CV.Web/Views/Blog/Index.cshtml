@@ -2,7 +2,7 @@
 <!-- Header -->
 <div class="box">
     <div class="brums">
-        <img src="~/client/images/product-bg1.jpg" alt="">
+        <img src="@ViewBag.URLImage" alt="Hình bài viết">
     </div>
 </div>
 
@@ -26,11 +26,12 @@
                                     {
                                         if (ViewBag.cat != "")
                                         {
-                                            <div class="index"><a href="~/tintuc-@i">@{++i;}</a></div>
+                                            <div class="index"><a href="~/nhomtintuc-@i-@ViewBag.cat">@{++i;}</a></div>
+
                                         }
                                         else
                                         {
-                                            <div class="index"><a href="~/tintuc-@i-@ViewBag.cat">@{++i;}</a></div>
+                                            <div class="index"><a href="~/tintuc-@i">@{++i;}</a></div>
                                         }
                                     }
                                 }

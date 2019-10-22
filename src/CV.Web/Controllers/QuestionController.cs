@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CV.Core.Endpoints;
 using CV.Data.Model.FAQ;
 using CV.Service.Interface.FAQ;
+using CV.Service.Interface.Setting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CV.Web.Controllers
@@ -13,11 +14,15 @@ namespace CV.Web.Controllers
     {
         private readonly IQuestionService _questionService;
         private readonly IGroupQuestionService _groupQuestionService;
+        private readonly IWebImageService _webImageService;
 
-        public QuestionController(IQuestionService questionService, IGroupQuestionService groupQuestionService)
+        public QuestionController(IQuestionService questionService, 
+            IGroupQuestionService groupQuestionService,
+            IWebImageService webImageService)
         {
             _questionService = questionService;
             _groupQuestionService = groupQuestionService;
+            _webImageService = webImageService;
         }
 
         [Route(QuestionEndpoints.IndexEndpoint)]
@@ -25,6 +30,7 @@ namespace CV.Web.Controllers
         public IActionResult Index()
         {
             var model = _groupQuestionService.GetAll(lang: base.CurrentLang);
+            ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbFAQ).FirstOrDefault()?.URLImage;
             return View(model);
         }
 

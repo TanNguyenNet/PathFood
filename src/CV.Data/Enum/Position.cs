@@ -12,6 +12,18 @@ namespace CV.Data.Enum
         HomeSlide,
 
         [Display(Name = "Logo")]
-        Logo
+        Logo,
+
+        [Display(Name = "Hình Breadcrumb sản phẩm")]
+        BreadcrumbProduct,
+
+        [Display(Name = "Hình Breadcrumb tin tức")]
+        BreadcrumbNews,
+
+        [Display(Name = "Hình Breadcrumb Ứng dụng")]
+        BreadcrumbIntegrate,
+
+        [Display(Name = "Hình Breadcrumb FAQ")]
+        BreadcrumbFAQ
     }
 }
