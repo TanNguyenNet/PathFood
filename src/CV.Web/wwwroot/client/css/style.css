@@ -2777,8 +2777,9 @@
      border: 1px solid #999;
      z-index: 90; }
    .nav-wrap .mainnav > li {
+     float:left;
      position: relative;
-     display: inline-block;
+     /* display: inline-block; */
      padding: 5px 15px;
      border: 1px solid #999;
      font-family: "Montserrat-Medium", "Roboto", sans-serif;
@@ -3166,7 +3167,11 @@
        }
    .new-product .img-content {
      margin-top: 40px;
-     position: relative; }
+     position: relative;
+    max-width: 277.5px;
+  max-height: 277.5px;
+width: 100%;
+height: 100%; }
      .new-product .img-content .overlay {
        position: absolute;
        background-color: rgba(56, 49, 49, 0.690196);
@@ -3176,7 +3181,9 @@
        visibility: hidden;
        transition: ease-in .35s;
        -moz-transition: ease-in .35s;
-       -webkit-transition: ease-in .35s; }
+       -webkit-transition: ease-in .35s;
+      height: 100%;
+    width: 100%; }
        .new-product .img-content .overlay .overlay-content {
          padding: 20px 15px;
          color: #fff;
@@ -3352,7 +3359,7 @@
          color: #27313d; }
          .consultant .person .contact-person a i,  .consultant .person .contact-person span i{
            padding-right: 5px;
-           cursor: pointer; }
+          cursor: pointer; }
        .consultant .person .contact-person .name {
          font-weight: bold;
          color: #0066b2; }
@@ -4975,8 +4982,8 @@
      .nav-wrap .dropdown {
        position: absolute;
        width: 175px;
-       top: 33px;
-       left: 146px;
+       top: 100%;
+       left: 0;
        opacity: 0;
        visibility: hidden;
        transition: ease-out .35s;
@@ -4987,6 +4994,7 @@
        z-index: 90; }
      .nav-wrap .mainnav > li {
        float: left;
+       position: relative;
        padding: 5px 15px;
        border: 1px solid #999;
        font-family: "Montserrat-Medium", "Roboto", sans-serif;
