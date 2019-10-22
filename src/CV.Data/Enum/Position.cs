@@ -24,6 +24,9 @@ namespace CV.Data.Enum
         BreadcrumbIntegrate,
 
         [Display(Name = "Hình Breadcrumb FAQ")]
-        BreadcrumbFAQ
+        BreadcrumbFAQ,
+
+        [Display(Name = "Hình Breadcrumb liên hệ")]
+        BreadcrumbContact
     }
 }
