@@ -50,6 +50,8 @@ namespace CV.Web.Extension
 
             services.AddTransient<IInfoService, InfoService>();
 
+            services.AddTransient<IEmailService, EmailService>();
+
         }
     }
 }

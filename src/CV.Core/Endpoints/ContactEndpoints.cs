@@ -9,7 +9,7 @@ namespace CV.Core.Endpoints
         //Vietnam
         public const string IndexEndpoint = "~/lienhe";
 
-        public const string SendContactEndPoint = "goi-lien-he";
+        public const string SendContactEndPoint = "~/goi-lien-he";
 
         //English
         public const string EnIndexEndpoint = "~/contact";

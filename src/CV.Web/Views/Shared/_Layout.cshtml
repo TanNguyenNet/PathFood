@@ -19,9 +19,7 @@
         await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);
     }
 
-    @{
-        await Html.RenderPartialAsync("_Footer").ConfigureAwait(true);
-    }
+    @await Component.InvokeAsync("Footer")
 
     @{
         await Html.RenderPartialAsync("Assets/_BottomScript").ConfigureAwait(true);

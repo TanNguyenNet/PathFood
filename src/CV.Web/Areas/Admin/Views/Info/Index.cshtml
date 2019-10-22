@@ -1,20 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Product";
+    ViewData["Title"] = "Info";
 }
 
 <div class="content">
+
+    <!-- Start Content-->
     <div class="container-fluid">
+
+        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Catalog</a></li>
-                            <li class="breadcrumb-item active">Product</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Setting</a></li>
+                            <li class="breadcrumb-item active">Info</li>
                         </ol>
                     </div>
-                    <h4 class="page-title">Sản phẩm</h4>
+                    <h4 class="page-title">Cấu hình hệ thống</h4>
                 </div>
             </div>
         </div>
@@ -27,7 +31,7 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-                                <a asp-area="admin" asp-controller="product" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Sản phẩm</a>
+                                <a asp-area="admin" asp-controller="info" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Tạo cấu hình</a>
                             </div>
                         </div>
 
@@ -36,48 +40,35 @@
                                 <thead>
                                     <tr>
                                         <th>Tên</th>
-                                        <th>Mô tả</th>
-                                        <th>Sản phẩm mới</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Email</th>
+                                        <th>Zalo</th>
                                         <th style="width: 85px;">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in list">
                                         <td>
-                                            {{item.name}}
+                                            <a :href="'/admin/info/update/' + item.id">{{item.name}}</a>
                                         </td>
                                         <td>
-                                            {{item.description}}
-                                        </td>
-                                        <td class="table-user">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" id="newCheck" v-model="item.new" disabled>
-                                            </div>
+                                            {{item.address}}
                                         </td>
                                         <td>
-                                            <a :href="'/admin/product/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            {{item.email}}
+                                        </td>
+                                        <td>
+                                            {{item.zalo}}
+                                        </td>
+                                        <td>
+                                            <a :href="'/admin/info/update/' + item.id " class="action-icon"><i class="mdi mdi-square-edit-outline"></i></a>
                                             <a v-on:click="deleteItem(item.id)" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
 
-                        <paginate v-model="page"
-                                  :page-count="pCount"
-                                  :page-range="2"
-                                  :container-class="'pagination pagination-rounded justify-content-end mb-0'"
-                                  :page-class="'page-item'"
-                                  :page-link-class="'page-link'"
-                                  :prev-class="'page-item'"
-                                  :prev-link-class="'page-link'"
-                                  :next-class="'page-item'"
-                                  :next-link-class="'page-link'"
-                                  :prev-text="'<'"
-                                  :next-text="'>'"
-                                  :click-handler="loadData">
-                        </paginate>
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
             </div> <!-- end col -->
@@ -89,5 +80,5 @@
 
 @section Scripts{
     <script src="~/lib/vuejs-paginate/dist/index.js"></script>
-    <script src="~/webAppAdmin/catalog/product/list.js"></script>
+    <script src="~/webAppAdmin/settings/info/list.js"></script>
 }

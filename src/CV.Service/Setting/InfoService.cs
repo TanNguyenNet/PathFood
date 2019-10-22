@@ -98,6 +98,8 @@ namespace CV.Service.Setting
 
                 updateInfo.LastUpdatedBy = userCurrent;
 
+                _infoRepo.Update(updateInfo);
+
                 return info;
             }
             catch

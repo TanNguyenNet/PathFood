@@ -1,0 +1,117 @@
+﻿@{
+
+}
+<div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">CMS</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Setting</a></li>
+                            <li class="breadcrumb-item active">Add info</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Thêm info</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card-box">
+                    <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Thông tin</h5>
+
+                    <div class="form-group mb-3">
+                        <label for="name">Tên <span v-if="!$v.objModel.name.required" class="text-danger">* Nhập tên</span></label>
+                        <input type="text" id="name" name="name" class="form-control" v-model="$v.objModel.name.$model" placeholder="Nhập tên">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="address">Địa chỉ </label>
+                        <input type="text" id="address" name="address" class="form-control" v-model="objModel.address" placeholder="Nhập địa chỉ">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="phone">Điện thoại </label>
+                        <input type="text" id="phone" name="phone" class="form-control" v-model="objModel.phone" placeholder="Nhập điện thoại">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="hotLine">Hot line </label>
+                        <input type="text" id="hotLine" name="hotLine" class="form-control" v-model="objModel.hotLine" placeholder="Nhập điện hot line">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="fax">Fax </label>
+                        <input type="text" id="fax" name="hotLine" class="form-control" v-model="objModel.fax" placeholder="Nhập fax">
+                    </div>
+
+                </div> <!-- end card-box -->
+            </div> <!-- end col -->
+
+            <div class="col-lg-6">
+                <div class="card-box">
+                    <h5 class="text-uppercase mt-0 mb-3 bg-light p-2">Thông tin cấu hình</h5>
+
+                    <div class="form-group mb-3">
+                        <label for="example-select">Chọn cấu hình</label>
+                        <select class="form-control" id="typeInfo" v-model="objModel.infoType">
+                            <option v-for="type in infoTypes" v-bind:value="type.id">
+                                {{type.name}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email">Email </label>
+                        <input type="email" id="email" name="email" class="form-control" v-model="objModel.email" placeholder="Nhập email">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="password">Password </label>
+                        <input type="password" id="password" name="password" class="form-control" v-model="objModel.password" placeholder="Nhập password">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="portMail">Hot line </label>
+                        <input type="text" id="portMail" name="portMail" class="form-control" v-model="objModel.portMail" placeholder="Nhập port">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="smtpEmail">SMTP </label>
+                        <input type="text" id="smtpEmail" name="smtpEmail" class="form-control" v-model="objModel.smtpEmail" placeholder="Nhập smtp">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="zalo">Zalo </label>
+                        <input type="text" id="zalo" name="zalo" class="form-control" v-model="objModel.zalo" placeholder="Nhập zalo id">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mb-3">
+                    <a class="btn w-sm btn-light waves-effect" asp-area="admin" asp-controller="info" asp-action="index">Cancel</a>
+                    <button type="button" class="btn w-sm btn-success waves-effect waves-light" v-if="!$v.$anyError" v-on:click="save">Save</button>
+                </div>
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div> <!-- container -->
+</div> <!-- content -->
+
+
+@section Scripts{
+    <script src="~/lib/vuelidate/dist/vuelidate.min.js"></script>
+    <script src="~/lib/vuelidate/dist/validators.min.js"></script>
+    <script src="~/webAppAdmin/settings/info/create.js"></script>
+}
