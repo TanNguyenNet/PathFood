@@ -1,7 +1,7 @@
 ﻿@model CatalogModel
 <div class="box">
     <div class="brums">
-        <img src="~/client/images/product-bg.jpg" alt="">
+        <img src="@ViewBag.UrlImage" alt="@Model.Title">
     </div>
 </div>
 
@@ -34,13 +34,9 @@
                         </ul>
                     </div>
                 </div>
-
-
                 @{
                     await Html.RenderPartialAsync("~/Views/Catalog/_Index/_Product.cshtml").ConfigureAwait(true);
                 }
-
-
             </div>
         </div>
     </div>

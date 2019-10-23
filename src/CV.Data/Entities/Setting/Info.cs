@@ -28,6 +28,8 @@ namespace CV.Data.Entities.Setting
 
         public string SmtpEmail { set; get; }
 
+        public string UrlMap { set; get; }
+
         public InfoType InfoType { set; get; }
     }
 }

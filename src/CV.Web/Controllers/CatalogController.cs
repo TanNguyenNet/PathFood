@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CV.Core.Endpoints;
 using CV.Data.Model.Catalog;
 using CV.Service.Interface.Catalog;
+using CV.Service.Interface.Setting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CV.Web.Controllers
@@ -14,14 +15,17 @@ namespace CV.Web.Controllers
         private readonly IProductService _productService;
         private readonly ICatalogFunctionService _catalogFunctionService;
         private readonly ICatalogSectorService _catalogSectorService;
+        private readonly IWebImageService _webImageService;
 
         public CatalogController(IProductService productService,
             ICatalogFunctionService catalogFunctionService,
-            ICatalogSectorService catalogSectorService)
+            ICatalogSectorService catalogSectorService,
+            IWebImageService webImageService)
         {
             _productService = productService;
             _catalogFunctionService = catalogFunctionService;
             _catalogSectorService = catalogSectorService;
+            _webImageService = webImageService;
         }
 
         [Route(CatalogEndpoints.IndexEndpoint)]
@@ -51,6 +55,8 @@ namespace CV.Web.Controllers
                 model.Products = _productService.GetAll(CurrentLang);
                 model.Title = "Tất cả";
             }
+
+            ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbProduct).FirstOrDefault()?.URLImage;
 
             return View(model);
         }

@@ -66,7 +66,7 @@ namespace CV.Service.Blog
             {
                 var query = _pageContentRepo.TableNoTracking.Where(x => x.Slug == slug).FirstOrDefault();
 
-                return _mapper.Map<PageContentModel>(slug);
+                return _mapper.Map<PageContentModel>(query);
             }
             catch
             {

@@ -15,7 +15,8 @@ var app = new Vue({
                 zalo: "",
                 password: "",
                 portEmail: "",
-                smtpEmail: ""
+                smtpEmail: "",
+                urlMap: ""
             },
             infoTypes: []
         };

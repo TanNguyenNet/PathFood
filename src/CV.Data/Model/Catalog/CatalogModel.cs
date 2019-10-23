@@ -8,6 +8,8 @@ namespace CV.Data.Model.Catalog
     {
         public string Title { set; get; }
 
+        public string UrlImage { set; get; }
+
         public IEnumerable<CatalogFunctionModel> CatalogFunctions { set; get; }
 
         public IEnumerable<CatalogSectorModel> CatalogSectors { set; get; }
