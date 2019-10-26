@@ -43,6 +43,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\WebEnglish\Data\" />
     <Folder Include="Areas\WebEnglish\Models\" />
+    <Folder Include="wwwroot\document\" />
   </ItemGroup>
 
 
