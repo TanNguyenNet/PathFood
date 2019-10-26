@@ -27,6 +27,7 @@ var app = new Vue({
                 .then(function (response) {
                     self.objModel = response.data;
                     $('#urlImage').val(self.objModel.urlImage);
+                    $('#hexa-colorpicker').val(self.objModel.color);
                 })
                 .catch(function (error) {
                     alert("ERROR: " + (error.message | error));
