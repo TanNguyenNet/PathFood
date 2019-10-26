@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PostModel>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4 col-sm-6 col-12 mt30">
+        <div class="content-wrap">
+            <img src="@item.UrlImage" alt="@item.Name">
+            <div class="info-content">
+                <h3 class="title">@item.Name</h3>
+                <p>@item.Description</p>
+                <div class="readmore">
+                    <a href="~/en/tintuc/@item.Slug">đọc thêm</a>
+                    <a class="float-right" href="~/en/tintuc/@item.Slug"><span class="icon icon-redo2"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

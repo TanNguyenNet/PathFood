@@ -1,4 +1,5 @@
 ﻿using CV.Data.Entities.Blog;
+using CV.Data.Enum;
 using CV.Data.Model.Blog;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ namespace CV.Service.Interface.Blog
 {
     public interface IPageContentService
     {
-        IEnumerable<PageContentModel> GetAll(bool? home = null);
+        IEnumerable<PageContentModel> GetAll(bool? home = null, Languages? lang= null);
 
         PageContentModel GetPage(string id);
 

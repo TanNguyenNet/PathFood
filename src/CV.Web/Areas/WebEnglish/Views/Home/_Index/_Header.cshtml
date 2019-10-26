@@ -1,0 +1,14 @@
+﻿@model HomeModel
+<!-- Header -->
+<div class="box">
+    <div class="swiper-container swiper">
+        <div class="swiper-wrapper">
+            @foreach (var item in Model.Images)
+            {
+                <div class="swiper-slide"><img src="@item.URLImage" alt="slider 1"></div>
+            }
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>

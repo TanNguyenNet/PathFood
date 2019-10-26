@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using CV.Core.Data;
 using CV.Data.Entities.Blog;
+using CV.Data.Enum;
 using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
 using CV.Utils.Helper;
@@ -44,12 +45,15 @@ namespace CV.Service.Blog
             }
         }
 
-        public IEnumerable<PageContentModel> GetAll(bool? home = null)
+        public IEnumerable<PageContentModel> GetAll(bool? home = null, Languages? lang = null)
         {
             var query = _pageContentRepo.TableNoTracking;
 
             if (home != null)
                 query = query.Where(x => x.Home == home.Value);
+
+            if (lang != null)
+                query = query.Where(x => x.Lang == lang);
 
             return query.ProjectTo<PageContentModel>(_mapper.ConfigurationProvider).ToList();
         }
@@ -103,6 +107,8 @@ namespace CV.Service.Blog
                 _mapper.Map(pageContent, updatePageContent);
 
                 updatePageContent.LastUpdatedBy = userCurrent;
+
+                _pageContentRepo.Update(updatePageContent);
 
                 return pageContent;
 

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi">
+<head>
+    @{
+        await Html.RenderPartialAsync("Assets/_TopMeta").ConfigureAwait(true);
+        await Html.RenderPartialAsync("Assets/_TopCss").ConfigureAwait(true);
+    }
+</head>
+<body class="home main-home home-background">
+
+    @await Component.InvokeAsync("EnHeader")
+
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("EnLogo")
+
+    @{
+        await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);
+    }
+
+    @await Component.InvokeAsync("EnFooter")
+
+    @{
+        await Html.RenderPartialAsync("Assets/_BottomScript").ConfigureAwait(true);
+    }
+</body>
+</html>

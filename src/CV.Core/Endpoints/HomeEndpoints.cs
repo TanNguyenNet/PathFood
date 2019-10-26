@@ -13,6 +13,8 @@ namespace CV.Core.Endpoints
 
         public const string IndexAliasEndpoint = "~/trang-chu";
 
+        public const string EnglishIndexEndpoint = "~/en";
+
 
     }
 }

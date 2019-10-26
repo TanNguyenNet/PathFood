@@ -11,5 +11,12 @@ namespace CV.Core.Endpoints
         public const string SectorEndpoint = "~/nhom-sanpham-{sector}";
 
         public const string FunctionEndpoint = "~/nhom-chucnang-{function}";
+
+
+        public const string EnglishIndexEndpoint = "~/en/sanpham";
+
+        public const string EnglishSectorEndpoint = "~/en/nhom-sanpham-{sector}";
+
+        public const string EnglishFunctionEndpoint = "~/en/nhom-chucnang-{function}";
     }
 }

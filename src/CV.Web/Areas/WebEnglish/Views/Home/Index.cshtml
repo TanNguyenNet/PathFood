@@ -1,0 +1,11 @@
+﻿@model HomeModel
+@{
+    ViewData["Title"] = "Home";
+    ViewData["Description"] = "paht.com.vn";
+
+    await Html.RenderPartialAsync("~/Views/Home/_Index/_Header.cshtml").ConfigureAwait(true);
+    await Html.RenderPartialAsync("~/Views/Home/_Index/_AboutUs.cshtml").ConfigureAwait(true);
+    await Html.RenderPartialAsync("~/Views/Home/_Index/_Product.cshtml").ConfigureAwait(true);
+    await Html.RenderPartialAsync("~/Views/Home/_Index/_NewProduct.cshtml").ConfigureAwait(true);
+    await Html.RenderPartialAsync("~/Views/Home/_Index/_Post.cshtml").ConfigureAwait(true);
+}

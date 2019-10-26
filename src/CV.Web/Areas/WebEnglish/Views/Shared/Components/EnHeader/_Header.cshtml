@@ -1,0 +1,86 @@
+﻿@model HeaderModel
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <p class="work-time">
+                        <span class="icon icon-alarm"></span>Thứ 2 - 7: 8g30 - 17g00
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <p class="phone float-right">
+                        <a href=”tel:0964891898″><span class="icon icon-phone"></span>hotline: 090 3245 3422</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="logo">
+                        <a href="~/"><img src="~/client/images/icon/logo-header.png" alt=""></a><div class="logo-text"><span>Promise</span><span>Acceptance</span><span>Trust</span><span>Hope</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-wrap">
+        <div class="container">
+            <div class="row">
+                <nav class="mobile-menu">
+                    <ul class="mainnav">
+                        <li><a href="~/en">Home</a>
+                        <li class="hassubs">
+                            <a href="~/en/sanpham">Product</a>
+                            <ul class="dropdown">
+                                <li class="subs hassubs">
+                                    <a href="#">theo chức năng</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.CatalogFunctions)
+                                        {
+                                            <li class="subs"><a href="~/en/nhom-chucnang-@item.Slug">@item.Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li class="subs hassubs">
+                                    <a href="#">theo lĩnh vực</a>
+                                    <ul class="dropdown">
+                                        @foreach (var item in Model.CatalogSectors)
+                                        {
+                                            <li class="subs"><a href="~/en/nhom-sanpham-@item.Slug">@item.Name</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="hassubs">
+                            <a href="~/en/tintuc">tin tức</a>
+
+                            <ul class="dropdown">
+                                @foreach (var item in Model.CategoryBlogs)
+                                {
+                                    <li class="subs hassubs"><a href="~/en/nhomtintuc-1/@item.Slug">@item.Name</a></li>
+                                }
+                            </ul>
+                        </li>
+
+                        <li class="hassubs">
+                            <a href="#">ứng dụng</a>
+                            <ul class="dropdown">
+                                @foreach (var item in Model.PageContents)
+                                {
+                                    <li class="subs hassubs"><a href="~/en/ungdung-@item.Slug">@item.Name</a></li>
+                                }
+                            </ul>
+                        </li>
+                        <li><a href="~/en/cauhoi">faq</a></li>
+                        <li><a href="~/en/lienhe">liên hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

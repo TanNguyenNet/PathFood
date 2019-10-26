@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CV.Web.Controllers.ViewComponents
+namespace CV.Web.Areas.WebEnglish.Controllers.ViewComponents
 {
-    public class FooterViewComponent : ViewComponent
+    public class EnFooterViewComponent : ViewComponent
     {
         private readonly IInfoService _infoService;
         private readonly IPageContentService _pageContentService;
 
-        public FooterViewComponent(IInfoService infoService, IPageContentService pageContentService)
+        public EnFooterViewComponent(IInfoService infoService, IPageContentService pageContentService)
         {
             _infoService = infoService;
             _pageContentService = pageContentService;
@@ -24,7 +24,7 @@ namespace CV.Web.Controllers.ViewComponents
         {
             var footerModel = new FooterModel();
             footerModel.Infos = await Task.Run(() => Task.Run(() => _infoService.GetAll(Data.Enum.InfoType.InfoCompay)));
-            footerModel.PageContents = _pageContentService.GetAll(true, Data.Enum.Languages.Vi);
+            footerModel.PageContents = _pageContentService.GetAll(true, Data.Enum.Languages.En);
             return View("_Footer", footerModel);
         }
     }

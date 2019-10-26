@@ -1,0 +1,36 @@
+﻿@model HomeModel
+<div class="box mt45">
+    <div class="news">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.PostsHot)
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="content">
+                            <img src="@item.UrlImage" alt="@item.Name">
+                            <div class="info-content">
+                                <h3 class="title">@item.Name</h3>
+                                <p>@item.Description</p>
+                                <div class="readmore">
+                                    <a href="~/tintuc/@item.Slug">đọc thêm</a>
+                                    <a class="float-right" href="~/tintuc/@item.Slug"><span class="icon icon-redo2"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="col-lg-4 col-md-12 col-sm-12 first-2">
+                    <div class="content-list">
+                        <span class="title1">Tin tức mới</span>
+                        <ul>
+                            @foreach (var item in Model.Posts)
+                            {
+                                <li><h3><span class="icon icon-plus"></span><a href="~/tintuc/@item.Slug">@item.Name</a></h3></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,16 +7,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CV.Web.Controllers.ViewComponents
+namespace CV.Web.Areas.WebEnglish.Controllers.ViewComponents
 {
-    public class HeaderViewComponent : ViewComponent
+    public class EnHeaderViewComponent : ViewComponent
     {
         private readonly ICatalogFunctionService _catalogFunctionService;
         private readonly ICatalogSectorService _catalogSectorService;
         private readonly ICategoryBlogService _categoryBlogService;
         private readonly IPageContentService _pageContentService;
 
-        public HeaderViewComponent(ICatalogFunctionService catalogFunctionService, 
+        public EnHeaderViewComponent(ICatalogFunctionService catalogFunctionService, 
             ICatalogSectorService catalogSectorService,
             ICategoryBlogService categoryBlogService,
             IPageContentService pageContentService)
@@ -30,10 +30,10 @@ namespace CV.Web.Controllers.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var model = new HeaderModel();
-            model.CatalogFunctions = await Task.Run(() => Task.Run(() => _catalogFunctionService.GetAll(Data.Enum.Languages.Vi, true)));
-            model.CatalogSectors = _catalogSectorService.GetAll(Data.Enum.Languages.Vi, true);
-            model.CategoryBlogs = _categoryBlogService.GetAll(Data.Enum.Languages.Vi);
-            model.PageContents = _pageContentService.GetAll(false, Data.Enum.Languages.Vi);
+            model.CatalogFunctions = await Task.Run(() => Task.Run(() => _catalogFunctionService.GetAll(Data.Enum.Languages.En, true)));
+            model.CatalogSectors = _catalogSectorService.GetAll(Data.Enum.Languages.En, true);
+            model.CategoryBlogs = _categoryBlogService.GetAll(Data.Enum.Languages.En);
+            model.PageContents = _pageContentService.GetAll(false);
             return View("_Header", model);
         }
     }

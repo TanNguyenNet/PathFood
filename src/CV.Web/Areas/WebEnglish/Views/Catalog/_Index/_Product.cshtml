@@ -1,0 +1,23 @@
+﻿@model CatalogModel
+<div class="col-md-9">
+    <div class="content-wrap">
+        <h3>@Model.Title</h3>
+        <table class="table_1" cellspacing="1" cellpadding="1" border="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Products)
+                {
+                    <tr style="color: @item.Color">
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
