@@ -11,7 +11,24 @@ $(document).ready(function(){
     var swiper2 = new Swiper('.swiper2', {
       slidesPerView: 7,
       spaceBetween: 0,
-      autoplay: 10000
+      autoplay: 10000,
+      breakpoints: {
+        1024: {
+            slidesPerView: 5
+        },
+        991: {
+            slidesPerView: 4
+        },
+        990: {
+            slidesPerView: 3
+        },
+        576: {
+            slidesPerView: 2
+        },
+        320: {
+            slidesPerView: 2
+        }
+      }
     });
     var swiper3 = new Swiper('.swiper3', {
       autoplay: 5000
