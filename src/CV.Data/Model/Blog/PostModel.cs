@@ -23,5 +23,7 @@ namespace CV.Data.Model.Blog
         public bool Active { set; get; }
 
         public string CategoryBlogId { set; get; }
+
+        public virtual CategoryBlogModel CategoryBlog { set; get; }
     }
 }

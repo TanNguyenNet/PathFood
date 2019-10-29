@@ -36,6 +36,7 @@
                                 <thead>
                                     <tr>
                                         <th>Câu hỏi</th>
+                                        <th>Nhóm câu hỏi</th>
                                         <th>Hiển thị</th>
                                         <th style="width: 85px;">Action</th>
                                     </tr>
@@ -44,6 +45,10 @@
                                     <tr v-for="item in list">
                                         <td>
                                             {{item.name}}
+                                        </td>
+                                        <td v-if="item.groupQuestion === null"></td>
+                                        <td v-else-if="item.groupQuestion !== null">
+                                            {{item.groupQuestion.name}}
                                         </td>
                                         <td>
                                             <div class="custom-control custom-checkbox">

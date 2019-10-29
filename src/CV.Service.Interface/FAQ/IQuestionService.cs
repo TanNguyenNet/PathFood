@@ -13,7 +13,7 @@ namespace CV.Service.Interface.FAQ
 
         QuestionModel GetQuestionSlug(string slug);
 
-        PagedResult<QuestionModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "");
+        PagedResult<QuestionModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "",bool include = false);
 
         IEnumerable<QuestionModel> GetAll(string filter = "", Languages? lang = Languages.Vi);
 

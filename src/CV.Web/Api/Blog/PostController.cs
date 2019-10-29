@@ -15,7 +15,7 @@ namespace CV.Web.Api.Blog
 
         public IActionResult Get(int page = 1, int pageSize = 20, string filter = "")
         {
-            var model = _postService.GetPagedAll(page, pageSize, filter);
+            var model = _postService.GetPagedAll(page, pageSize, filter,include: true);
             return Ok(model);
         }
 

@@ -44,6 +44,7 @@
                                     <tr>
                                         <th>Hình đại diện</th>
                                         <th>Tên</th>
+                                        <th>Danh mục</th>
                                         <th>Ngày đăng</th>
                                         <th style="width: 85px;">Action</th>
                                     </tr>
@@ -55,6 +56,12 @@
                                         </td>
                                         <td>
                                             {{item.name}}
+                                        </td>
+                                        <td v-if="item.categoryBlogId === null">
+                                            
+                                        </td>
+                                        <td v-else-if="item.categoryBlogId !== null">
+                                            {{item.categoryBlog.name}}
                                         </td>
                                         <td>
                                             {{item.pushlishDate | formatDate}}

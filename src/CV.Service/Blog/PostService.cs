@@ -7,6 +7,7 @@ using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
 using CV.Utils.Helper;
 using CV.Utils.Utils.Web.Page;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace CV.Service.Blog
 
         public PagedResult<PostModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "",
             DateTimeOffset? fromDate = null, DateTimeOffset? toDate = null, bool publishDate = false, 
-            Languages? lang = null,string cat = "")
+            Languages? lang = null,string cat = "",bool include = false)
         {
             var query = _postRepo.TableNoTracking;
 
@@ -88,6 +89,8 @@ namespace CV.Service.Blog
             if (!string.IsNullOrWhiteSpace(cat))
                 query = query.Where(x => x.CategoryBlog.Slug == cat);
 
+            if (include)
+                query = query.Include(x => x.CategoryBlog);
             var rowCount = query.Count();
             query = query.OrderByDescending(x => x.PushlishDate)
                .Skip((page - 1) * pageSize).Take(pageSize);

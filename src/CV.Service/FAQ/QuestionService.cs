@@ -7,6 +7,7 @@ using CV.Data.Model.FAQ;
 using CV.Service.Interface.FAQ;
 using CV.Utils.Helper;
 using CV.Utils.Utils.Web.Page;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,12 +51,15 @@ namespace CV.Service.FAQ
             throw new NotImplementedException();
         }
 
-        public PagedResult<QuestionModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "")
+        public PagedResult<QuestionModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "", bool include = false)
         {
             var query = _questionRepo.TableNoTracking;
 
             if (!string.IsNullOrWhiteSpace(filter))
                 query = query.Where(x => x.Name.Contains(filter));
+
+            if (include)
+                query = query.Include(x => x.GroupQuestion);
 
             var rowCount = query.Count();
 
