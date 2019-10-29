@@ -15,7 +15,7 @@ namespace CV.Service.Interface.Catalog
 
         IEnumerable<ProductModel> GetProductBySector(string slug);
 
-        PagedResult<ProductModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "", string functionId = "", string sectorId = "", Languages? lang = null);
+        PagedResult<ProductModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "", string functionId = "", string sectorId = "", Languages? lang = null,bool include= false);
 
         IEnumerable<ProductModel> GetAll(Languages? lang = null);
 

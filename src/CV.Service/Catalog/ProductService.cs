@@ -50,7 +50,7 @@ namespace CV.Service.Catalog
         }
 
         public PagedResult<ProductModel> GetPagedAll(int page = 1, int pageSize = 20, string filter = "",
-            string functionId = "", string sectorId = "", Languages? lang = null)
+            string functionId = "", string sectorId = "", Languages? lang = null,bool include = false)
         {
             var query = _productRepo.TableNoTracking;
 
@@ -62,6 +62,9 @@ namespace CV.Service.Catalog
 
             if (!string.IsNullOrWhiteSpace(sectorId))
                 query = query.Where(x => x.CatalogSectorId == sectorId);
+
+            if (include)
+                query = query.Include(x=>x.CatalogFunction).Include(x=>x.CatalogSector);
 
             var rowCount = query.Count();
             query = query.OrderBy(x=>x.Name).Skip((page - 1) * pageSize).Take(pageSize);
