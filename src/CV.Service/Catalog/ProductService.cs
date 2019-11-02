@@ -64,7 +64,7 @@ namespace CV.Service.Catalog
                 query = query.Where(x => x.CatalogSectorId == sectorId);
 
             if (include)
-                query = query.Include(x=>x.CatalogFunction).Include(x=>x.CatalogSector);
+                query = query.Include(x => x.CatalogFunction).Include(x => x.CatalogSector);
 
             var rowCount = query.Count();
             query = query.OrderBy(x=>x.Name).Skip((page - 1) * pageSize).Take(pageSize);

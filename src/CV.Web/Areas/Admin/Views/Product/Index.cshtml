@@ -51,6 +51,14 @@
                                         <td>
                                             {{item.description}}
                                         </td>
+                                        <td v-if="item.catalogFunction === null"></td>
+                                        <td v-else-if="item.catalogFunction !== null">
+                                            {{item.catalogFunction.name}}
+                                        </td>
+                                        <td v-if="item.catalogSector === null"></td>
+                                        <td v-else-if="item.catalogSector !== null">
+                                            {{item.catalogSector.name}}
+                                        </td>
                                         <td class="table-user">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" id="newCheck" v-model="item.new" disabled>
