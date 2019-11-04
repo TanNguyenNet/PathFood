@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using CV.Core.Data;
+using CV.Core.Endpoints;
 using CV.Data.Entities.Blog;
+using CV.Data.Entities.Setting;
 using CV.Data.Enum;
 using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
@@ -19,12 +21,14 @@ namespace CV.Service.Blog
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Post> _postRepo;
+        private readonly IRepository<SearchPage> _searchPageRepo;
         private readonly IUnitOfWork _uow;
         public PostService(IMapper mapper, IUnitOfWork uow)
         {
             _mapper = mapper;
             _uow = uow;
             _postRepo = uow.GetRepository<Post>();
+            _searchPageRepo = uow.GetRepository<SearchPage>();
         }
 
         public void Delete(string id, string userId)
@@ -35,6 +39,11 @@ namespace CV.Service.Blog
                 entity.DeletedTime = CoreHelper.SystemTimeNowUTCTimeZoneLocal;
                 entity.DeletedBy = userId;
                 _postRepo.Update(entity);
+
+                var entitySearchPage = _searchPageRepo.TableNoTracking.Where(x => x.ItemId == id).FirstOrDefault();
+
+                if (entitySearchPage != null)
+                    _searchPageRepo.Delete(entitySearchPage);
             }
             catch
             {
@@ -128,6 +137,20 @@ namespace CV.Service.Blog
                 newPost.CreatedBy = userCurrent;
                 newPost.Slug = StringHelper.ToUrlFriendlyWithDate(newPost.Name);
                 _postRepo.Insert(newPost);
+
+                var newSearchPage = new SearchPage();
+                newSearchPage.Lang = newPost.Lang;
+                newSearchPage.Name = newPost.Name;
+                newSearchPage.Slug = newPost.Slug;
+                newSearchPage.ItemId = newPost.Id;
+
+                if (newPost.Lang == Languages.Vi)
+                    newSearchPage.URL = BlogEndpoints.PostEndpoint.Replace("{slug}", newSearchPage.Slug);
+                else
+                    newSearchPage.URL = BlogEndpoints.EnglishPostEndpoint.Replace("{slug}", newSearchPage.Slug);
+
+                _searchPageRepo.Insert(newSearchPage);
+
                 return post;
             }
             catch

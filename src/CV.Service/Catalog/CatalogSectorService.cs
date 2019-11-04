@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using CV.Core.Data;
+using CV.Core.Endpoints;
 using CV.Data.Entities.Catalog;
+using CV.Data.Entities.Setting;
 using CV.Data.Enum;
 using CV.Data.Model.Catalog;
 using CV.Service.Interface.Catalog;
@@ -19,6 +21,7 @@ namespace CV.Service.Catalog
 
         private readonly IMapper _mapper;
         private readonly IRepository<CatalogSector> _catalogSectorRepo;
+        private readonly IRepository<SearchPage> _searchPageRepo;
         private readonly IUnitOfWork _uow;
 
         public CatalogSectorService(IMapper mapper, IUnitOfWork uow)
@@ -26,6 +29,7 @@ namespace CV.Service.Catalog
             _mapper = mapper;
             _uow = uow;
             _catalogSectorRepo = _uow.GetRepository<CatalogSector>();
+            _searchPageRepo = _uow.GetRepository<SearchPage>();
         }
 
         public void Delete(string id, string userId)
@@ -36,6 +40,11 @@ namespace CV.Service.Catalog
                 catalog.DeletedBy = userId;
                 catalog.DeletedTime = CoreHelper.SystemTimeNowUTCTimeZoneLocal;
                 _catalogSectorRepo.Update(catalog);
+
+                var searchPage = _searchPageRepo.TableNoTracking.FirstOrDefault(x => x.ItemId == id);
+
+                if (searchPage != null)
+                    _searchPageRepo.Delete(searchPage);
             }
             catch
             {
@@ -75,6 +84,20 @@ namespace CV.Service.Catalog
                 newCatalog.CreatedBy = userCurrentId;
                 newCatalog.Slug = StringHelper.ToUrlFriendly(newCatalog.Name);
                 _catalogSectorRepo.Insert(newCatalog);
+
+                var newSearchPage = new SearchPage();
+                newSearchPage.Lang = newCatalog.Lang;
+                newSearchPage.Name = newCatalog.Name;
+                newSearchPage.Slug = newCatalog.Slug;
+                newSearchPage.ItemId = newCatalog.Id;
+
+                if (newCatalog.Lang == Languages.Vi)
+                    newSearchPage.URL = CatalogEndpoints.SectorEndpoint.Replace("{function}", newSearchPage.Slug);
+                else
+                    newSearchPage.URL = CatalogEndpoints.EnglishSectorEndpoint.Replace("{function}", newSearchPage.Slug);
+
+                _searchPageRepo.Insert(newSearchPage);
+
                 return catalogSector;
             }
             catch
@@ -93,6 +116,19 @@ namespace CV.Service.Catalog
 
                 updateCatalogSector.LastUpdatedBy = userCurrentId;
                 _catalogSectorRepo.Update(updateCatalogSector);
+
+                var updateSearch = _searchPageRepo.TableNoTracking.FirstOrDefault(x => x.ItemId == catId);
+
+                if (updateSearch != null)
+                    updateSearch.Slug = updateCatalogSector.Slug;
+
+                if (updateCatalogSector.Lang == Languages.Vi)
+                    updateSearch.URL = CatalogEndpoints.FunctionEndpoint.Replace("{function}", updateSearch.Slug);
+                else
+                    updateSearch.URL = CatalogEndpoints.EnglishFunctionEndpoint.Replace("{function}", updateSearch.Slug);
+
+                _searchPageRepo.Update(updateSearch);
+
                 return catalogSector;
             }
             catch

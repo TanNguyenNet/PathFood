@@ -36,6 +36,8 @@ namespace CV.Service.Mapper
             CreateMap<PageContentModel, PageContent>();
 
             CreateMap<InfoModel, Info>();
+
+            CreateMap<SearchPageModel, SearchPage>();
         }
     }
 }
