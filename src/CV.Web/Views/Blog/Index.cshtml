@@ -9,43 +9,229 @@
 <!-- Main slider -->
 <div class="box mb45">
     <div class="blog-list">
-        <div class="container">
-            <div class="row">
-
-                @{
-                    await Html.RenderPartialAsync("~/Views/Blog/_Index/_Post.cshtml", Model.Results).ConfigureAwait(true);
-                }
-
-                <div class="wrap-pagination">
-                    <div class="pagination">
-                        <span>
-                            @{
-                                if (Model.PageCount > 0)
-                                {
-                                    for (int i = 1; i < Model.PageCount + 1; i++)
-                                    {
-                                        if (ViewBag.cat != "")
-                                        {
-                                            <div class="index"><a href="~/nhomtintuc-@i/@ViewBag.cat"> @i</a></div>
-
-                                        }
-                                        else
-                                        {
-                                            <div class="index"><a href="~/tintuc-@i"> @i</a></div>
-                                        }
-                                    }
-                                }
-                            }
-                        </span>
-                        <svg viewBox="0 0 100 100">
-                            <path d="m 7.1428558,49.999998 c -1e-7,-23.669348 19.1877962,-42.8571447 42.8571442,-42.8571446 23.669347,0 42.857144,19.1877966 42.857144,42.8571446" />
-                        </svg>
-                        <svg viewBox="0 0 100 100">
-                            <path d="m 7.1428558,49.999998 c -1e-7,23.669347 19.1877962,42.857144 42.8571442,42.857144 23.669347,0 42.857144,-19.187797 42.857144,-42.857144" />
-                        </svg>
+        <div class="container d-none d-lg-block mb-30">
+            <div class="d-lg-flex justify-content-between border-bottom-gray">
+                <div class="box-left-header-blogs">
+                    <div class="highlight-blog">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="" title="chat beo"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Tỷ lệ vàng của chất béo</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>01/11/2019</div>
+                        </div>
                     </div>
                 </div>
-
+                <div class="box-right-header-blogs">
+                    <div class="list-blogs">
+                            <div class="current-blog">
+                                <div class="image-current-blog">
+                                    <a href="#">
+                                        <img src="/UploadFiles/Flavors.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                    </a>
+                                </div>
+                                <h4>
+                                    <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                                </h4>
+                                <div class="date-create"><span class="icon icon-calendar"></span>09/10/2019</div>
+                            </div>
+                            <div class="current-blog">
+                                <div class="image-current-blog">
+                                    <a href="#">
+                                        <img src="/UploadFiles/Micro-Emulsions-in-Poultry.jpg" alt="" title="Tăng cường kiểm soát về ATVSTP"/>
+                                    </a>
+                                </div>
+                                <h4>
+                                    <a href="#">Tăng cường kiểm soát về ATVSTP</a>
+                                </h4>
+                                <div class="date-create"><span class="icon icon-calendar"></span>08/10/2019</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="blog-category">
+            <div class="title-blog d-flex justify-content-between">
+                <h3>Thế giới</h3>
+                <a href="#" class="link-see-more">Xem thêm</a>
+            </div>
+            <div class="list-blogs swiper-container swiper6">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>01/11/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Are-Essential-Oils-Anti-Inflammatory.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>17/09/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/How-to-increase-SNF-in-Milk-Production-Know-about-SNF-–-Solids-Not-Fat-Vinayak-Ingredients.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>15/09/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Micro-Emulsions-in-Poultry.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>01/09/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#"">
+                                    <img src="/UploadFiles/Problems-of-Indian-Dairy-Industry-Vinayak-Ingredients.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#"">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>29/08/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>17/06/2019</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="blog-category">
+            <div class="title-blog d-flex justify-content-between">
+                <h3>Nội bộ</h3>
+                <a href="#" class="link-see-more">Xem thêm</a>
+            </div>
+            <div class="list-blogs swiper-container swiper6">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>01/11/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Are-Essential-Oils-Anti-Inflammatory.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>17/09/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/How-to-increase-SNF-in-Milk-Production-Know-about-SNF-–-Solids-Not-Fat-Vinayak-Ingredients.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>15/09/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Micro-Emulsions-in-Poultry.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>01/09/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#"">
+                                    <img src="/UploadFiles/Problems-of-Indian-Dairy-Industry-Vinayak-Ingredients.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#"">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>29/08/2019</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="#">
+                                    <img src="/UploadFiles/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="" title="Đường nâu không tốt hơn đường trắng"/>
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="#">Đường nâu không tốt hơn đường trắng</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>17/06/2019</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
