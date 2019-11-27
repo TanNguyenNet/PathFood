@@ -13,6 +13,8 @@ namespace CV.Data.Model.Page
 
         public IEnumerable<PostModel> PostsHot { set; get; }
 
+        public IEnumerable<CategoryBlogModel> Category { set; get; }
+
         public IEnumerable<WebImageModel> Images { set; get; }
 
         public IEnumerable<CatalogFunctionModel> CatalogFunctions { set; get; }

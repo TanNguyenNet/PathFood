@@ -6,92 +6,33 @@
                 <div class="col-md-12 algin-text first-2">
                     <h1 class="header-title">Tin Tức</h1>
                     <ul class="filter-list">
-                        <li class="active"  value="tin-thi-truong"><span>Tin thị trường</span></li>
-                        <li value="tin-noi-bo"><span>tin nội bộ</span></li></div>
-            </div> 
+                        @foreach (var item in Model.Category)
+                        {
+                            <li value="@item.Id"><span>@item.Name</span></li>
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="container">
-          <div class="swiper-container swiper5">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide img-content" data-filter="tin-thi-truong">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/The-Science-of-Feed-Formulation.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">Tỷ vệ vàng của chất béo</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
+            <div class="swiper-container swiper5">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model.Posts)
+                    {
+                        <div class="swiper-slide img-content" data-filter="@item.CategoryBlogId">
+                            <div class="content">
+                                <a href="#"><img src="@item.UrlImage" alt="@item.Name"></a>
+                                <div class="info-content">
+                                    <h3 class="title"><a href="~/tin-tuc/@item.Slug">@item.Name</a></h3>
+                                    <div class="readmore">
+                                        <a href="~/tin-tuc/@item.Slug"><span class="icon icon-calendar"></span>@item.PushlishDate.Value.ToString("dd/MM/yyyy")</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
-              </div>
-              <div class="swiper-slide img-content" data-filter="tin-thi-truong">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/Make-your-Jams-and-Jellies-Appealing-with-our-Natural-Color-Ecocol.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">VN phát hiện màng bọc thực phẩm nhiễm chất độc</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide img-content" data-filter="tin-thi-truong">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/How-to-increase-SNF-in-Milk-Production-Know-about-SNF-–-Solids-Not-Fat-Vinayak-Ingredients.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">Đường nâu không tốt hơn đường trắng</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide img-content" data-filter="tin-thi-truong">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/Seasoning.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">Tăng cường kiểm soát về ATVSTP thuỷ sản xk</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide img-content" data-filter="tin-thi-truong">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/The-Science-of-Feed-Formulation.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">Tỷ vệ vàng của chất béo</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide img-content" data-filter="tin-thi-truong">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/Problems-of-Indian-Dairy-Industry-Vinayak-Ingredients.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">Đường nâu không tốt hơn đường trắng</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="swiper-slide img-content" data-filter="tin-noi-bo">
-                <div class="content">
-                    <a href="#"><img src="/UploadFiles/Problems-of-Indian-Dairy-Industry-Vinayak-Ingredients.jpg" alt="T&#x1EF7; l&#x1EC7; v&#xE0;ng c&#x1EE7;a ch&#x1EA5;t b&#xE9;o"></a>
-                    <div class="info-content">
-                        <h3 class="title"><a href="#">Đường nâu không tốt hơn đường trắng</a></h3>
-                        <div class="readmore">
-                            <a href="/tintuc/ty-le-vang-cua-chat-beo-14102019"><span class="icon icon-calendar"></span>12/02/2019</a>
-                        </div>
-                    </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
     </div>
 </div>

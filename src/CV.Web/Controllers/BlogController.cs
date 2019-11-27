@@ -27,7 +27,6 @@ namespace CV.Web.Controllers
 
         [Route(BlogEndpoints.IndexEndpoint)]
         [Route(BlogEndpoints.IndexPagedEndpoint)]
-        [Route(BlogEndpoints.CatPagedEndpoint)]
         [HttpGet]
         public IActionResult Index(int page = 1, string cat = "")
         {
@@ -44,9 +43,33 @@ namespace CV.Web.Controllers
                 if (pageModel.Posts is null)
                     pageModel.Posts = posts.Results;
                 else
-                    pageModel.Posts.ToList().AddRange(posts.Results);
-
+                {
+                    var tmp = pageModel.Posts.ToList();
+                    foreach (var post in posts.Results)
+                    {
+                        tmp.Add(post);
+                    }
+                    pageModel.Posts = tmp;
+                }
             }
+
+            ViewBag.cat = cat;
+            ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbNews).FirstOrDefault()?.URLImage;
+
+            return View(pageModel);
+        }
+
+        [Route(BlogEndpoints.CatPagedEndpoint)]
+        [HttpGet]
+        public IActionResult PostCategory(int page = 1, string cat = "")
+        {
+
+            var pageModel = new PagePostModel();
+
+            var model = _postService.GetPagedAll(page, 3, publishDate: true, lang: CurrentLang, cat: cat);
+            pageModel.MixPost = model.Results;
+
+            pageModel.PagePost = _postService.GetPagedAll(page, 12, publishDate: true, lang: CurrentLang, cat: cat);
 
             ViewBag.cat = cat;
             ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbNews).FirstOrDefault()?.URLImage;
