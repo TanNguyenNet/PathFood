@@ -3636,7 +3636,7 @@ padding-bottom: 2rem;
    background-repeat: no-repeat;
    background-position: right center; }
    .product-list .aside-nav h3 {
-    font-size: 25px;
+    font-size: 20px;
     color: #0066b2;
     font-family: "Montserrat-Bold", "Roboto", sans-serif;
     font-weight: normal;
@@ -5784,6 +5784,18 @@ font-weight: 600; }
        padding-top: 30px;
        font-size: 14px; } }
    @media only screen and (max-width: 767px) {
+    .home-partner .header-title {
+      font-size: 2.8rem;
+    }
+    .art-navigation .content .header-title {
+      font-size: 2.8rem;
+    }
+    .new-product .header-title {
+      font-size: 2.8rem;
+    }
+    .bg-hex:before {
+      background-image: none;
+    }
     .new-product .box {
       top: 32%;
       left: 76%;
@@ -5807,7 +5819,10 @@ font-weight: 600; }
    .mt60 {
      margin-top: 60px; }
    .mt45 {
-     margin-top: 0; }
+     margin-top: 45px; }
+     .mb100 {
+       margin-bottom: 40px;
+     }
    .contact-info .com-wrap1 {
      border-right: none;
      margin-top: 40px; }
@@ -5971,10 +5986,10 @@ font-weight: 600; }
     .art-navigation .content .menunav {
       top: 0;
     }
-    .art-navigation .content .header-title {
+    /* .art-navigation .content .header-title {
       width: 50%;
       color: #172b4d;
-    }
+    } */
     .oval-gradient-bg {
       width: 290%;
     }
@@ -5997,7 +6012,8 @@ font-weight: 600; }
       text-align: center;
     }
    body {
-     font-size: 12px; }
+     /* font-size: 12px; */
+     }
    .consultant {
      display: none; }
    .mb-online {

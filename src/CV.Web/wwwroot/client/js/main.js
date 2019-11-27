@@ -9,7 +9,7 @@ $(document).ready(function(){
     //home-blog
     var swiper5 = new Swiper('.swiper5', {
       pagination: '.swiper-pagination',
-      slidesPerView: 4,
+      slidesPerView: 5,
       centeredSlides: true,
       spaceBetween: 30
   });
@@ -204,7 +204,7 @@ $(document).ready(function(){
           slidesxcol = 3;
         else slidesxcol = 1;
         swiper1 = new Swiper('.swiper5', {
-          slidesPerView: 4,
+          slidesPerView: 5,
           centeredSlides: true,
           spaceBetween: 30
         });
@@ -217,7 +217,7 @@ $(document).ready(function(){
           slidesxcol = 3;
         else slidesxcol = 1;
         swiper1 = new Swiper('.swiper5', {
-          slidesPerView: 4,
+          slidesPerView: 5,
           centeredSlides: true,
           spaceBetween: 30
         });
