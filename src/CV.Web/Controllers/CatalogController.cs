@@ -37,23 +37,26 @@ namespace CV.Web.Controllers
             var model = new CatalogModel();
             model.CatalogFunctions = _catalogFunctionService.GetAll(CurrentLang);
             model.CatalogSectors = _catalogSectorService.GetAll(CurrentLang);
-
+            ViewBag.color = "";
             if (!string.IsNullOrWhiteSpace(function))
             {
                 model.Products = _productService.GetProductByFunction(function);
                 model.Title = model.CatalogFunctions.Where(x => x.Slug == function).FirstOrDefault().Name;
+                ViewBag.color = model.CatalogFunctions.Where(x => x.Slug == function).FirstOrDefault().Color;
             }
 
             else if (!string.IsNullOrWhiteSpace(sector))
             {
                 model.Products = _productService.GetProductBySector(sector);
                 model.Title = model.CatalogSectors.Where(x => x.Slug == sector).FirstOrDefault().Name;
+                ViewBag.color = model.CatalogSectors.Where(x => x.Slug == sector).FirstOrDefault().Color;
             }
 
             else
             {
                 model.Products = _productService.GetAll(CurrentLang);
                 model.Title = "Tất cả";
+                
             }
 
             ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbProduct).FirstOrDefault()?.URLImage;

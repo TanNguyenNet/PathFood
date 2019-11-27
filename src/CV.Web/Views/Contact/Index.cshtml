@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<InfoModel>
-@{ 
+@{
     ViewData["Title"] = "Liên hệ";
     ViewData["Description"] = "Gởi thông tin liên hệ cho chúng tôi";
 }
@@ -92,10 +92,11 @@ hỗ trợ khách hàng là niềm vui của PATH!!</p>
 
                     </div>
                 </div>
-                @{ 
+                @{
                     await Html.RenderPartialAsync("~/Views/Contact/_Index/_FormContact.cshtml").ConfigureAwait(true);
                 }
             </div>
         </div>
     </div>
 </div>
+@await Component.InvokeAsync("Logo")

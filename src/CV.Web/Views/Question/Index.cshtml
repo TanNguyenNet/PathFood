@@ -57,3 +57,4 @@
 @{
     await Html.RenderPartialAsync("~/Views/Question/_Index/_Question.cshtml").ConfigureAwait(true);
 }
+@await Component.InvokeAsync("Logo")

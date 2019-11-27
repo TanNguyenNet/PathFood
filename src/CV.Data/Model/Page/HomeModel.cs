@@ -19,5 +19,7 @@ namespace CV.Data.Model.Page
 
         public IEnumerable<CatalogSectorModel> CatalogSectors { set; get; }
 
+        public IEnumerable<WebImageModel> Logos { set; get; }
+
     }
 }
