@@ -4039,14 +4039,20 @@ padding-bottom: 2rem;
 }
 
  .contact-form .button .btn {
-   border: 1px solid #0066b2;
-   padding: 10px 40px;
-   font-weight: bold;
-   font-size: 16px;
-   background-color: transparent;
-   text-transform: uppercase; }
+  /* margin: 2rem 0; */
+  border-radius: .4rem;
+  box-shadow: 0 0.7rem 1.9rem 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffc15f;
+  padding: 1rem 4rem;
+  font-size: 1.8rem;
+  color: #fff;
+  border: .1rem solid #ffc15f;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Montserrat-Bold", "Roboto", sans-serif;
+ }
    .contact-form .button .btn:hover {
-     background-color: #0066b2;
+     background-color: #ffc15f;
      color: #fff; }
  
  .contact-form .form-group {
@@ -4119,7 +4125,8 @@ padding-bottom: 2rem;
    /* margin-top: 80px; */
    }
    .QA-list .qa-wrap {
-     padding: 20px 0; }
+     /* padding: 20px 0; */
+     }
      .QA-list .qa-wrap li {
        display: inline-block;
        padding: 10px 20px;
@@ -4128,12 +4135,12 @@ padding-bottom: 2rem;
        .QA-list .qa-wrap li:hover {
          padding: 10px 20px;
          border-radius: 30px;
-         background-color: #4a90e2;
+         background-color: #ffc15f;
          color: #fff; }
      .QA-list .qa-wrap .active {
        padding: 10px 20px;
        border-radius: 30px;
-       background-color: #4a90e2;
+       background-color: #ffc15f;
        color: #fff; }
    .QA-list .QA-content .accordion_container {
      width: 100%; }
@@ -4175,11 +4182,12 @@ padding-bottom: 2rem;
    .contact-info .com-wrap1 {
      border-right: 1px dashed #0066b2; }
    .contact-info h3 {
-     border-bottom: 2px solid #0066b2;
+     /* border-bottom: 2px solid #0066b2; */
      margin-bottom: 20px;
      display: inline-block;
      font-weight: bold;
-     text-transform: capitalize; }
+     text-transform: capitalize; 
+    font-size: 2.5rem }
    .contact-info .incon-info {
      position: relative;
      margin: 15px 0; }
@@ -4195,9 +4203,16 @@ padding-bottom: 2rem;
  }
  .appli .title {
    font-family: "Montserrat-Bold", "Roboto", sans-serif;
+   font-size: 2.5rem;
    color: #0066b2;
    margin-bottom: 10px;
    text-transform: uppercase; }
+   .appli .title1 {
+    font-family: "Montserrat-Bold", "Roboto", sans-serif;
+    font-size: 1.8rem;
+    color: #0066b2;
+    margin-bottom: 10px;
+    text-transform: uppercase; }
  
  .appli p {
    padding: 5px 0; }
