@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CV.Utils.Utils.Web.Page;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,6 +14,6 @@ namespace CV.Data.Model.Blog
 
         public IEnumerable<PostModel> Posts { set; get; }
 
-        
+        public PagedResult<PostModel> PagePost { set; get; }
     }
 }

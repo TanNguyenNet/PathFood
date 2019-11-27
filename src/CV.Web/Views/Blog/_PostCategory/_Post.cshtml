@@ -1,0 +1,58 @@
+﻿@model PagePostModel
+
+<div class="container">
+    <div class="blog-category">
+        <div class="list-blogs swiper-container swiper6">
+            <div class="swiper-wrapper">
+                @foreach (var post in Model.PagePost.Results)
+                {
+                    <div class="swiper-slide item">
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="~/tintuc/@post.Slug">
+                                    <img src="@post.UrlImage" alt="@post.Name" title="@post.Name" />
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="~/tintuc/@post.Slug">@post.Name</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>@post.PushlishDate.Value.ToString("dd/MM/yyyy")</div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+        <div class="wrap-pagination">
+            <div class="pagination">
+                <span>
+                    @{
+                        if (Model.PagePost.PageCount > 0)
+                        {
+                            for (int i = 1; i < Model.PagePost.PageCount + 1; i++)
+                            {
+                                if (ViewBag.cat != "")
+                                {
+                                    <div class="index"><a href="~/nhomtintuc-@i/@ViewBag.cat"> @i</a></div>
+
+                                }
+                                else
+                                {
+                                    <div class="index"><a href="~/tintuc-@i"> @i</a></div>
+                                }
+                            }
+                        }
+                    }
+                </span>
+                <svg viewBox="0 0 100 100">
+                    <path d="m 7.1428558,49.999998 c -1e-7,-23.669348 19.1877962,-42.8571447 42.8571442,-42.8571446 23.669347,0 42.857144,19.1877966 42.857144,42.8571446" />
+                </svg>
+                <svg viewBox="0 0 100 100">
+                    <path d="m 7.1428558,49.999998 c -1e-7,23.669347 19.1877962,42.857144 42.8571442,42.857144 23.669347,0 42.857144,-19.187797 42.857144,-42.857144" />
+                </svg>
+            </div>
+        </div>
+
+    </div>
+</div>

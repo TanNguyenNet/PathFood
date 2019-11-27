@@ -12,11 +12,8 @@
 
 
     @RenderBody()
-
-    @{
-        await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);
-    }
-
+  
+    @await Component.InvokeAsync("OnlineChat")
     @await Component.InvokeAsync("Footer")
 
     @{
