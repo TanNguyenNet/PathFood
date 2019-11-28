@@ -1,4 +1,8 @@
 ﻿@model CatalogModel
+@{
+    ViewData["Title"] = Model.Title + " - Path";
+    ViewData["Description"] = "path.com.vn";
+}
 <div class="box">
     <div class="brums">
         <img src="@ViewBag.UrlImage" alt="@Model.Title">
