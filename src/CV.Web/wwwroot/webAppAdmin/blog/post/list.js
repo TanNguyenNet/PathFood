@@ -12,19 +12,21 @@ var app = new Vue({
             list: [],
             pCount: 0,
             pSize: 20,
-            page: 1
+            page: 1,
+            filter: ""
         };
     },
     methods: {
         loadData: function (page) {
             var self = this;
 
-            var filter = {
+            var params = {
                 page: self.page,
-                pageSize: self.pSize
+                pageSize: self.pSize,
+                filter: self.filter
             };
 
-            axios.get('/api/post/get', filter)
+            axios.get('/api/post/get', { params })
                 .then(function (response) {
                     self.list = response.data.results;
                     self.pCount = response.data.pageCount;
