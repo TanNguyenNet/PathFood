@@ -22,8 +22,11 @@
 <div class="mb-online">
     <div class="mbonline-wrapper">
         <div class="hotline">
-            <div class="detail-hotline"><i class="icon icon-phone-hang-up"></i><span>Số tổng đài</span></div>
-            <div><a href='tel:0909109786'><span>0909109786</span></a></div>
+            <div class="icon-class"><img src="~/client/images/old-typical-phone.png" alt="phone icon"></div>
+            <div class="detail-hotline">
+                <span>Số tổng đài</span>
+                <a href='tel:0909109786'><span>0909109786</span></a>
+            </div>
         </div>
         <div class="con-person">
             <div id="caroseul" class="swiper-container swiper3 person">
@@ -31,7 +34,7 @@
                     @foreach (var item in Model)
                     {
                         <div class="swiper-slide">
-                            <img src="~/client/images/customer-service.svg" alt="">
+                            <img src="~/client/images/customer-service.svg" alt="customer service">
                             <div class="contact-person">
                                 <span class="name">@item.Name</span>
                                 <a class="chat" href='http://zalo.me/@item.Phone'><span><i class="icon icon-bubbles2"></i>chat online</span></a>

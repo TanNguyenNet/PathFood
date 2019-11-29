@@ -11,7 +11,24 @@ $(document).ready(function(){
       pagination: '.swiper-pagination',
       slidesPerView: 5,
       centeredSlides: true,
-      spaceBetween: 30
+      spaceBetween: 30,
+      breakpoints: {
+        1024: {
+            slidesPerView: 5
+        },
+        991: {
+            slidesPerView: 4
+        },
+        990: {
+            slidesPerView: 3
+        },
+        576: {
+            slidesPerView: 2
+        },
+        320: {
+            slidesPerView: 1
+        }
+      }
   });
   //blog-swiper
   var swiper6 = new Swiper('.swiper6', {
@@ -49,13 +66,13 @@ $(document).ready(function(){
             slidesPerView: 4
         },
         990: {
-            slidesPerView: 3
+            slidesPerView: 4
         },
         576: {
-            slidesPerView: 2
+            slidesPerView: 4
         },
         320: {
-            slidesPerView: 2
+            slidesPerView: 4
         }
       }
     });

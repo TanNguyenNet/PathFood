@@ -4,13 +4,13 @@
     var hPost = Model.MixPost.Skip(1).Take(2);
 }
 <div class="blog-list">
-    <div class="container d-none d-lg-block mb-30">
-        <div class="d-lg-flex justify-content-between border-bottom-gray">
+    <div class="container d-lg-block mb-30">
+        <div class="d-lg-flex d-md-flex justify-content-between border-bottom-gray">
             <div class="box-left-header-blogs">
                 <div class="highlight-blog">
                     <div class="current-blog">
                         <div class="image-current-blog">
-                            <a href="#">
+                            <a href="~/tintuc/@mainPost.Slug">
                                 <img src="@mainPost.UrlImage" alt="@mainPost.Name" title="@mainPost.Name" />
                             </a>
                         </div>
