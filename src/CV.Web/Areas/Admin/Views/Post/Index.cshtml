@@ -27,13 +27,19 @@
                     <div class="card-body">
                         <div class="row mb-2">
                             <div class="col-sm-4">
-                                <a asp-area="admin" asp-controller="post" asp-action="create" class="btn btn-primary waves-effect waves-light" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Bài viết mới</a>
+                                <form class="form-inline">
+                                    <div class="form-group mb-2">
+                                        <label for="inputPassword2" class="sr-only">Search</label>
+                                        <input type="search" class="form-control" id="inputPassword2" v-model="filter" placeholder="Search...">
+                                    </div>
+                                    <div class="form-group mx-sm-3 mb-2">
+                                        <button id="demo-btn-addrow" class="btn btn-primary" v-on:click="loadData" type="button"><i class="mdi mdi-file-find"></i></button>
+                                    </div>
+                                </form>
                             </div>
                             <div class="col-sm-8">
                                 <div class="text-sm-right">
-                                    <button type="button" class="btn btn-success mb-2 mr-1"><i class="mdi mdi-settings"></i></button>
-                                    <button type="button" class="btn btn-light mb-2 mr-1">Import</button>
-                                    <button type="button" class="btn btn-light mb-2">Export</button>
+                                    <a asp-area="admin" asp-controller="post" asp-action="create" class="btn btn-primary mb-2 mr-1" data-overlaycolor="#38414a"><i class="mdi mdi-plus-circle mr-1"></i> Bài viết mới</a>
                                 </div>
                             </div><!-- end col-->
                         </div>
