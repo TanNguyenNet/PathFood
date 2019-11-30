@@ -2798,6 +2798,7 @@
       }
  .nav-wrap {
    background: linear-gradient(90deg, rgba(255,153,0,1) 0%, rgba(255,188,0,1) 63%, rgba(255,153,0,1) 100%);
+     position:relative;
    /* border-top: 1px solid #fff; */
    /* border-bottom: 3px solid #a2a2a2;
    font-size: 0.75rem; */
@@ -2906,7 +2907,78 @@
      transition: ease-out .35s;
      -moz-transition: ease-out .35s;
      -webkit-transition: ease-out .35s; }
- 
+   .header-right {
+       display: inline-block;
+       position: absolute;
+       right: 0;
+       text-align: right;
+       top: 0;
+       padding-top: 10px;
+   }
+.header-right > div {
+    display: inline-block;
+    margin-left: 20px;
+    color: #fff;
+}
+.yolo-search-wrapper.show {
+    transition: all 0.3s ease 0s;
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+}
+.yolo-search-wrapper {
+    background: linear-gradient(90deg, rgba(5,161,247,1) 0%, rgba(148,221,255,1) 63%, rgba(5,161,247,1) 100%);
+    transition: all 0.3s ease 0s;
+    transform: translateY(-100%);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 21;
+    visibility: hidden;
+    opacity: 0;
+    height: 100vh;
+}
+.yolo-search-wrapper input {
+    background-color: transparent;
+    border-width: 0 0 2px;
+    margin-top: 45vh;
+    width: 80vw;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    font-size: 16px;
+}
+.yolo-search-wrapper input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+
+.yolo-search-wrapper input::-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
+.yolo-search-wrapper input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+}
+.yolo-search-wrapper button.close {
+    background: transparent none repeat scroll 0 0;
+    color: #fff;
+    opacity: 1;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    z-index: 22;
+    font-size: 30px;
+    border: none;
+}
+.yolo-search-wrapper .search {
+    background-color: transparent;
+    border: medium none;
+    margin-left: -36px;
+    color: #fff;
+}
  /* --------------------------------------------------------------------- */
  /* home page
  /* --------------------------------------------------------------------- */
@@ -6170,7 +6242,7 @@ font-weight: 600; }
      margin: auto; } }
    @media only screen and (max-width: 575px) {
     .new-product .display-product > div {
-      height: 630px;
+      height: 395px;
     }
     .news .info-content .title, .blog-list .info-content .title {
       font-size: 1.4rem;

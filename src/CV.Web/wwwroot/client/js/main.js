@@ -283,7 +283,10 @@ $(document).ready(function(){
         });
       }
     }
-
+    //scroll top
+    $("button.scroll-top").click(function(){
+      $(window).scrollTop(0);
+    });
     //QA arrcordian
     $(".accordion_head").click(function() {
       if ($('.accordion_body').is(':visible')) {
@@ -298,4 +301,16 @@ $(document).ready(function(){
         $(this).children(".plusminus").text('+');
       }
     });
+    /*****************************/
+    /* click icon menu */
+    /*****************************/
+    $('.icon-search-menu').on('click', function (event) {
+      event.preventDefault();
+      $('.yolo-search-wrapper').toggleClass('show');
+    });
+    $('.yolo-search-wrapper .close').on('click', function (event) {
+      event.preventDefault();
+      $('.yolo-search-wrapper').removeClass('show');
+    });
+
 });
