@@ -68,17 +68,19 @@
                         <li><a href="~/lienhe">liên hệ</a></li>
                     </ul>
                 </nav>
-                
-            <div class="header-right">
-              <div class="search-button-wrapper header-customize-item style-default">
-                <div class="icon-search-menu"><i class="icon icon-search"></i></div>
-                <div class="yolo-search-wrapper">
-                  <input id="search-ajax" placeholder="Enter keyword to search" type="search"/>
-                  <button class="search"><i class="icon icon-search"></i></button>
-                  <button class="close"><i class="icon icon-cancel-circle"></i></button>
+
+                <div class="header-right">
+                    <div class="search-button-wrapper header-customize-item style-default">
+                        <div class="icon-search-menu"><i class="icon icon-search"></i></div>
+                        <div class="yolo-search-wrapper">
+                            <form method="get" action="~/tim-kiem" novalidate>
+                                <input id="search-ajax" name="filter" placeholder="Enter keyword to search" type="text" />
+                                <button class="search" type="submit"><i class="icon icon-search"></i></button>
+                                <button class="close"><i class="icon icon-cancel-circle"></i></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
-    </div>
 </header>

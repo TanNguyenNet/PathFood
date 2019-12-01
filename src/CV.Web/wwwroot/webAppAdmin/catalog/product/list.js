@@ -71,5 +71,6 @@ var app = new Vue({
     },
     created: function () {
         this.loadData(this.page);
+        this.loadLang();
     }
 });

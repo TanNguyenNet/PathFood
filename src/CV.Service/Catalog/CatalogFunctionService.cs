@@ -125,7 +125,12 @@ namespace CV.Service.Catalog
                 var updateSearch = _searchPageRepo.TableNoTracking.FirstOrDefault(x => x.ItemId == catId);
 
                 if (updateSearch != null)
+                {
                     updateSearch.Slug = updateCat.Slug;
+                    updateSearch.Lang = updateCat.Lang;
+                    updateSearch.Name = updateCat.Name;
+                }
+                    
 
                 if (updateCat.Lang == Languages.Vi)
                     updateSearch.URL = CatalogEndpoints.FunctionEndpoint.Replace("{function}", updateSearch.Slug);

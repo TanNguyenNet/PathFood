@@ -168,6 +168,24 @@ namespace CV.Service.Blog
                 updatePost.LastUpdatedBy = userCurrentId;
 
                 _postRepo.Update(updatePost);
+
+                var updateSearch = _searchPageRepo.TableNoTracking.FirstOrDefault(x => x.ItemId == id);
+
+                if (updateSearch != null)
+                {
+                    updateSearch.Slug = updatePost.Slug;
+                    updateSearch.Lang = updatePost.Lang;
+                    updateSearch.Name = updatePost.Name;
+                }
+                    
+
+                if (updatePost.Lang == Languages.Vi)
+                    updateSearch.URL = BlogEndpoints.PostEndpoint.Replace("{slug}", updateSearch.Slug);
+                else
+                    updateSearch.URL = BlogEndpoints.EnglishPostEndpoint.Replace("{slug}", updateSearch.Slug);
+
+                _searchPageRepo.Update(updateSearch);
+
                 return post;
             }
             catch

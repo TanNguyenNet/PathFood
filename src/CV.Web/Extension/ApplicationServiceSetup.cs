@@ -52,6 +52,8 @@ namespace CV.Web.Extension
 
             services.AddTransient<IEmailService, EmailService>();
 
+            services.AddTransient<ISearchService, SearchService>();
+
         }
     }
 }
