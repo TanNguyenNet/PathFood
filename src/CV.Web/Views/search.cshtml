@@ -1,18 +1,50 @@
-@model CatalogModel
-<div class="col-md-9">
-    <div class="content-wrap">
-        <h3 style="color: @ViewBag.color">@Model.Title</h3>
-        <table class="table_1" cellspacing="1" cellpadding="1" border="0" width="100%">
-            <thead>
-            <tr>
-                <td>kết quả tìm kiểm</td>
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="#">thông tin search hiển thị ở đây.</a></td>
-                </tr>
-            </tbody>
-        </table>
+@model CatalogModel 
+<div class="box">
+    <div class="product-list">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="aside-nav">
+                        <h3>
+                            Sản phẩm theo chức năng
+                        </h3>
+                        <ul>
+                            @foreach (var item in Model.CatalogFunctions)
+                            {
+                                <li><a style="color: @item.Color" href="~/nhom-chucnang-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="aside-nav mt45">
+                        <h3>
+                            Sản phẩm theo lĩnh vực
+                        </h3>
+                        <ul>
+                            @foreach (var item in Model.CatalogSectors)
+                            {
+                                <li><a style="color: @item.Color" href="~/nhom-sanpham-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="content-wrap">
+                        <h3 style="color: @ViewBag.color">@Model.Title</h3>
+                        <table class="table_1" cellspacing="1" cellpadding="1" border="0" width="100%">
+                            <thead>
+                            <tr>
+                                <td>kết quả tìm kiểm</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#">thông tin search hiển thị ở đây.</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</div>   
