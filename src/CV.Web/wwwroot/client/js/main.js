@@ -216,7 +216,24 @@ $(document).ready(function(){
         $("[data-filter]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
         swiper5 = new Swiper('.swiper5', {
           slidesPerView: 5,
-          spaceBetween: 30
+          spaceBetween: 30,
+          breakpoints: {
+            1024: {
+                slidesPerView: 5
+            },
+            991: {
+                slidesPerView: 4
+            },
+            990: {
+                slidesPerView: 3
+            },
+            576: {
+                slidesPerView: 2
+            },
+            320: {
+                slidesPerView: 1
+            }
+          }
         });
       }
       else {
@@ -225,7 +242,24 @@ $(document).ready(function(){
         // console.log($(".swiper-slide").length)
         swiper5 = new Swiper('.swiper5', {
           slidesPerView: 5,
-          spaceBetween: 30
+          spaceBetween: 30,
+          breakpoints: {
+            1024: {
+                slidesPerView: 5
+            },
+            991: {
+                slidesPerView: 4
+            },
+            990: {
+                slidesPerView: 3
+            },
+            576: {
+                slidesPerView: 2
+            },
+            320: {
+                slidesPerView: 1
+            }
+          }
         });
       }
     });
