@@ -8,9 +8,7 @@ $(document).ready(function(){
     });
     //home-blog
     var swiper5 = new Swiper('.swiper5', {
-      pagination: '.swiper-pagination',
       slidesPerView: 5,
-      centeredSlides: true,
       spaceBetween: 30,
       breakpoints: {
         1024: {
@@ -211,18 +209,13 @@ $(document).ready(function(){
     //new product slider & filter
     $(".filter-list li").on("click", function(){
       var filter = $(this).attr("value");
-      var slidesxcol;
       $(".filter-list li").removeClass("active");
       $(this).addClass("active");
 
       if(filter=="tin-thi-truong" || filter=="tin-noi-bo"){
         $("[data-filter]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
-        if($(".swiper5 .swiper-slide").length > 6)
-          slidesxcol = 5;
-        else slidesxcol = 1;
         swiper5 = new Swiper('.swiper5', {
           slidesPerView: 5,
-          centeredSlides: true,
           spaceBetween: 30
         });
       }
@@ -230,18 +223,24 @@ $(document).ready(function(){
       $(".swiper5 .swiper-slide").not("[data-filter='"+filter+"']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
         $("[data-filter='"+filter+"']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
         // console.log($(".swiper-slide").length)
-        if($(".swiper5 .swiper-slide").length > 6)
-          slidesxcol = 5;
-        else slidesxcol = 1;
         swiper5 = new Swiper('.swiper5', {
           slidesPerView: 5,
-          centeredSlides: true,
           spaceBetween: 30
         });
       }
     });
+    //product tabs 
+    var tabs =  $(".tabs li a");
+  
+    tabs.click(function() {
+      var content = this.hash.replace('/','');
+      tabs.removeClass("active");
+      $(this).addClass("active");
+      $(".aside-nav").find('ul').hide();
+      $(content).fadeIn(200);
+    });
 
-    //QA filter
+  //QA filter
     // $(".qa-wrap li").on('click', (function(event){
     //   var target = $( event.target );
     //   $(".qa-wrap li").removeClass("active");
