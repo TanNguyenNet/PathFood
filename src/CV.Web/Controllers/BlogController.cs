@@ -71,6 +71,11 @@ namespace CV.Web.Controllers
 
             pageModel.PagePost = _postService.GetPagedAll(page, 12, publishDate: true, lang: CurrentLang, cat: cat);
 
+            var category = _categoryBlogService.GetCategoryBlog("", cat);
+
+            ViewBag.Title = category.Name;
+            ViewBag.Description = category.Name + " - path";
+
             ViewBag.cat = cat;
             ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbNews).FirstOrDefault()?.URLImage;
 
