@@ -40,8 +40,6 @@ namespace CV.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            //SystemSetting.Current = Configuration.GetSection<SystemSetting>("Setting");
-            //DirectoryHelper.CreateIfNotExist(SystemSetting.Current.ResourceFolderPath);
         }
 
         public IConfiguration Configuration { get; }
