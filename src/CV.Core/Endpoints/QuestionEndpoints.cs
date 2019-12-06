@@ -7,5 +7,7 @@ namespace CV.Core.Endpoints
     public class QuestionEndpoints
     {
         public const string IndexEndpoint = "~/cauhoi";
+
+        public const string EnglishIndexEndpoint = "~/en/cauhoi";
     }
 }

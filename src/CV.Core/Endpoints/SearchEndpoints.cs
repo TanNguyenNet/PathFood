@@ -7,6 +7,8 @@ namespace CV.Core.Endpoints
     public class SearchEndpoints
     {
         public const string IndexEndpoint = "~/tim-kiem";
-        
+
+        public const string EnglishIndexEndpoint = "~/en/tim-kiem";
+
     }
 }
