@@ -36,5 +36,7 @@ namespace CV.Data.EF
 
         public DbSet<Info> Infos { set; get; }
 
+        public DbSet<SearchPage> SearchPages { set; get; }
+
     }
 }

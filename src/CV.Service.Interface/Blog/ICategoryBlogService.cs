@@ -8,7 +8,7 @@ namespace CV.Service.Interface.Blog
 {
     public interface ICategoryBlogService
     {
-        CategoryBlogModel GetCategoryBlog(string id);
+        CategoryBlogModel GetCategoryBlog(string id,string slug="");
 
         IEnumerable<CategoryBlogModel> GetAll(Languages? lang);
 

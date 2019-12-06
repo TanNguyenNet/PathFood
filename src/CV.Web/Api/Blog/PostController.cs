@@ -1,4 +1,5 @@
-﻿using CV.Data.Model.Blog;
+﻿using CV.Data.Enum;
+using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,9 +14,9 @@ namespace CV.Web.Api.Blog
             _postService = postService;
         }
 
-        public IActionResult Get(int page = 1, int pageSize = 20, string filter = "")
+        public IActionResult Get(int page = 1, int pageSize = 20, string filter = "", Languages? lang = null)
         {
-            var model = _postService.GetPagedAll(page, pageSize, filter,include: true);
+            var model = _postService.GetPagedAll(page, pageSize, filter, include: true, lang: lang);
             return Ok(model);
         }
 

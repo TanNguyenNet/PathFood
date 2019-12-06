@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GroupQuestionModel>
-    <!-- Header -->
+@{
+    ViewData["Title"] = "Câu hỏi - Path";
+    ViewData["Description"] = "path.com.vn";
+}
+<!-- Header -->
 <div class="box">
     <div class="brums">
         <img src="@ViewBag.URLImage" alt="Hình FAQ">
@@ -14,7 +18,6 @@
                 <div class="col-md-5 col-sm-12">
                     <div class="contet-wrap">
                         <h1 class="header-title">Đặt Câu Hỏi</h1>
-                        <img src="~/client/images/icon/street.svg">
                         <p>
                             Bạn có thắc mắc cần được giải đáp? <br>
                             cả câu trả lời đều có ở đây! Nếu bạn không tìm thấy câu trả lời ở bên dưới? Điền thông tin câu hỏi của bạn ở form bên cạnh để Chúng tôi giải đáp thắc mắc của bạn nhé.
@@ -22,10 +25,10 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12">
-                    <div class="QA-wrap">
+                    <div class="QA-wrap container">
                         <form class="contact-form" action="~/question/sendquestion" method="post">
-                            @Html.AntiForgeryToken()
-                            <div class="row">
+                            
+                            <div class="row field-block">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Họ Tên <span class="star">*</span></label>
@@ -58,3 +61,4 @@
 @{
     await Html.RenderPartialAsync("~/Views/Question/_Index/_Question.cshtml").ConfigureAwait(true);
 }
+@await Component.InvokeAsync("Logo")

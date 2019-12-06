@@ -10,10 +10,12 @@ var app = new Vue({
     data() {
         return {
             list: [],
+            langs: [],
             pCount: 0,
             pSize: 20,
             page: 1,
-            filter: ""
+            filter: "",
+            lang: null
         };
     },
     methods: {
@@ -23,7 +25,8 @@ var app = new Vue({
             var params = {
                 page: self.page,
                 pageSize: self.pSize,
-                filter: self.filter
+                filter: self.filter,
+                lang: self.lang
             };
 
             axios.get('/api/product/get', {
@@ -54,9 +57,20 @@ var app = new Vue({
                 .catch(function () {
                     console.log('Error');
                 });
+        },
+        loadLang: function () {
+            var self = this;
+            axios.get('/api/setting/GetLanguages/', null)
+                .then(function (response) {
+                    self.langs = response.data;
+                })
+                .catch(function (error) {
+                    alert("ERROR: " + (error.message | error));
+                });
         }
     },
     created: function () {
         this.loadData(this.page);
+        this.loadLang();
     }
 });

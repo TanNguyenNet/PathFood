@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<InfoModel>
-@{ 
+@{
     ViewData["Title"] = "Liên hệ";
     ViewData["Description"] = "Gởi thông tin liên hệ cho chúng tôi";
 }
@@ -16,8 +16,9 @@
                 <div class="col-md-12">
                     <div class="header-wrap">
                         <h1 class="header-title">Liên Hệ</h1>
-                        <img src="~/client/images/icon/street.svg">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <!-- <img src="~/client/images/icon/street.svg"> -->
+                        <p>Đừng chừng chừ hãy liên hệ ngay chúng tôi để được hỗ trợ tốt nhất
+hỗ trợ khách hàng là niềm vui của PATH!!</p>
                     </div>
                 </div>
             </div>
@@ -91,10 +92,11 @@
 
                     </div>
                 </div>
-                @{ 
+                @{
                     await Html.RenderPartialAsync("~/Views/Contact/_Index/_FormContact.cshtml").ConfigureAwait(true);
                 }
             </div>
         </div>
     </div>
 </div>
+@await Component.InvokeAsync("Logo")

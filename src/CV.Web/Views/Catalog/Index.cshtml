@@ -1,4 +1,8 @@
 ﻿@model CatalogModel
+@{
+    ViewData["Title"] = Model.Title + " - Path";
+    ViewData["Description"] = "path.com.vn";
+}
 <div class="box">
     <div class="brums">
         <img src="@ViewBag.UrlImage" alt="@Model.Title">
@@ -11,27 +15,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="aside-nav">
-                        <h3>
-                            Sản phẩm theo chức năng
-                        </h3>
-                        <ul>
-                            @foreach (var item in Model.CatalogFunctions)
-                            {
-                                <li><a style="color: @item.Color" href="~/nhom-chucnang-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
-                            }
+                    <div class="wrap">
+                        <ul class="tabs group">
+                            <li><a class="active" href="#/one">Chức Năng</a></li>
+                            <li><a href="#/two">Lĩnh Vực</a></li>
                         </ul>
-                    </div>
-                    <div class="aside-nav mt45">
-                        <h3>
-                            Sản phẩm theo lĩnh vực
-                        </h3>
-                        <ul>
-                            @foreach (var item in Model.CatalogSectors)
-                            {
-                                <li><a style="color: @item.Color" href="~/nhom-sanpham-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
-                            }
-                        </ul>
+                        <div class="aside-nav">
+                            <ul id="one">
+                                @foreach (var item in Model.CatalogFunctions)
+                                {
+                                    <li><a style="color: @item.Color" href="~/nhom-chucnang-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
+                                }
+                            </ul>
+                            <ul id="two" style="display:none">
+                                @foreach (var item in Model.CatalogSectors)
+                                {
+                                    <li><a style="color: @item.Color" href="~/nhom-sanpham-@item.Slug"><span class="icon icon-radio-unchecked"></span>@item.Name</a></li>
+                                }
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 @{
@@ -40,4 +42,7 @@
             </div>
         </div>
     </div>
+    
+    
 </div>
+@await Component.InvokeAsync("Logo")

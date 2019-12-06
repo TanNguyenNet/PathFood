@@ -28,9 +28,9 @@ namespace CV.Web.Areas.WebEnglish.Controllers
             _webImageService = webImageService;
         }
 
-        [Route(CatalogEndpoints.IndexEndpoint)]
-        [Route(CatalogEndpoints.FunctionEndpoint)]
-        [Route(CatalogEndpoints.SectorEndpoint)]
+        [Route(CatalogEndpoints.EnglishIndexEndpoint)]
+        [Route(CatalogEndpoints.EnglishFunctionEndpoint)]
+        [Route(CatalogEndpoints.EnglishSectorEndpoint)]
         [HttpGet]
         public IActionResult Index(string function = "", string sector = "")
         {

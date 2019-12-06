@@ -443,6 +443,26 @@ namespace CV.Data.EF.Migrations
                     b.ToTable("Infos");
                 });
 
+            modelBuilder.Entity("CV.Data.Entities.Setting.SearchPage", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ItemId");
+
+                    b.Property<int>("Lang");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Slug");
+
+                    b.Property<string>("URL");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SearchPages");
+                });
+
             modelBuilder.Entity("CV.Data.Entities.Setting.WebImage", b =>
                 {
                     b.Property<string>("Id")

@@ -1,0 +1,17 @@
+@model HomeModel
+<div class="box mb45">
+    <div class="home-partner">
+        <h1 class="header-title">Đối tác của Path</h1>
+        <div class="swiper-container swiper2">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model.Logos)    
+                {
+                <div class="swiper-slide"><img src="@item.URLImage" alt="@item.Name"></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+    

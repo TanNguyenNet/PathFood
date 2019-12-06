@@ -1,36 +1,18 @@
 ﻿@model HomeModel
-<div class="box mt45 mb45">
+<div class="box mb45">
     <div class="new-product">
         <div class="header-filter">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-sm-12 mbb20">
-                        <span>Sản Phẩm Mới:</span>
-                        <div class="box">
-                            <select id="pr-option">
-                                <option value="1">theo chức năng</option>
-                                <option value="2">theo lĩnh vực</option>
-                            </select>
-                        </div>
+                    <div class="col-md-12 mbb20">
+                        <h1 class="header-title">Sản phẩm mới</h1>
                     </div>
                     <div class="col-md-8 col-sm-12">
-                        <ul class="filter-list display-product" data-change="1">
-                            @foreach (var item in Model.CatalogFunctions)
-                            {
-                                <li value="@item.Slug"><span>@item.Name</span></li>
-                            }
-                        </ul>
-                        <ul class="filter-list non-display-product" data-change="2">
-                            @foreach (var item in Model.CatalogSectors)
-                            {
-                                <li value="@item.Slug"><span>@item.Name</span></li>
-                            }
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container function display-product" data-change="1">
+        <div class="container function display-product">
             <div class="swiper-container swiper1">
                 <div class="swiper-wrapper">
                     @foreach (var item in Model.CatalogFunctions)
@@ -38,38 +20,11 @@
                         foreach (var product in item.Product)
                         {
                             <div class="swiper-slide img-content" data-filter="@item.Slug">
-                                <img class="img-fluid" src="@product.UrlImage" alt="@product.Name">
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <p><span>Sản phẩm:</span> @product.Name</p>
-                                        <p><span>Thành phần:</span> @product.Description</p>
-                                    </div>
-                                </div>
+                                <a href="#"><img class="img-fluid" src="@product.UrlImage" alt="@product.Name"></a>
                             </div>
                         }
                     }
                     </div>
-            </div>
-        </div>
-        <div class="container field non-display-product" data-change="2">
-            <div class="swiper-container swiper1">
-                <div class="swiper-wrapper">
-                    @foreach (var item in Model.CatalogSectors)
-                    {
-                        foreach (var product in item.Product)
-                        {
-                            <div class="swiper-slide img-content" data-filter="@item.Slug">
-                                <img class="img-fluid" src="@product.UrlImage" alt="@product.Name">
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <p><span>Sản phẩm:</span> @product.Name</p>
-                                        <p><span>Thành phần:</span> @product.Description</p>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                </div>
             </div>
         </div>
     </div>

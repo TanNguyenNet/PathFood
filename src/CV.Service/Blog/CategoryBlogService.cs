@@ -26,7 +26,7 @@ namespace CV.Service.Blog
             _categoryBlogRepo = _uow.GetRepository<CategoryBlog>();
         }
 
-        public void Delete(string id,string userId)
+        public void Delete(string id, string userId)
         {
             try
             {
@@ -51,8 +51,13 @@ namespace CV.Service.Blog
             return query.ProjectTo<CategoryBlogModel>(_mapper.ConfigurationProvider).ToList();
         }
 
-        public CategoryBlogModel GetCategoryBlog(string id)
+        public CategoryBlogModel GetCategoryBlog(string id, string slug = "")
         {
+            if (!string.IsNullOrWhiteSpace(slug))
+            {
+                var entity = _categoryBlogRepo.TableNoTracking.FirstOrDefault(x => x.Slug == slug);
+                return _mapper.Map<CategoryBlogModel>(entity);
+            }
             var query = _categoryBlogRepo.GetById(id);
             return _mapper.Map<CategoryBlogModel>(query);
         }

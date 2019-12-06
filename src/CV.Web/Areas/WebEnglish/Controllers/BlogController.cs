@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CV.Core.Endpoints;
+using CV.Data.Model.Blog;
 using CV.Service.Interface.Blog;
 using CV.Service.Interface.Setting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,14 +27,59 @@ namespace CV.Web.Areas.WebEnglish.Controllers
 
         [Route(BlogEndpoints.EnglishIndexEndpoint)]
         [Route(BlogEndpoints.EnglishIndexPagedEndpoint)]
-        [Route(BlogEndpoints.EnglishCatPagedEndpoint)]
         [HttpGet]
         public IActionResult Index(int page = 1, string cat = "")
         {
-            var model = _postService.GetPagedAll(page, 12, publishDate: true, lang: CurrentLang, cat: cat);
+
+            var pageModel = new PagePostModel();
+            pageModel.Category = _categoryBlogService.GetAll(CurrentLang);
+
+            var model = _postService.GetPagedAll(page, 3, publishDate: true, lang: CurrentLang, cat: cat);
+            pageModel.MixPost = model.Results;
+
+            foreach (var item in pageModel.Category)
+            {
+                var posts = _postService.GetPagedAll(page, 4, publishDate: true, lang: CurrentLang, cat: item.Slug);
+                if (pageModel.Posts is null)
+                    pageModel.Posts = posts.Results;
+                else
+                {
+                    var tmp = pageModel.Posts.ToList();
+                    foreach (var post in posts.Results)
+                    {
+                        tmp.Add(post);
+                    }
+                    pageModel.Posts = tmp;
+                }
+            }
+
             ViewBag.cat = cat;
             ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbNews).FirstOrDefault()?.URLImage;
-            return View(model);
+
+            return View(pageModel);
+        }
+
+        [Route(BlogEndpoints.EnglishCatPagedEndpoint)]
+        [HttpGet]
+        public IActionResult PostCategory(int page = 1, string cat = "")
+        {
+
+            var pageModel = new PagePostModel();
+
+            var model = _postService.GetPagedAll(page, 3, publishDate: true, lang: CurrentLang, cat: cat);
+            pageModel.MixPost = model.Results;
+
+            pageModel.PagePost = _postService.GetPagedAll(page, 12, publishDate: true, lang: CurrentLang, cat: cat);
+
+            var category = _categoryBlogService.GetCategoryBlog("", cat);
+
+            ViewBag.Title = category.Name;
+            ViewBag.Description = category.Name + " - path";
+
+            ViewBag.cat = cat;
+            ViewBag.UrlImage = _webImageService.GetAll(Data.Enum.Position.BreadcrumbNews).FirstOrDefault()?.URLImage;
+
+            return View(pageModel);
         }
 
         [Route(BlogEndpoints.EnglishPostEndpoint)]

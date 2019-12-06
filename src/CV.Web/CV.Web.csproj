@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <LangVersion>7.1</LangVersion>
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -30,7 +31,7 @@
 
   <ItemGroup>
 
-    
+
     <ProjectReference Include="..\CV.Data.EF\CV.Data.EF.csproj" />
     <ProjectReference Include="..\CV.Service.Interface\CV.Service.Interface.csproj" />
     <ProjectReference Include="..\CV.Service.Mapper\CV.Service.Mapper.csproj" />

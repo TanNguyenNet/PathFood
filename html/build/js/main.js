@@ -171,6 +171,28 @@ $(document).ready(function(){
         });
       }
     });
+    //home-blog filter
+    $(".qa-wrap li").on('click', function() {
+      var filter = $(this).attr("value");
+      filterList(filter);
+    });
+
+    //News filter function
+    function filterList(value) {
+      var list = $(".QA-content .wrap");
+      $(list).fadeOut("fast");
+      if (value == "all") {
+        $(".QA-content").find(".wrap").each(function (i) {
+          $(this).delay(200).slideDown("fast");
+        });
+      } else {
+        //Notice this *=" <- This means that if the data-category contains multiple options, it will find them
+        //Ex: data-category="Cat1, Cat2"
+        $(".QA-content").find("[data-filter*=" + value + "]").each(function (i) {
+          $(this).delay(200).slideDown("fast");
+        });
+      }
+    }
 
     $(".qa-wrap li").on('click', function() {
       var filter = $(this).attr("value");

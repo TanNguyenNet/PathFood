@@ -1,0 +1,44 @@
+﻿@model PagePostModel
+@{
+    var mainPost = Model.MixPost.FirstOrDefault();
+    var hPost = Model.MixPost.Skip(1).Take(2);
+}
+<div class="blog-list">
+    <div class="container d-lg-block mb-30">
+        <div class="d-lg-flex d-md-flex justify-content-between border-bottom-gray">
+            <div class="box-left-header-blogs">
+                <div class="highlight-blog">
+                    <div class="current-blog">
+                        <div class="image-current-blog">
+                            <a href="~/tintuc/@mainPost.Slug">
+                                <img src="@mainPost.UrlImage" alt="@mainPost.Name" title="@mainPost.Name" />
+                            </a>
+                        </div>
+                        <h4>
+                            <a href="~/tintuc/@mainPost.Slug">@mainPost.Name</a>
+                        </h4>
+                        <div class="date-create"><span class="icon icon-calendar"></span>@mainPost.PushlishDate.Value.ToString("dd/MM/yyyy")</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-right-header-blogs">
+                <div class="list-blogs">
+                    @foreach (var item in hPost)
+                    {
+                        <div class="current-blog">
+                            <div class="image-current-blog">
+                                <a href="~/tintuc/@item.Slug">
+                                    <img src="@item.UrlImage" alt="@item.Name" title="@item.Name" />
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="~/tintuc/@item.Slug">@item.Name</a>
+                            </h4>
+                            <div class="date-create"><span class="icon icon-calendar"></span>@item.PushlishDate.Value.ToString("dd/MM/yyyy")</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
