@@ -1,0 +1,22 @@
+﻿@model PagePostModel
+@{ 
+    ViewData["Title"] = ViewBag.Title;
+    ViewData["Description"] = ViewBag.Description;
+}
+<!-- Header -->
+<div class="box">
+    <div class="brums">
+        <img src="@ViewBag.URLImage" alt="Hình bài viết">
+    </div>
+</div>
+
+<!-- Main slider -->
+<div class="box mb45">
+    @{
+        await Html.RenderPartialAsync("~/Views/Blog/_PostCategory/_Main.cshtml").ConfigureAwait(true);
+
+        await Html.RenderPartialAsync("~/Views/Blog/_PostCategory/_Post.cshtml").ConfigureAwait(true);
+    }
+</div>
+
+@await Component.InvokeAsync("EnLogo")
