@@ -1,72 +1,75 @@
 ﻿@model FooterModel
-<footer id="footer-style-1">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xs-12 col-sm-6 col-md-3 mt45">
-                <div class="footer-logo">
-                    <img class="img-fluid" src="~/client/images/icon/logo-footer2.png" alt="foo-logo">
+<footer class="footer">
+    <div class="section-footer">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+                    <div class="info-company">
+                        <h3>CTY TNHH HƯỚNG ĐI</h3>
+                        @{
+                            if (Model.Infos.Count() > 0)
+                            {
+                                <div class="address-company">
+                                    <span class="icon icon-location2"></span>@Model.Infos.ToList()[0].Address
+                                </div>
+                                <a href='mailto:@Model.Infos.ToList()[0].Email'><span class="icon icon-phone"></span>Email: @Model.Infos.ToList()[0].Email</a>
+                                <a href="tel:@Model.Infos.ToList()[0].Phone"><span class="icon icon-mail2"></span>Điện thoại: @Model.Infos.ToList()[0].Phone</a>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-7 col-xl-8">
+                    <div class="follow-company">
+                        <div class="box-social">
+                            <h3>Follow cùng PATH</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/CauLacBoTiengAnhSaiGonAmerican" target="_blank">
+                                        <span class="icon icon-facebook"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="youtube" href="https://www.youtube.com/user/nhungcindylemon" target="_blank">
+                                        <span class="icon icon-youtube"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="menu-footer">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/sanpham">Sản Phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/tintuc">Tin Tức</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Ứng Dụng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/cauhoi">F&Q</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/lienhe">Liên Hệ</a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 mt45">
-                <h3>Địa chỉ công ty</h3>
-                @{
-                    if (Model.Infos.Count() > 0)
-                    {
-                        <div class="incon-info">
-                            <span class="icon icon-location2"></span>
-                            <p><span>@Model.Infos.ToList()[0].Address</span></p>
-                        </div>
-                        <div class="incon-info">
-                            <span class="icon icon-phone"></span>
-                            <p><a href="tel:@Model.Infos.ToList()[0].Phone"><span>Điện thoại: @Model.Infos.ToList()[0].Phone</span></a></p>
-                        </div>
-                        <div class="incon-info">
-                            <span class="icon icon-mail2"></span>
-                            <p><a href='mailto:@Model.Infos.ToList()[0].Email'><span>Email: @Model.Infos.ToList()[0].Email</span></a></p>
-
-                        </div>
-                    }
-
-                }
-
-                <div class="incon-info">
-                    <a href="">
-                        <span class="icon icon-earth"></span>
-                        <p><span>coi bản đồ</span>
-                    </a></p>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 mt45">
-                <h3>Chính sách path</h3>
-                <ul class="foo-policy">
+            <div class="bottom-footer">
+                <div class="copr-right">Path 2019 Copyright. All Right Reserved 2-19 Designed by <span style="color:orange">CVTeam</span></div>
+                <ul class="term-condition">
                     @foreach (var item in Model.PageContents)
                     {
                         <li><a href="~/ungdung-@item.Slug">@item.Name</a></li>
                     }
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3 mt45">
-                <div class="social">
-                    <h3>Kết nối với Path</h3>
-                    <ul class="foo-social">
-                        <li><a href=""><span class="icon icon-facebook"></a></li>
-                        <li><a href=""><span class="icon icon-google-plus"></a></li>
-                        <li><a href=""><span class="icon icon-instagram"></a></li>
-                        <li><a href=""><span class="icon icon-twitter"></a></li>
-                    </ul>
-                </div>
-                <div class="certi" style="display:none">
-                    <h3>Certification</h3>
-                    <img src="" alt="bộ công thương">
-                </div>
-            </div>
+            <button class="scroll-top" title="Go to top"></button>
         </div>
     </div>
-    <div class="copy-right">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">Path 2019 Copyright. All Right Reserved 2-19 Designed by <span style="color:orange">CVTeam</span></div>
-            </div>
-        </div>
-    </div>
+    <div id="fb-root"></div>
 </footer>

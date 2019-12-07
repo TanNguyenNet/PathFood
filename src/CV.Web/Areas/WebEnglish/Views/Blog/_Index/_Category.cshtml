@@ -1,0 +1,34 @@
+﻿@model PagePostModel
+
+@foreach (var item in Model.Category)
+{
+    <div class="container">
+        <div class="blog-category">
+            <div class="title-blog d-flex justify-content-between">
+                <h3>@item.Name</h3>
+                <a href="~/nhomtintuc-1/@item.Slug" class="link-see-more">Xem thêm</a>
+            </div>
+            <div class="list-blogs swiper-container swiper6">
+                <div class="swiper-wrapper">
+                    @foreach (var post in Model.Posts.Where(x => x.CategoryBlogId == item.Id))
+                    {
+                        <div class="swiper-slide item">
+                            <div class="current-blog">
+                                <div class="image-current-blog">
+                                    <a href="~/en/tintuc/@post.Slug">
+                                        <img src="@post.UrlImage" alt="@post.Name" title="@post.Name" />
+                                    </a>
+                                </div>
+                                <h4>
+                                    <a href="~/en/tintuc/@post.Slug">@post.Name</a>
+                                </h4>
+                                <div class="date-create"><span class="icon icon-calendar"></span>@post.PushlishDate.Value.ToString("dd/MM/yyyy")</div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
