@@ -23,7 +23,7 @@ namespace CV.Web.Controllers.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var footerModel = new FooterModel();
-            footerModel.Infos = await Task.Run(() => Task.Run(() => _infoService.GetAll(Data.Enum.InfoType.InfoCompay)));
+            footerModel.Infos = await Task.Run(()  => _infoService.GetAll(Data.Enum.InfoType.InfoCompay));
             footerModel.PageContents = _pageContentService.GetAll(true, Data.Enum.Languages.Vi);
             return View("_Footer", footerModel);
         }

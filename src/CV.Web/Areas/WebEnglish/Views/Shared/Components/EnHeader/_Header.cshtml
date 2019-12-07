@@ -1,27 +1,15 @@
 ﻿@model HeaderModel
 <header>
-    <div class="top-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <p class="work-time">
-                        <span class="icon icon-alarm"></span>Thứ 2 - 7: 8g30 - 17g00
-                    </p>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <p class="phone float-right">
-                        <a href=”tel:0964891898″><span class="icon icon-phone"></span>hotline: 090 3245 3422</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="header-logo">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="logo">
-                        <a href="~/"><img src="~/client/images/icon/logo-header.png" alt=""></a><div class="logo-text"><span>Promise</span><span>Acceptance</span><span>Trust</span><span>Hope</span></div>
+                        <a href="~/"><img src="~/client/images/icon/logo-header-w.png" alt=""></a>
+                        <div class="logo-text display-none">
+                            <div>Promise</div>
+                            <div><span>Acceptance Trust Hope</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,16 +20,16 @@
             <div class="row">
                 <nav class="mobile-menu">
                     <ul class="mainnav">
-                        <li><a href="~/en">Home</a>
+                        <li><a href="~/">trang chủ</a>
                         <li class="hassubs">
-                            <a href="~/en/sanpham">Product</a>
+                            <a href="~/sanpham">sản phẩm</a>
                             <ul class="dropdown">
                                 <li class="subs hassubs">
                                     <a href="#">theo chức năng</a>
                                     <ul class="dropdown">
                                         @foreach (var item in Model.CatalogFunctions)
                                         {
-                                            <li class="subs"><a href="~/en/nhom-chucnang-@item.Slug">@item.Name</a></li>
+                                            <li class="subs"><a href="~/nhom-chucnang-@item.Slug">@item.Name</a></li>
                                         }
                                     </ul>
                                 </li>
@@ -50,19 +38,19 @@
                                     <ul class="dropdown">
                                         @foreach (var item in Model.CatalogSectors)
                                         {
-                                            <li class="subs"><a href="~/en/nhom-sanpham-@item.Slug">@item.Name</a></li>
+                                            <li class="subs"><a href="~/nhom-sanpham-@item.Slug">@item.Name</a></li>
                                         }
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li class="hassubs">
-                            <a href="~/en/tintuc">tin tức</a>
+                            <a href="~/tintuc">tin tức</a>
 
                             <ul class="dropdown">
                                 @foreach (var item in Model.CategoryBlogs)
                                 {
-                                    <li class="subs hassubs"><a href="~/en/nhomtintuc-1/@item.Slug">@item.Name</a></li>
+                                    <li class="subs hassubs"><a href="~/nhomtintuc-1/@item.Slug">@item.Name</a></li>
                                 }
                             </ul>
                         </li>
@@ -72,15 +60,27 @@
                             <ul class="dropdown">
                                 @foreach (var item in Model.PageContents)
                                 {
-                                    <li class="subs hassubs"><a href="~/en/ungdung-@item.Slug">@item.Name</a></li>
+                                    <li class="subs hassubs"><a href="~/ungdung-@item.Slug">@item.Name</a></li>
                                 }
                             </ul>
                         </li>
-                        <li><a href="~/en/cauhoi">faq</a></li>
-                        <li><a href="~/en/lienhe">liên hệ</a></li>
+                        <li><a href="~/cauhoi">faq</a></li>
+                        <li><a href="~/lienhe">liên hệ</a></li>
                     </ul>
                 </nav>
+
+                <div class="header-right">
+                    <div class="search-button-wrapper header-customize-item style-default">
+                        <div class="icon-search-menu"><i class="icon icon-search"></i></div>
+                        <div class="yolo-search-wrapper">
+                            <form method="get" action="~/tim-kiem" novalidate>
+                                <input id="search-ajax" name="filter" placeholder="Enter keyword to search" type="text" />
+                                <button class="search" type="submit"><i class="icon icon-search"></i></button>
+                                <button class="close"><i class="icon icon-cancel-circle"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </header>

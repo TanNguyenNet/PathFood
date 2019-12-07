@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CV.Web.Controllers.ViewComponents
+namespace CV.Web.Areas.WebEnglish.Controllers.ViewComponents
 {
-    public class OnlineChatViewComponent : ViewComponent
+    public class EnOnlineChatViewComponent : ViewComponent
     {
         private readonly IInfoService _infoService;
-        public OnlineChatViewComponent(IInfoService infoService)
+        public EnOnlineChatViewComponent(IInfoService infoService)
         {
             _infoService = infoService;
         }

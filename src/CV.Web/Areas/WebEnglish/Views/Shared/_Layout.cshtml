@@ -13,12 +13,7 @@
 
     @RenderBody()
 
-    @await Component.InvokeAsync("EnLogo")
-
-    @{
-        await Html.RenderPartialAsync("_OnlineChat").ConfigureAwait(true);
-    }
-
+    @await Component.InvokeAsync("EnOnlineChat")
     @await Component.InvokeAsync("EnFooter")
 
     @{

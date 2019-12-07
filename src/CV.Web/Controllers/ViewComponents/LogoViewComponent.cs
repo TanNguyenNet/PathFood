@@ -17,7 +17,7 @@ namespace CV.Web.Controllers.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var model = await Task.Run(() => Task.Run(() => _webImageService.GetAll(Data.Enum.Position.Logo)));
+            var model = await Task.Run(()  => _webImageService.GetAll(Data.Enum.Position.Logo));
             return View("_PartnerBanner", model);
         }
     }

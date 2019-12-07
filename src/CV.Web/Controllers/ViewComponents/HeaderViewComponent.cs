@@ -16,7 +16,7 @@ namespace CV.Web.Controllers.ViewComponents
         private readonly ICategoryBlogService _categoryBlogService;
         private readonly IPageContentService _pageContentService;
 
-        public HeaderViewComponent(ICatalogFunctionService catalogFunctionService, 
+        public HeaderViewComponent(ICatalogFunctionService catalogFunctionService,
             ICatalogSectorService catalogSectorService,
             ICategoryBlogService categoryBlogService,
             IPageContentService pageContentService)
@@ -30,7 +30,7 @@ namespace CV.Web.Controllers.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var model = new HeaderModel();
-            model.CatalogFunctions = await Task.Run(() => Task.Run(() => _catalogFunctionService.GetAll(Data.Enum.Languages.Vi, true)));
+            model.CatalogFunctions = await Task.Run(() => _catalogFunctionService.GetAll(Data.Enum.Languages.Vi, true));
             model.CatalogSectors = _catalogSectorService.GetAll(Data.Enum.Languages.Vi, true);
             model.CategoryBlogs = _categoryBlogService.GetAll(Data.Enum.Languages.Vi);
             model.PageContents = _pageContentService.GetAll(false, Data.Enum.Languages.Vi);
