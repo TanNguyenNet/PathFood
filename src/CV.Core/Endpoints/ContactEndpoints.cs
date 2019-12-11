@@ -14,5 +14,6 @@ namespace CV.Core.Endpoints
         //English
         public const string EnIndexEndpoint = "~/contact";
 
+        public const string EnSendContactEndPoint = "~/en/goi-lien-he";
     }
 }

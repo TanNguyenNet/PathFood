@@ -44,6 +44,8 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\WebEnglish\Data\" />
     <Folder Include="Areas\WebEnglish\Models\" />
+    <Folder Include="Areas\WebEnglish\Views\Integrate\" />
+    <Folder Include="Areas\WebEnglish\Views\Question\" />
     <Folder Include="wwwroot\document\" />
   </ItemGroup>
 

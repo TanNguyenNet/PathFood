@@ -3,32 +3,34 @@
     <div class="news">
         <div class="container">
             <div class="row">
-                @foreach (var item in Model.PostsHot)
-                {
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="content">
-                            <img src="@item.UrlImage" alt="@item.Name">
-                            <div class="info-content">
-                                <h3 class="title">@item.Name</h3>
-                                <p>@item.Description</p>
-                                <div class="readmore">
-                                    <a href="~/tintuc/@item.Slug">đọc thêm</a>
-                                    <a class="float-right" href="~/tintuc/@item.Slug"><span class="icon icon-redo2"></span></a>
+                <div class="col-md-12 algin-text first-2">
+                    <h1 class="header-title">Tin Tức</h1>
+                    <ul class="filter-list">
+                        @foreach (var item in Model.Category)
+                        {
+                            <li value="@item.Id"><span>@item.Name</span></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="swiper-container swiper5">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model.Posts)
+                    {
+                        <div class="swiper-slide img-content" data-filter="@item.CategoryBlogId">
+                            <div class="content">
+                                <a href="#"><img src="@item.UrlImage" alt="@item.Name"></a>
+                                <div class="info-content">
+                                    <h3 class="title"><a href="~/en/tin-tuc/@item.Slug">@item.Name</a></h3>
+                                    <div class="readmore">
+                                        <a href="~/en/tin-tuc/@item.Slug"><span class="icon icon-calendar"></span>@item.PushlishDate.Value.ToString("dd/MM/yyyy")</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                }
-                <div class="col-lg-4 col-md-12 col-sm-12 first-2">
-                    <div class="content-list">
-                        <span class="title1">Tin tức mới</span>
-                        <ul>
-                            @foreach (var item in Model.Posts)
-                            {
-                                <li><h3><span class="icon icon-plus"></span><a href="~/tintuc/@item.Slug">@item.Name</a></h3></li>
-                            }
-                        </ul>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

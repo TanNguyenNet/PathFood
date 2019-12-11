@@ -31,7 +31,7 @@ namespace CV.Web.Areas.WebEnglish.Controllers
             return View(model);
         }
 
-        [Route(ContactEndpoints.SendContactEndPoint)]
+        [Route(ContactEndpoints.EnSendContactEndPoint)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult SendContact(EmailSenderModel emailSenderModel)

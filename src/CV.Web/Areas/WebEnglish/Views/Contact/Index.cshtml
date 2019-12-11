@@ -1,0 +1,104 @@
+﻿@model IEnumerable<InfoModel>
+@{
+    ViewData["Title"] = "Liên hệ";
+    ViewData["Description"] = "Gởi thông tin liên hệ cho chúng tôi";
+}
+
+<div class="box">
+    <div class="brums">
+        <img src="@ViewBag.URLImage" alt="Hình liên hệ">
+    </div>
+</div>
+<div class="box">
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="header-wrap">
+                        <h1 class="header-title">Liên Hệ</h1>
+                        <!-- <img src="~/client/images/icon/street.svg"> -->
+                        <p>
+                            Đừng chừng chừ hãy liên hệ ngay chúng tôi để được hỗ trợ tốt nhất
+                            hỗ trợ khách hàng là niềm vui của PATH!!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- QA  -->
+<div class="box">
+    <div class="contact-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 com-wrap1">
+                    <div>
+                        @{
+                            if (Model.Count() > 0)
+                            {
+                                <div class="com-wrap">
+                                    <h3>Trụ sở chính</h3>
+                                    <div class="incon-info">
+                                        <span class="icon icon-location2"></span>
+                                        <p><span>Địa chỉ: @Model.ToList()[0].Address</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-phone"></span>
+                                        <p><span>Điện thoại: @Model.ToList()[0].Phone</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-mail2"></span>
+                                        <p><span>Email: @Model.ToList()[0].Email</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-printer"></span>
+                                        <p><span>fax: @Model.ToList()[0].Fax</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-earth"></span>
+                                        <p><a href="">coi bản đồ</a></p>
+                                    </div>
+                                </div>
+                            }
+
+                            if (Model.Count() > 1)
+                            {
+                                <div class="com-wrap mt45">
+                                    <h3>nhà máy sản xuất</h3>
+                                    <div class="incon-info">
+                                        <span class="icon icon-location2"></span>
+                                        <p><span>@Model.ToList()[1].Address</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-phone"></span>
+                                        <p><span>Điện thoại: @Model.ToList()[1].Phone</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-mail2"></span>
+                                        <p><span>Email: @Model.ToList()[1].Email</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-printer"></span>
+                                        <p><span>fax: @Model.ToList()[1].Fax</span></p>
+                                    </div>
+                                    <div class="incon-info">
+                                        <span class="icon icon-earth"></span>
+                                        <p><a href="">coi bản đồ</a></p>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+
+                    </div>
+                </div>
+                @{
+                    await Html.RenderPartialAsync("~/Views/Contact/_Index/_FormContact.cshtml").ConfigureAwait(true);
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("EnLogo")
