@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace CV.Web.Areas.WebEnglish.Controllers
 {
     [Area("WebEnglish")]
-    [Authorize]
     public class BaseController : Controller
     {
         protected Languages CurrentLang

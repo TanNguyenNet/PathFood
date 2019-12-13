@@ -1,0 +1,26 @@
+﻿@model PageContentModel
+@{
+    ViewData["Title"] = Model.Name;
+    ViewData["Description"] = Model.Description;
+}
+<div class="box">
+    <div class="brums">
+        <img src="@ViewBag.URLImage" alt="Hình ứng dụng">
+    </div>
+</div>
+
+<!-- Main slider -->
+<div class="box mt45 mb45">
+    <div class="appli">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-wrap">
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("EnLogo")

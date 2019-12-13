@@ -125,7 +125,7 @@ namespace CV.Web
 
                 routes.MapRoute(
                     name: "webenglish",
-                    template: "webenglish/{controller=Login}/{action=Index}/{id?}");
+                    template: "webenglish/{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(name: "areaRoute",
                     template: "{area:exists}/{controller=Login}/{action=Index}/{id?}");

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<GroupQuestionModel>
+@{
+    ViewData["Title"] = "FAQ - Path";
+    ViewData["Description"] = "path.com.vn";
+}
+<!-- Header -->
+<div class="box">
+    <div class="brums">
+        <img src="@ViewBag.URLImage" alt="Hình FAQ">
+    </div>
+</div>
+
+<!-- Main slider -->
+<div class="box">
+    <div class="Q-A">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="contet-wrap">
+                        <h1 class="header-title">Make a question</h1>
+                        <p>
+                            Do you have questions that need to be answered? <br>
+                            The whole answer is here! If you do not find the answer below? Fill in your questions in the form below so we can answer your questions.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="QA-wrap container">
+                        <form class="contact-form" action="~/en/goi-cau-hoi" method="post">
+                            
+                            <div class="row field-block">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Full Name <span class="star">*</span></label>
+                                        <input type="text" class="form-control" required="required" name="CreatedBy" id="CreatedBy">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Emaill <span class="star">*</span></label>
+                                        <input type="text" class="form-control" required="required" name="Email" id="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="message">Question <span class="star">*</span></label>
+                                        <textarea class="form-control" row="5" required="required" name="Name" id="Name"></textarea>
+                                    </div>
+                                </div>
+                                <div class="button col-md-12"><button type="submit" class="btn float-right">Send</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@{
+    await Html.RenderPartialAsync("~/Areas/WebEnglish/Views/Question/_Index/_Question.cshtml").ConfigureAwait(true);
+}
+@await Component.InvokeAsync("EnLogo")

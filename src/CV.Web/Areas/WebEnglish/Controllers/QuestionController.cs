@@ -36,6 +36,7 @@ namespace CV.Web.Areas.WebEnglish.Controllers
         }
 
         [HttpPost]
+        [Route(QuestionEndpoints.EnglishPostQuestion)]
         [ValidateAntiForgeryToken]
         public IActionResult SendQuestion(QuestionModel question)
         {

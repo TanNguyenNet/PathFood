@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="logo">
-                        <a href="~/"><img src="~/client/images/icon/logo-header-w.png" alt=""></a>
+                        <a href="~/en"><img src="~/client/images/icon/logo-header-w.png" alt=""></a>
                         <div class="logo-text display-none">
                             <div>Promise</div>
                             <div><span>Acceptance Trust Hope</span></div>
@@ -20,52 +20,52 @@
             <div class="row">
                 <nav class="mobile-menu">
                     <ul class="mainnav">
-                        <li><a href="~/">trang chủ</a>
+                        <li><a href="~/en">Home</a>
                         <li class="hassubs">
-                            <a href="~/sanpham">sản phẩm</a>
+                            <a href="~/en/sanpham">Product</a>
                             <ul class="dropdown">
                                 <li class="subs hassubs">
-                                    <a href="#">theo chức năng</a>
+                                    <a href="#">Functions</a>
                                     <ul class="dropdown">
                                         @foreach (var item in Model.CatalogFunctions)
                                         {
-                                            <li class="subs"><a href="~/nhom-chucnang-@item.Slug">@item.Name</a></li>
+                                            <li class="subs"><a href="~/en/nhom-chucnang-@item.Slug">@item.Name</a></li>
                                         }
                                     </ul>
                                 </li>
                                 <li class="subs hassubs">
-                                    <a href="#">theo lĩnh vực</a>
+                                    <a href="#">Field</a>
                                     <ul class="dropdown">
                                         @foreach (var item in Model.CatalogSectors)
                                         {
-                                            <li class="subs"><a href="~/nhom-sanpham-@item.Slug">@item.Name</a></li>
+                                            <li class="subs"><a href="~/en/nhom-sanpham-@item.Slug">@item.Name</a></li>
                                         }
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li class="hassubs">
-                            <a href="~/tintuc">tin tức</a>
+                            <a href="~/en/tintuc">News</a>
 
                             <ul class="dropdown">
                                 @foreach (var item in Model.CategoryBlogs)
                                 {
-                                    <li class="subs hassubs"><a href="~/nhomtintuc-1/@item.Slug">@item.Name</a></li>
+                                    <li class="subs hassubs"><a href="~/en/nhomtintuc-1/@item.Slug">@item.Name</a></li>
                                 }
                             </ul>
                         </li>
 
                         <li class="hassubs">
-                            <a href="#">ứng dụng</a>
+                            <a href="#">Application</a>
                             <ul class="dropdown">
                                 @foreach (var item in Model.PageContents)
                                 {
-                                    <li class="subs hassubs"><a href="~/ungdung-@item.Slug">@item.Name</a></li>
+                                    <li class="subs hassubs"><a href="~/en/ungdung-@item.Slug">@item.Name</a></li>
                                 }
                             </ul>
                         </li>
-                        <li><a href="~/cauhoi">faq</a></li>
-                        <li><a href="~/lienhe">liên hệ</a></li>
+                        <li><a href="~/en/cauhoi">FAQ</a></li>
+                        <li><a href="~/en/lienhe">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -73,7 +73,7 @@
                     <div class="search-button-wrapper header-customize-item style-default">
                         <div class="icon-search-menu"><i class="icon icon-search"></i></div>
                         <div class="yolo-search-wrapper">
-                            <form method="get" action="~/tim-kiem" novalidate>
+                            <form method="get" action="~/en/tim-kiem" novalidate>
                                 <input id="search-ajax" name="filter" placeholder="Enter keyword to search" type="text" />
                                 <button class="search" type="submit"><i class="icon icon-search"></i></button>
                                 <button class="close"><i class="icon icon-cancel-circle"></i></button>
