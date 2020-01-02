@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  //languages
+  
   //banner slider
   var swiper = new Swiper('.swiper',
     {
