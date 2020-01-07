@@ -2914,11 +2914,13 @@
        text-align: right;
        top: 0;
        padding-top: 10px;
+       z-index: 9999999;
    }
    .flag {
        position: absolute;
        right: 10px;
        line-height: 35px;
+       z-index: 999999;
    }
 .header-right > div {
     display: inline-block;
@@ -6400,8 +6402,8 @@ color: #fff;}
     .art-navigation .content .circle-container {
         position: relative;
         /* 1 */
-        width: 450px;
-        height: 450px;
+        width: 40em;
+        height: 40em;
         padding: 0;
         border-radius: 50%;
         list-style: none;
@@ -6420,23 +6422,23 @@ color: #fff;}
         height: 6em;
         margin: -3em; }
     .art-navigation .content .circle-container > :nth-of-type(1) {
-        -webkit-transform: rotate(30deg) translate(22em) rotate(-30deg);
-        transform: rotate(30deg) translate(22em) rotate(-30deg); }
+        -webkit-transform: rotate(30deg) translate(15em) rotate(-30deg);
+        transform: rotate(30deg) translate(15em) rotate(-30deg); }
     .art-navigation .content .circle-container > :nth-of-type(2) {
-        -webkit-transform: rotate(90deg) translate(22em) rotate(-90deg);
-        transform: rotate(90deg) translate(22em) rotate(-90deg); }
+        -webkit-transform: rotate(90deg) translate(15em) rotate(-90deg);
+        transform: rotate(90deg) translate(15em) rotate(-90deg); }
     .art-navigation .content .circle-container > :nth-of-type(3) {
-        -webkit-transform: rotate(150deg) translate(22em) rotate(-150deg);
-        transform: rotate(150deg) translate(22em) rotate(-150deg); }
+        -webkit-transform: rotate(150deg) translate(15em) rotate(-150deg);
+        transform: rotate(150deg) translate(15em) rotate(-150deg); }
     .art-navigation .content .circle-container > :nth-of-type(4) {
-        -webkit-transform: rotate(210deg) translate(22em) rotate(-210deg);
-        transform: rotate(210deg) translate(22em) rotate(-210deg); }
+        -webkit-transform: rotate(210deg) translate(15em) rotate(-210deg);
+        transform: rotate(210deg) translate(15em) rotate(-210deg); }
     .art-navigation .content .circle-container > :nth-of-type(5) {
-        -webkit-transform: rotate(270deg) translate(22em) rotate(-270deg);
-        transform: rotate(270deg) translate(22em) rotate(-270deg); }
+        -webkit-transform: rotate(270deg) translate(15em) rotate(-270deg);
+        transform: rotate(270deg) translate(15em) rotate(-270deg); }
     .art-navigation .content .circle-container > :nth-of-type(6) {
-        -webkit-transform: rotate(330deg) translate(22em) rotate(-330deg);
-        transform: rotate(330deg) translate(22em) rotate(-330deg); }
+        -webkit-transform: rotate(330deg) translate(15em) rotate(-330deg);
+        transform: rotate(330deg) translate(15em) rotate(-330deg); }
     .art-navigation .content .circle-container img {
         display: block;
         width: 100%;
@@ -6446,23 +6448,45 @@ color: #fff;}
     .art-navigation .content .circle-container li > svg {
         height: 40px; }
     .art-navigation .content .circle-container li > svg#Capa_1 {
-        -webkit-transform: rotate(-128deg) translate(145px) rotate(75deg);
-        transform: rotate(-128deg) translate(145px) rotate(75deg); }
+        -webkit-transform: rotate(-128deg) translate(122px) rotate(75deg);
+        transform: rotate(-128deg) translate(122px) rotate(75deg); }
     .art-navigation .content .circle-container li > svg#Capa_2 {
-        -webkit-transform: rotate(-89deg) translate(165px) rotate(90deg);
-        transform: rotate(-89deg) translate(165px) rotate(90deg); }
+        -webkit-transform: rotate(-89deg) translate(152px) rotate(90deg);
+        transform: rotate(-89deg) translate(152px) rotate(90deg); }
     .art-navigation .content .circle-container li > svg#Capa_3 {
-        -webkit-transform: rotate(-53deg) translate(145px) rotate(112deg);
-        transform: rotate(-53deg) translate(145px) rotate(112deg); }
+        -webkit-transform: rotate(-53deg) translate(136px) rotate(112deg);
+        transform: rotate(-53deg) translate(136px) rotate(112deg); }
     .art-navigation .content .circle-container li > svg#Capa_4 {
-        -webkit-transform: rotate(-10deg) translate(95px) rotate(130deg);
-        transform: rotate(-10deg) translate(95px) rotate(130deg); }
+        -webkit-transform: rotate(-10deg) translate(84px) rotate(130deg);
+        transform: rotate(-10deg) translate(84px) rotate(130deg); }
     .art-navigation .content .circle-container li > svg#Capa_5 {
-        -webkit-transform: rotate(87deg) translate(42px) rotate(90deg);
-        transform: rotate(87deg) translate(42px) rotate(90deg); }
+        -webkit-transform: rotate(87deg) translate(28px) rotate(90deg);
+        transform: rotate(87deg) translate(28px) rotate(90deg); }
     .art-navigation .content .circle-container li > svg#Capa_6 {
-        -webkit-transform: rotate(14deg) translate(-98px) rotate(-132deg);
-        transform: rotate(14deg) translate(-98px) rotate(-132deg); }
+        -webkit-transform: rotate(14deg) translate(-70px) rotate(-132deg);
+        transform: rotate(14deg) translate(-70px) rotate(-132deg); }
+    .art-navigation .content .circle-container li img {
+        -webkit-transform: scale(1.25);
+        transform: scale(1.25); }
+    .art-navigation .content .circle-container li a {
+        color: #fff;
+        font-weight: bold; }
+
+    .art-navigation .content .circle-container li a .candy, .art-navigation .content .circle-container li a .ingredent, .art-navigation .content .circle-container li a .scream, .art-navigation .content .circle-container li a .sauce {
+        line-height: 82px;}
+    .art-navigation .content .menunav ul.abc {
+        position: absolute;
+        padding: 90px;
+        max-width: 0;
+        max-height: 0;
+        list-style: none;
+        top: 188px;
+        left: calc(50% - 8.4rem);
+        margin: auto; }
+    .art-navigation .content .circle label, .art-navigation .content .slice label {
+        font-size: 8px;
+        color: #fff;
+        font-weight: bold; }
 }
    @media only screen and (max-width: 575px) {
     .new-product .display-product > div {
@@ -6474,8 +6498,8 @@ color: #fff;}
     .art-navigation .content .circle-container {
       position: relative;
       /* 1 */
-      width: 574px;
-      height: 574px; }
+      width: 520px;
+      height: 520px; }
     .art-navigation .content .circle-container > * {
       width: 4em;
       height: 4em; }
@@ -6543,9 +6567,12 @@ color: #fff;}
       max-width: 0;
       max-height: 0;
       list-style: none;
-      top: 194px;
-      left: 34.5%;
+      top: 170px;
+      left: 33.5%;
       margin: auto; }
+       .art-navigation {
+           padding-bottom: 0px;
+       }
     .header-filter {
       text-align: left;
     }
