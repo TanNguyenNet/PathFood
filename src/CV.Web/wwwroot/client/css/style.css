@@ -3053,6 +3053,7 @@
     background-image: url(../images/adn1.png);
     background-repeat: no-repeat;
     background-position: left;
+     background-size: cover;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -3184,8 +3185,8 @@
      .art-navigation .content .circle-container {
        position: relative;
        /* 1 */
-       width: 40em;
-       height: 40em;
+       width: 55em;
+       height: 55em;
        padding: 0;
        border-radius: 50%;
        list-style: none;
@@ -3204,23 +3205,23 @@
        height: 6em;
        margin: -3em; }
      .art-navigation .content .circle-container > :nth-of-type(1) {
-       -webkit-transform: rotate(30deg) translate(15em) rotate(-30deg);
-               transform: rotate(30deg) translate(15em) rotate(-30deg); }
+       -webkit-transform: rotate(30deg) translate(22em) rotate(-30deg);
+               transform: rotate(30deg) translate(22em) rotate(-30deg); }
      .art-navigation .content .circle-container > :nth-of-type(2) {
-       -webkit-transform: rotate(90deg) translate(15em) rotate(-90deg);
-               transform: rotate(90deg) translate(15em) rotate(-90deg); }
+       -webkit-transform: rotate(90deg) translate(22em) rotate(-90deg);
+               transform: rotate(90deg) translate(22em) rotate(-90deg); }
      .art-navigation .content .circle-container > :nth-of-type(3) {
-       -webkit-transform: rotate(150deg) translate(15em) rotate(-150deg);
-               transform: rotate(150deg) translate(15em) rotate(-150deg); }
+       -webkit-transform: rotate(150deg) translate(22em) rotate(-150deg);
+               transform: rotate(150deg) translate(22em) rotate(-150deg); }
      .art-navigation .content .circle-container > :nth-of-type(4) {
-       -webkit-transform: rotate(210deg) translate(15em) rotate(-210deg);
-               transform: rotate(210deg) translate(15em) rotate(-210deg); }
+       -webkit-transform: rotate(210deg) translate(22em) rotate(-210deg);
+               transform: rotate(210deg) translate(22em) rotate(-210deg); }
      .art-navigation .content .circle-container > :nth-of-type(5) {
-       -webkit-transform: rotate(270deg) translate(15em) rotate(-270deg);
-               transform: rotate(270deg) translate(15em) rotate(-270deg); }
+       -webkit-transform: rotate(270deg) translate(22em) rotate(-270deg);
+               transform: rotate(270deg) translate(22em) rotate(-270deg); }
      .art-navigation .content .circle-container > :nth-of-type(6) {
-       -webkit-transform: rotate(330deg) translate(15em) rotate(-330deg);
-               transform: rotate(330deg) translate(15em) rotate(-330deg); }
+       -webkit-transform: rotate(330deg) translate(22em) rotate(-330deg);
+               transform: rotate(330deg) translate(22em) rotate(-330deg); }
      .art-navigation .content .circle-container img {
        display: block;
        width: 100%;
@@ -3230,32 +3231,35 @@
      .art-navigation .content .circle-container li > svg {
        height: 40px; }
      .art-navigation .content .circle-container li > svg#Capa_1 {
-       -webkit-transform: rotate(-128deg) translate(122px) rotate(75deg);
-               transform: rotate(-128deg) translate(122px) rotate(75deg); }
+       -webkit-transform: rotate(-128deg) translate(145px) rotate(75deg);
+               transform: rotate(-128deg) translate(145px) rotate(75deg); }
      .art-navigation .content .circle-container li > svg#Capa_2 {
-       -webkit-transform: rotate(-89deg) translate(152px) rotate(90deg);
-               transform: rotate(-89deg) translate(152px) rotate(90deg); }
+       -webkit-transform: rotate(-89deg) translate(165px) rotate(90deg);
+               transform: rotate(-89deg) translate(165px) rotate(90deg); }
      .art-navigation .content .circle-container li > svg#Capa_3 {
-       -webkit-transform: rotate(-53deg) translate(136px) rotate(112deg);
-               transform: rotate(-53deg) translate(136px) rotate(112deg); }
+       -webkit-transform: rotate(-53deg) translate(145px) rotate(112deg);
+               transform: rotate(-53deg) translate(145px) rotate(112deg); }
      .art-navigation .content .circle-container li > svg#Capa_4 {
-       -webkit-transform: rotate(-10deg) translate(84px) rotate(130deg);
-               transform: rotate(-10deg) translate(84px) rotate(130deg); }
+       -webkit-transform: rotate(-10deg) translate(95px) rotate(130deg);
+               transform: rotate(-10deg) translate(95px) rotate(130deg); }
      .art-navigation .content .circle-container li > svg#Capa_5 {
-       -webkit-transform: rotate(87deg) translate(28px) rotate(90deg);
-               transform: rotate(87deg) translate(28px) rotate(90deg); }
+       -webkit-transform: rotate(87deg) translate(42px) rotate(90deg);
+               transform: rotate(87deg) translate(42px) rotate(90deg); }
      .art-navigation .content .circle-container li > svg#Capa_6 {
-       -webkit-transform: rotate(14deg) translate(-70px) rotate(-132deg);
-               transform: rotate(14deg) translate(-70px) rotate(-132deg); }
+       -webkit-transform: rotate(14deg) translate(-98px) rotate(-132deg);
+               transform: rotate(14deg) translate(-98px) rotate(-132deg); }
      .art-navigation .content .circle-container li img {
-       -webkit-transform: scale(1.25);
-               transform: scale(1.25); }
+       -webkit-transform: scale(1.85);
+               transform: scale(1.85); }
      .art-navigation .content .circle-container li a {
        color: #fff;
-       font-weight: bold; }
+       font-weight: bold;
+     line-height: 30px; }
 
     .art-navigation .content .circle-container li a .candy, .art-navigation .content .circle-container li a .ingredent, .art-navigation .content .circle-container li a .scream, .art-navigation .content .circle-container li a .sauce {
-      line-height: 82px;}
+      line-height: 130px;}
+.art-navigation .content .circle-container li a .candy, .art-navigation .content .circle-container li a .ingredent, .art-navigation .content .circle-container li a .scream, .art-navigation .content .circle-container li a .sauce {
+    line-height: 130px;}
      .art-navigation .content .circle-container li a .overlay {
        position: absolute;
        top: 50%;
@@ -3266,8 +3270,8 @@
        background-repeat: no-repeat;
        text-align: center;
        border-radius: 50%;
-       width: 104px;
-       height: 95px;
+       width: 155px;
+       height: 145px;
        -webkit-box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 8px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
                box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 8px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1); }
      .art-navigation .content .circle, .art-navigation .content .circle:before, .art-navigation .content .circle:after {
@@ -3277,14 +3281,14 @@
        margin: auto;
        top: 40px; }
      .art-navigation .content .menunav ul.abc {
-       position: absolute;
-       padding: 95px;
-       max-width: 0;
-       max-height: 0;
-       list-style: none;
-       top: 185px;
-       left: calc(50% - 88px);
-       margin: auto; }
+         position: absolute;
+         padding: 145px;
+         max-width: 0;
+         max-height: 0;
+         list-style: none;
+         top: 240px;
+         left: calc(50% - 14.6rem);
+         margin: auto;  }
      .art-navigation .content .menunav li {
        position: absolute; }
      .art-navigation .content .slice {
@@ -3322,7 +3326,7 @@
        height: 200%;
        -webkit-transform: skew(-40deg) rotate(-65deg);
                transform: skew(-40deg) rotate(-65deg);
-       line-height: 2.9;
+       line-height: 4;
        text-align: center; }
      .art-navigation .content .slice label span {
        display: block; }
@@ -3341,7 +3345,7 @@
      .art-navigation .content .cherry label, .art-navigation .content .ocherry:checked ~ nav .unsel {
        background: #00a6e7; }
      .art-navigation .content .circle label, .art-navigation .content .slice label {
-       font-size: 10px;
+       font-size: 12px;
        color: #fff;
        font-weight: bold; }
      .art-navigation .content .slice p {
@@ -6044,14 +6048,15 @@ color: #fff;}
      font-size: 10px;
      height: 420px; }
    .art-navigation .content .menunav ul.abc {
-     position: absolute;
-     padding: 95px;
-     max-width: 0;
-     max-height: 0;
-     list-style: none;
-     top: 185px;
-     left: calc(50% - 8.8rem);
-     margin: auto; } }
+       position: absolute;
+       padding: 145px;
+       max-width: 0;
+       max-height: 0;
+       list-style: none;
+       top: 240px;
+       left: calc(50% - 14.6rem);
+       margin: auto; }  
+   }
    @media only screen and (max-width: 991px) {
 
    .art-navigation .content .menunav ul.abc {
@@ -6299,74 +6304,93 @@ color: #fff;}
      .header-logo .logo .trust {
        padding-right: 10px;
        padding-left: 30px; }
+
+@media only screen and (max-width: 991px) {
    .art-navigation .content .circle-container {
      position: relative;
      /* 1 */
-     width: 450px;
-     height: 450px; }
+     width: 50em;
+     height: 50em; }
    .art-navigation .content .circle-container > * {
      width: 4em;
      height: 4em; }
-   .art-navigation .content .circle-container li > svg {
-     height: 30px; }
-   .art-navigation .content .circle-container > :nth-of-type(1) {
-     -webkit-transform: rotate(30deg) translate(12em) rotate(-30deg);
-             transform: rotate(30deg) translate(12em) rotate(-30deg); }
-   .art-navigation .content .circle-container > :nth-of-type(2) {
-     -webkit-transform: rotate(90deg) translate(12em) rotate(-90deg);
-             transform: rotate(90deg) translate(12em) rotate(-90deg); }
-   .art-navigation .content .circle-container > :nth-of-type(3) {
-     -webkit-transform: rotate(150deg) translate(12em) rotate(-150deg);
-             transform: rotate(150deg) translate(12em) rotate(-150deg); }
-   .art-navigation .content .circle-container > :nth-of-type(4) {
-     -webkit-transform: rotate(210deg) translate(12em) rotate(-210deg);
-             transform: rotate(210deg) translate(12em) rotate(-210deg); }
-   .art-navigation .content .circle-container > :nth-of-type(5) {
-     -webkit-transform: rotate(270deg) translate(12em) rotate(-270deg);
-             transform: rotate(270deg) translate(12em) rotate(-270deg); }
-   .art-navigation .content .circle-container > :nth-of-type(6) {
-     -webkit-transform: rotate(330deg) translate(12em) rotate(-330deg);
-             transform: rotate(330deg) translate(12em) rotate(-330deg); }
-   .art-navigation .content .circle-container li > svg#Capa_1 {
-     -webkit-transform: rotate(-130deg) translate(90px) rotate(74deg);
-             transform: rotate(-130deg) translate(90px) rotate(74deg); }
-   .art-navigation .content .circle-container li > svg#Capa_2 {
-     -webkit-transform: rotate(-90deg) translate(108px) rotate(90deg);
-             transform: rotate(-90deg) translate(108px) rotate(90deg); }
-   .art-navigation .content .circle-container li > svg#Capa_3 {
-     -webkit-transform: rotate(-54deg) translate(96px) rotate(115deg);
-             transform: rotate(-54deg) translate(96px) rotate(115deg); }
-   .art-navigation .content .circle-container li > svg#Capa_4 {
-     -webkit-transform: rotate(-10deg) translate(60px) rotate(130deg);
-             transform: rotate(-10deg) translate(60px) rotate(130deg); }
-   .art-navigation .content .circle-container li > svg#Capa_5 {
-     -webkit-transform: rotate(88deg) translate(25px) rotate(90deg);
-             transform: rotate(88deg) translate(25px) rotate(90deg); }
-   .art-navigation .content .circle-container li > svg#Capa_6 {
-     -webkit-transform: rotate(12deg) translate(-55px) rotate(-128deg);
-             transform: rotate(12deg) translate(-55px) rotate(-128deg); }
+    .art-navigation .content .circle-container > :nth-of-type(1) {
+        -webkit-transform: rotate(30deg) translate(20em) rotate(-30deg);
+        transform: rotate(30deg) translate(20em) rotate(-30deg); }
+    .art-navigation .content .circle-container > :nth-of-type(2) {
+        -webkit-transform: rotate(90deg) translate(22em) rotate(-90deg);
+        transform: rotate(90deg) translate(20em) rotate(-90deg); }
+    .art-navigation .content .circle-container > :nth-of-type(3) {
+        -webkit-transform: rotate(150deg) translate(22em) rotate(-150deg);
+        transform: rotate(150deg) translate(20em) rotate(-150deg); }
+    .art-navigation .content .circle-container > :nth-of-type(4) {
+        -webkit-transform: rotate(210deg) translate(22em) rotate(-210deg);
+        transform: rotate(210deg) translate(20em) rotate(-210deg); }
+    .art-navigation .content .circle-container > :nth-of-type(5) {
+        -webkit-transform: rotate(270deg) translate(22em) rotate(-270deg);
+        transform: rotate(270deg) translate(20em) rotate(-270deg); }
+    .art-navigation .content .circle-container > :nth-of-type(6) {
+        -webkit-transform: rotate(330deg) translate(22em) rotate(-330deg);
+        transform: rotate(330deg) translate(20em) rotate(-330deg); }
+    .art-navigation .content .circle-container img {
+        display: block;
+        width: 100%;
+        border-radius: 50%; }
+    .art-navigation .content .circle-container li div {
+        position: relative; }
+    .art-navigation .content .circle-container li > svg {
+        height: 40px; }
+    .art-navigation .content .circle-container li > svg#Capa_1 {
+        -webkit-transform: rotate(-128deg) translate(115px) rotate(75deg);
+        transform: rotate(-128deg) translate(115px) rotate(75deg); }
+    .art-navigation .content .circle-container li > svg#Capa_2 {
+        -webkit-transform: rotate(-89deg) translate(130px) rotate(90deg);
+        transform: rotate(-89deg) translate(130px) rotate(90deg); }
+    .art-navigation .content .circle-container li > svg#Capa_3 {
+        -webkit-transform: rotate(-53deg) translate(120px) rotate(112deg);
+        transform: rotate(-53deg) translate(120px) rotate(112deg); }
+    .art-navigation .content .circle-container li > svg#Capa_4 {
+        -webkit-transform: rotate(-10deg) translate(90px) rotate(130deg);
+        transform: rotate(-10deg) translate(90px) rotate(130deg); }
+    .art-navigation .content .circle-container li > svg#Capa_5 {
+        -webkit-transform: rotate(87deg) translate(42px) rotate(90deg);
+        transform: rotate(87deg) translate(42px) rotate(90deg); }
+    .art-navigation .content .circle-container li > svg#Capa_6 {
+        -webkit-transform: rotate(14deg) translate(-78px) rotate(-132deg);
+        transform: rotate(14deg) translate(-78px) rotate(-132deg); }
+    .art-navigation .content .circle-container li img {
+        -webkit-transform: scale(1.85);
+        transform: scale(1.85); }
+    .art-navigation .content .circle-container li a {
+        color: #fff;
+        font-weight: bold;
+        line-height: 30px; }
+
     .art-navigation .content .circle-container li a .candy, .art-navigation .content .circle-container li a .ingredent, .art-navigation .content .circle-container li a .scream, .art-navigation .content .circle-container li a .sauce {
-    line-height: 65px;}
+        line-height: 90px;}
+    .art-navigation .content .circle-container li a .drink, .art-navigation .content .circle-container li a .meat {
+        line-height: 20px;}
   .art-navigation .content .circle-container li a span {
     font-size: 12px;
   }
    .art-navigation .content .circle-container li a .overlay {
-     width: 80px;
-     height: 70px;
+     width: 104px;
+     height: 95px;
      -webkit-box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 5px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
              box-shadow: inset 0 0 0 0 rgba(200, 95, 66, 0.4), inset 0 0 0 5px rgba(58, 58, 58, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1); }
    
    .art-navigation .content .menunav {
      overflow: auto; }
    .art-navigation .content .menunav ul.abc {
-     position: absolute;
-     padding: 80px;
-     max-width: 0;
-     max-height: 0;
-     list-style: none;
-     top: 132px;
-     left: calc(50% - 9.2rem);
-     margin: auto; } }
+       position: absolute;
+       padding: 150px;
+       max-width: 0;
+       max-height: 0;
+       list-style: none;
+       top: 180px;
+       left: calc(50% - 16rem);
+       margin: auto; } 
+}
 @media only screen and (max-width: 768px) {
     .new-product .display-product > div {
         height: 450px;
