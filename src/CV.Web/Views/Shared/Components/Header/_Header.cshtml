@@ -29,7 +29,7 @@
                                     <ul class="dropdown">
                                         @foreach (var item in Model.CatalogFunctions)
                                         {
-                                            <li class="subs"><a href="~/nhom-chucnang-@item.Slug">@item.Name</a></li>
+                                        <li class="subs"><a href="~/nhom-chucnang-@item.Slug">@item.Name</a></li>
                                         }
                                     </ul>
                                 </li>
@@ -38,7 +38,7 @@
                                     <ul class="dropdown">
                                         @foreach (var item in Model.CatalogSectors)
                                         {
-                                            <li class="subs"><a href="~/nhom-sanpham-@item.Slug">@item.Name</a></li>
+                                        <li class="subs"><a href="~/nhom-sanpham-@item.Slug">@item.Name</a></li>
                                         }
                                     </ul>
                                 </li>
@@ -50,7 +50,7 @@
                             <ul class="dropdown">
                                 @foreach (var item in Model.CategoryBlogs)
                                 {
-                                    <li class="subs hassubs"><a href="~/nhomtintuc-1/@item.Slug">@item.Name</a></li>
+                                <li class="subs hassubs"><a href="~/nhomtintuc-1/@item.Slug">@item.Name</a></li>
                                 }
                             </ul>
                         </li>
@@ -60,7 +60,7 @@
                             <ul class="dropdown">
                                 @foreach (var item in Model.PageContents)
                                 {
-                                    <li class="subs hassubs"><a href="~/ungdung-@item.Slug">@item.Name</a></li>
+                                <li class="subs hassubs"><a href="~/ungdung-@item.Slug">@item.Name</a></li>
                                 }
                             </ul>
                         </li>
@@ -82,9 +82,13 @@
                     </div>
                 </div>
                 <div class="flag">
-                    <a href="http://demo.path.com.vn"><img src="~/client/images/icon/vn.png" alt="VN"></a>
-                    <a href="http://demo.path.com.vn/en"><img src="~/client/images/icon/gb.png" alt="ENG"></a>
+                    @{
+                        var url = Context.Request.Scheme + "://" + Context.Request.Host;
+                    }
+                    <a href="@url"><img src="~/client/images/icon/vn.png" alt="VN"></a>
+                    <a href="@($"{url}/en")"><img src="~/client/images/icon/gb.png" alt="ENG"></a>
                 </div>
             </div>
         </div>
+    </div>
 </header>
