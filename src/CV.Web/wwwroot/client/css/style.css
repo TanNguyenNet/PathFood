@@ -2934,7 +2934,7 @@
     opacity: 1;
 }
 .yolo-search-wrapper {
-    background: linear-gradient(90deg, rgba(5,161,247,1) 0%, rgba(148,221,255,1) 63%, rgba(5,161,247,1) 100%);
+    background: linear-gradient(90deg, #000fbd 0%, rgba(148,221,255,1) 75%, #000fbd 100%);
     transition: all 0.3s ease 0s;
     transform: translateY(-100%);
     bottom: 0;
@@ -4530,12 +4530,13 @@ padding-bottom: 2rem;
 .info-company .address-company, .info-company a {
   position: relative;
   padding-left: 3rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.3;
   display: block;
   color: #fff;
   margin-bottom: 0.6rem;
-font-weight: 600; }
+/*font-weight: 600; */
+}
   .info-company .address-company span, .info-company a span {
     margin-right: .5rem;
     position: absolute;
@@ -4611,7 +4612,7 @@ font-weight: 600; }
   padding: 1.1rem 0 1rem;
   font-size: 14px;
   line-height: 1.57;
-  margin-top: 3rem;
+  margin-top: 1rem;
 color: #fff;}
   .bottom-footer .term-condition {
     margin: 0;
@@ -4683,7 +4684,8 @@ color: #fff;}
   @media (min-width: 922px) {
     .menu-footer {
       display: block;
-      margin-top: 2rem; } }
+      /*margin-top: 2rem;*/
+    } }
   @media (min-width: 1200px) {
     .menu-footer a {
       font-size: 1.4rem;
@@ -5931,12 +5933,12 @@ color: #fff;}
       background: url(../images/dna1.svg) right no-repeat;
       padding: 10px 0;
       text-align: center;
-      background: url(../images/dna1.svg) right no-repeat, linear-gradient(90deg, rgba(5,161,247,1) 0%, rgba(148,221,255,1) 63%, rgba(5,161,247,1) 100%);
+      background: url(../images/dna1.svg) right no-repeat, linear-gradient(90deg, #000fbd 0%, rgba(148,221,255,1) 75%, #000fbd 100%);
    }
       .header-logo .logo {
         text-align: left; }
         .header-logo .logo img {
-          width: 65px;
+          width: 65px !important;
         }
       .header-logo .logo-text {
         display: inline-block;
@@ -6252,9 +6254,9 @@ color: #fff;}
      padding: 20px 0;
      text-align: center; }
      .header-logo .logo img {
-       width: 65px; }
+       width: 135px; }
      .header-logo .logo span {
-       font-size: 14px;
+       font-size: 1.6rem;
        padding: 0px 10px;
        color: #fff;
        font-weight: bold; }
@@ -6263,7 +6265,7 @@ color: #fff;}
         overflow:hidden;
         white-space:nowrap;
         color: #fff;
-       font-size: 1.5rem;
+       font-size: 1.6rem;
       }
        .header-logo .logo-text div:first-of-type {    /* For increasing performance 
         ID/Class should've been used. 
@@ -6621,10 +6623,10 @@ color: #fff;}
           /* background: url(../images/dna1.svg) right no-repeat; */
           padding: 10px 0;
           text-align: center;
-          background:linear-gradient(90deg, rgba(5,161,247,1) 0%, rgba(148,221,255,1) 63%, rgba(5,161,247,1) 100%);
+          background:linear-gradient(90deg, #000fbd 0%, rgba(148,221,255,1) 75%, #000fbd 100%);
        }
         .header-logo {
-          padding: 20px 0;
+          padding: 10px 0;
           text-align: center; }
           .header-logo .logo img {
             width: 65px; }
